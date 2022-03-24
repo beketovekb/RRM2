@@ -210,9 +210,9 @@
         </div>
     </section>
     <section class="s4_1" id="s4_1">
-        <h2 data-aos="fade-down">НАШИ <span>ПРОЕКТЫ</span></h2>
+        <h2 data-aos="fade-down"><?php print($ftitle["10"]); ?></h2>
         <hr data-aos="flip-left">
-        <span class="title_caption" data-aos="fade-up">Воплощение ваших желаний в реальность</span>
+        <span class="title_caption" data-aos="fade-up"><?php print($ftitle["11"]); ?></span>
         <div class="projects" data-aos="zoom-in">
             <div class="projects_item p_item1">
                 <div class="p_shadow">
