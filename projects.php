@@ -39,7 +39,7 @@
                     <div class="shadow_up"></div>
                     <div class="container">
                         <nav>
-                            <a class="logo_link" href="index.html">
+                            <a class="logo_link" href="index.php">
                                 <img class="logo logo_light" src="img/logo_light.png" alt="Regulus Robotics Machine Logo">
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
@@ -72,7 +72,7 @@
                                 </a>
                                 <a href="https://api.whatsapp.com/send/?phone=77018002178" class="soc">
                                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 90 90" style="enable-background:new 0 0 90 90;" xml:space="preserve">
-                                        <g>
+                                        <g> 
                                             <path id="WhatsApp" d="M90,43.841c0,24.213-19.779,43.841-44.182,43.841c-7.747,0-15.025-1.98-21.357-5.455L0,90l7.975-23.522
                                                 c-4.023-6.606-6.34-14.354-6.34-22.637C1.635,19.628,21.416,0,45.818,0C70.223,0,90,19.628,90,43.841z M45.818,6.982
                                                 c-20.484,0-37.146,16.535-37.146,36.859c0,8.065,2.629,15.534,7.076,21.61L11.107,79.14l14.275-4.537
@@ -96,25 +96,25 @@
                                     <div class="burger_line"></div>
                                 </div>
                                 <ul class="none">
-                                    <a href="index.html#s1_1">
+                                    <a href="index.php#s1_1">
                                         <li>О компании</li>
                                     </a>
-                                    <a href="index.html#s3_1">
+                                    <a href="index.php#s3_1">
                                         <li>Навправления</li>
                                     </a>
-                                    <a href="index.html#s4_1">
+                                    <a href="index.php#s4_1">
                                         <li>Проекты</li>
                                     </a>
-                                    <a href="index.html#s5_1">
+                                    <a href="index.php#s5_1">
                                         <li>Партнеры</li>
                                     </a>
-                                    <a href="index.html#s7_1">
+                                    <a href="index.php#s7_1">
                                         <li>Новости</li>
                                     </a>
                                     <a href="">
                                         <li>Магазин</li>
                                     </a>
-                                    <a href="index.html#s9_1">
+                                    <a href="index.php#s9_1">
                                         <li>Контакты</li>
                                     </a>
                                 </ul>

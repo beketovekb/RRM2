@@ -49,7 +49,7 @@
                     <div class="shadow_up"></div>
                     <div class="container">
                         <nav>
-                            <a class="logo_link" href="index.html">
+                            <a class="logo_link" href="index.php">
                                 <img class="logo logo_light" src="img/logo_light.png" alt="Regulus Robotics Machine Logo">
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
@@ -97,9 +97,26 @@
                                         </g>
                                         </svg>
                                 </a>
+                                <div id="lang_selector" class="language-dropdown">
+                                    <label for="toggle" class="lang-flag lang-en" title="Click to select the language">
+                                        <span class="flag"></span>
+                                    </label>
+                                    <ul class="lang-list">
+                                        <li class="lang lang-en selected" title="EN">
+                                        <span class="flag"></span>  
+                                        </li>
+                                        <li class="lang lang-ru" title="RU">
+                                        <span class="flag"></span>
+                                        </li>
+                                        <li class="lang lang-kz" title="KZ">
+                                        <span class="flag"></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="burger">
+                            
 
+                            <div class="burger">
                                 <div class="burger_menu">
                                     <div class="burger_line"></div>
                                     <div class="burger_line"></div>

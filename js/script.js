@@ -58,3 +58,26 @@ $(function() {
     });
 });
 
+
+
+
+$(document).ready(function(){
+    $(".lang-flag").click(function(){
+      $(".language-dropdown").toggleClass("open");
+    });
+    $("ul.lang-list li").click(function(){
+      $("ul.lang-list li").removeClass("selected");
+      $(this).addClass("selected");
+      if($(this).hasClass('lang-en')){
+        $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-kz").removeClass("lang-ru");
+        $("#lang_selected").html("<p>EN</p>")
+      }else if($(this).hasClass('lang-ru')){
+        $(".language-dropdown").find(".lang-flag").addClass("lang-ru").removeClass("lang-kz").removeClass("lang-en");
+      $("#lang_selected").html("<p>PT</p>")
+      }else{
+        $(".language-dropdown").find(".lang-flag").addClass("lang-kz").removeClass("lang-en").removeClass("lang-ru");
+        $("#lang_selected").html("<p>ES</p>")
+      }
+      $(".language-dropdown").removeClass("open");
+    });
+  })
