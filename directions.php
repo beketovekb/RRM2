@@ -82,7 +82,7 @@
                                     <div class="burger_line"></div>
                                     <div class="burger_line"></div>
                                 </div>
-                                <ul class="none">
+                                <ul class="none"> 
                                     <a href="index.php#s1_1">
                                         <li>О компании</li>
                                     </a>

@@ -103,7 +103,7 @@
                                     </label>
                                     <ul class="lang-list">
                                         <li class="lang lang-en selected" title="EN">
-                                        <span class="flag"></span>
+                                        <span class="flag"></span>  
                                         </li>
                                         <li class="lang lang-ru" title="RU">
                                         <span class="flag"></span>
