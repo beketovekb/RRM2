@@ -33,20 +33,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    <script type="text/javascript">
-        var map;
-        DG.then(function() {
-            map = DG.map('map', {
-                center: [43.202648, 76.897693],
-                fullscreenControl: false,
-                zoomControl: false,
-                zoom: 13
-            });
-            DG.marker([43.202648, 76.897693]).addTo(map).bindPopup('г. Алматы, Казахстан, проспект Гагарина 309, офис 23');
-        });
-    </script>
-    <title>Regulus Robotics Machine</title>
+    <title>Regulus Robotics Machine2</title>
 </head>
 
 <body>

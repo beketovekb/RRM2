@@ -26,9 +26,11 @@
 </head>
 
 <body>
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
+    <div class="stars_window">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+    </div>
     <header>
         <div class="header_bg">
             <img class="spectr" src="img/bg_spectr.png" alt="">
@@ -134,7 +136,30 @@
                                 </div>
                             </div>
                             <div class="voz">
-                                
+                                <div class="voz_item">
+                                    
+                                        <img class="voz_img" src="img/line_fill.png" alt="">
+                                    
+                                    <h4>Заголовок</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
+                                </div>
+                                <div class="voz_item">
+                                    
+                                    <img class="voz_img" src="img/pin_alt_fill.png" alt="">
+
+                                    <h4>Заголовок</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
+                                </div>
+                                <div class="voz_item">
+                                    <img class="voz_img" src="img/bell_fill.png" alt="">
+                                    <h4>Заголовок</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
+                                </div>
+                                <div class="voz_item">
+                                    <img class="voz_img" src="img/tumer_fill.png" alt="">
+                                    <h4>Заголовок</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
