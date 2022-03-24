@@ -9,19 +9,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    <script type="text/javascript">
-        var map;
-        DG.then(function() {
-            map = DG.map('map', {
-                center: [43.202648, 76.897693],
-                fullscreenControl: false,
-                zoomControl: false,
-                zoom: 13
-            });
-            DG.marker([43.202648, 76.897693]).addTo(map).bindPopup('г. Алматы, Казахстан, проспект Гагарина 309, офис 23');
-        });
-    </script>
     <title>Regulus Robotics Machine</title>
 </head>
 
@@ -39,7 +26,7 @@
                     <div class="shadow_up"></div>
                     <div class="container">
                         <nav>
-                            <a class="logo_link" href="index.html">
+                            <a class="logo_link" href="index.php">
                                 <img class="logo logo_light" src="img/logo_light.png" alt="Regulus Robotics Machine Logo">
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
@@ -96,25 +83,25 @@
                                     <div class="burger_line"></div>
                                 </div>
                                 <ul class="none">
-                                    <a href="index.html#s1_1">
+                                    <a href="index.php#s1_1">
                                         <li>О компании</li>
                                     </a>
-                                    <a href="index.html#s3_1">
+                                    <a href="index.php#s3_1">
                                         <li>Навправления</li>
                                     </a>
-                                    <a href="index.html#s4_1">
+                                    <a href="index.php#s4_1">
                                         <li>Проекты</li>
                                     </a>
-                                    <a href="index.html#s5_1">
+                                    <a href="index.php#s5_1">
                                         <li>Партнеры</li>
                                     </a>
-                                    <a href="index.html#s7_1">
+                                    <a href="index.php#s7_1">
                                         <li>Новости</li>
                                     </a>
                                     <a href="">
                                         <li>Магазин</li>
                                     </a>
-                                    <a href="index.html#s9_1">
+                                    <a href="index.php#s9_1">
                                         <li>Контакты</li>
                                     </a>
                                 </ul>
@@ -140,31 +127,61 @@
                                     <div class="slide_img dir_slide_img1"></div>
                                     <h3>Lego mindsorm</h3>
                                     <p>Проект реализованный на основе конструктора Lego Minsdstorm Education</p>
+                                    <a href="projects.php" class="learn_more" >Читать подробнее
+                                        <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                                 <div class="slide_dir">
                                     <div class="slide_img dir_slide_img2"></div>
                                     <h3>Lego mindsorm</h3>
                                     <p>Проект реализованный на основе конструктора Lego Minsdstorm Education</p>
+                                    <a href="projects.php" class="learn_more" >Читать подробнее
+                                        <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                                 <div class="slide_dir">
                                     <div class="slide_img dir_slide_img3"></div>
                                     <h3>Lego mindsorm</h3>
                                     <p>Проект реализованный на основе конструктора Lego Minsdstorm Education</p>
+                                    <a href="projects.php" class="learn_more" >Читать подробнее
+                                        <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                                 <div class="slide_dir">
                                     <div class="slide_img dir_slide_img4"></div>
                                     <h3>Lego mindsorm</h3>
                                     <p>Проект реализованный на основе конструктора Lego Minsdstorm Education</p>
+                                    <a href="projects.php" class="learn_more" >Читать подробнее
+                                        <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                                 <div class="slide_dir">
                                     <div class="slide_img dir_slide_img5"></div>
                                     <h3>Lego mindsorm</h3>
                                     <p>Проект реализованный на основе конструктора Lego Minsdstorm Education</p>
+                                    <a href="projects.php" class="learn_more" >Читать подробнее
+                                        <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                                 <div class="slide_dir">
                                     <div class="slide_img dir_slide_img6"></div>
                                     <h3>Lego mindsorm</h3>
                                     <p>Проект реализованный на основе конструктора Lego Minsdstorm Education</p>
+                                    <a href="projects.php" class="learn_more" >Читать подробнее
+                                        <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                        </svg>
+                                    </a>
                                 </div>
                             </div>
                         </div>

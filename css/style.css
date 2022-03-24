@@ -515,6 +515,9 @@ header .soc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 850px) {
@@ -525,6 +528,7 @@ header .soc {
 
 header .soc a {
   margin-left: 10px;
+  width: 18px;
 }
 
 header .soc a:hover path {
@@ -533,6 +537,15 @@ header .soc a:hover path {
 
 header .soc path {
   fill: #fff;
+}
+
+header .soc .multilang {
+  margin-left: 30px;
+}
+
+header .soc .multilang span {
+  color: #fff;
+  font-size: 14px;
 }
 
 header .burger {
@@ -1865,6 +1878,28 @@ footer .f3 .f3_feed .shop_btn {
   font-weight: 400;
 }
 
+.variable-width .slide_dir a {
+  color: #cdcdcd;
+  font-size: 12px;
+  margin-top: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.variable-width .slide_dir a:hover {
+  color: #fff;
+}
+
+.variable-width .slide_dir a svg {
+  position: relative;
+  top: 0px;
+  margin-left: 6px;
+}
+
 .stars_window {
   height: 100vh;
   position: fixed;
@@ -2018,5 +2053,88 @@ footer .f3 .f3_feed .shop_btn {
 
 .voz .voz_item p {
   text-align: center;
+}
+
+.language-dropdown {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.language-dropdown .lang-en .flag {
+  background-image: url("../img/eng.png");
+}
+
+.language-dropdown .lang-ru .flag {
+  background-image: url("../img/ru.png");
+}
+
+.language-dropdown .lang-kz .flag {
+  background-image: url("../img/kz.png");
+}
+
+.language-dropdown label, .language-dropdown ul li {
+  display: block;
+  width: 40px;
+  height: 30px;
+  padding: 0px 6px;
+  cursor: pointer;
+}
+
+.language-dropdown ul.lang-list {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+
+.language-dropdown ul.lang-list li:last-child {
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.language-dropdown ul.lang-list li.selected {
+  display: none;
+}
+
+.language-dropdown label {
+  position: relative;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.language-dropdown .lang-flag .flag, .language-dropdown .lang-list .lang .flag {
+  float: left;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.language-dropdown.open ul.lang-list {
+  visibility: visible;
+  opacity: 1;
+}
+
+.language-dropdown.open label {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.animate, .lang-flag, .lang-list {
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+
+.lang-list {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

@@ -39,7 +39,7 @@
                     <div class="shadow_up"></div>
                     <div class="container">
                         <nav>
-                            <a class="logo_link" href="index.html">
+                            <a class="logo_link" href="index.php">
                                 <img class="logo logo_light" src="img/logo_light.png" alt="Regulus Robotics Machine Logo">
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
@@ -96,25 +96,25 @@
                                     <div class="burger_line"></div>
                                 </div>
                                 <ul class="none">
-                                    <a href="index.html#s1_1">
+                                    <a href="index.php#s1_1">
                                         <li>О компании</li>
                                     </a>
-                                    <a href="index.html#s3_1">
+                                    <a href="index.php#s3_1">
                                         <li>Навправления</li>
                                     </a>
-                                    <a href="index.html#s4_1">
+                                    <a href="index.php#s4_1">
                                         <li>Проекты</li>
                                     </a>
-                                    <a href="index.html#s5_1">
+                                    <a href="index.php#s5_1">
                                         <li>Партнеры</li>
                                     </a>
-                                    <a href="index.html#s7_1">
+                                    <a href="index.php#s7_1">
                                         <li>Новости</li>
                                     </a>
                                     <a href="">
                                         <li>Магазин</li>
                                     </a>
-                                    <a href="index.html#s9_1">
+                                    <a href="index.php#s9_1">
                                         <li>Контакты</li>
                                     </a>
                                 </ul>
