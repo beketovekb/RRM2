@@ -278,31 +278,6 @@
             </div>
         </div>
     </section>
-    <!-- <section class="s6_1" id="s6_1">
-        <div class="bg_feed"></div>
-        <div class="container">
-
-            <img src="img/img_feed.jpg" class="img_feed" alt="">
-            <div class="one-time" data-aos="zoom-in">
-                <div class="review_item">
-                    <span>Мониторили рынок. Аналогов достаточно много, но REGULUS ROBOTICS MACHINE выигрывает по показателю «возможности/цена»</span>
-                    <h3>АРАЙЛЫМ САРСАЕНБАЕВА</h3>
-                </div>
-                <div class="review_item">
-                    <span>Мониторили рынок. Аналогов достаточно много, но REGULUS ROBOTICS MACHINE выигрывает по показателю «возможности/цена»</span>
-                    <h3>АРАЙЛЫМ САРСАЕНБАЕВА</h3>
-                </div>
-                <div class="review_item">
-                    <span>Мониторили рынок. Аналогов достаточно много, но REGULUS ROBOTICS MACHINE выигрывает по показателю «возможности/цена»</span>
-                    <h3>АРАЙЛЫМ САРСАЕНБАЕВА</h3>
-                </div>
-                <div class="review_item">
-                    <span>Мониторили рынок. Аналогов достаточно много, но REGULUS ROBOTICS MACHINE выигрывает по показателю «возможности/цена»</span>
-                    <h3>АРАЙЛЫМ САРСАЕНБАЕВА</h3>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <section class="s7_1" id="s7_1">
         <div class="container">
             <h2 data-aos="fade-down">НОВОСТИ <span>КОМПАНИИ</span></h2>
