@@ -238,7 +238,7 @@
                     <div class="p_shadow">
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
                         <span class="project_direction"><?php print($project["Type_project_site"]); ?></span>
-                        <a class="shop_btn project_learn_more">Подорбнее</a>
+                        <a class="shop_btn project_learn_more" href="http://rrm2/projects.php?id=<?php print($project["Title_project_site"]); ?>">Подорбнее</a>
                     </div>
                 </div>
            <?php $i++;} ?>

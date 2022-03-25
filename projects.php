@@ -1,8 +1,8 @@
 <?php 
 require_once 'include/database.php';
 require_once 'include/functions.php'; 
-    $id = $_GET['id'];
-    $projects = get_more_project($link, "ru", $id);
+    $id = str_replace("%20",' ',$_GET['id']);
+    $projects = get_more_info_project($link, "ru", $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,19 +15,6 @@ require_once 'include/functions.php';
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-    <script type="text/javascript">
-        var map;
-        DG.then(function() {
-            map = DG.map('map', {
-                center: [43.202648, 76.897693],
-                fullscreenControl: false,
-                zoomControl: false,
-                zoom: 13
-            });
-            DG.marker([43.202648, 76.897693]).addTo(map).bindPopup('г. Алматы, Казахстан, проспект Гагарина 309, офис 23');
-        });
-    </script>
     <title>Regulus Robotics Machine</title>
 </head>
 
@@ -153,7 +140,7 @@ require_once 'include/functions.php';
                                     <img src="img/dir_img1.png" alt="">
                                 </div>
                                 <div class="content_directions">
-                                    <h2>IT продукты<br> и решения</h2>
+                                    <h2><?php print($project["Title_project_site"]); ?></h2>
                                     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
                                     <span>Сроки выполнения от 2-х месяцев</span>
                                 </div>
