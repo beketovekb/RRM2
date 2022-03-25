@@ -2162,29 +2162,8 @@ footer .f3 .f3_feed .shop_btn {
   display: block;
 }
 
-.news_body {
-  background-color: #fff;
-}
-
-.news_nav {
-  background-color: #fff !important;
-  position: relative !important;
-}
-
-.news_nav .shadow_up {
-  display: none !important;
-}
-
-.news_nav .logo_color {
-  opacity: 1 !important;
-}
-
-.news_nav ul a {
-  color: #000 !important;
-}
-
-.news_nav .soc a svg path {
-  fill: #000 !important;
+.shadow_up {
+  height: 85px !important;
 }
 
 .news_header {
@@ -2194,6 +2173,7 @@ footer .f3 .f3_feed .shop_btn {
 
 .news_list {
   height: 100%;
+  padding-top: 80px;
 }
 
 .news_list .news_head {
@@ -2206,12 +2186,12 @@ footer .f3 .f3_feed .shop_btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 10px;
   /*Resize the wrap to see the search bar change!*/
 }
 
 .news_list .news_head h2 {
   margin: 10px 0;
+  color: #fff;
 }
 
 .news_list .news_head .search {
@@ -2289,6 +2269,7 @@ footer .f3 .f3_feed .shop_btn {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 10px;
+  background-color: #fff;
   border-bottom: 1px solid #dbdbdb;
   border-top: 1px solid #dbdbdb;
 }
@@ -2340,6 +2321,10 @@ footer .f3 .f3_feed .shop_btn {
   margin-top: 16px;
   font-size: 14px;
   color: #888;
+}
+
+.news_list .news_column .news_item .news_content .news_options svg {
+  margin-right: 8px;
 }
 
 .news_list .news_column .news_item .news_content .news_options a {
