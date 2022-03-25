@@ -1,3 +1,9 @@
+<?php 
+require_once 'include/database.php';
+require_once 'include/functions.php'; 
+    $id = $_GET['id'];
+    $projects = get_more_project($link, "ru", $id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,6 +147,7 @@
                 <div class="gen">
                     <div class="container">
                         <div class="flex_center">
+                            <?php foreach($projects as $project){ ?>
                             <div class="flex">
                                 <div class="img_directions">
                                     <img src="img/dir_img1.png" alt="">
@@ -173,6 +180,7 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
                                 </div>
                             </div>
+                            <? } ?>
                         </div>
                     </div>
                 </div>
