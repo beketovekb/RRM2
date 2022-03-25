@@ -238,7 +238,7 @@
                     <div class="p_shadow">
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
                         <span class="project_direction"><?php print($project["Type_project_site"]); ?></span>
-                        <button class="shop_btn project_learn_more">Подорбнее</button>
+                        <a class="shop_btn project_learn_more">Подорбнее</a>
                     </div>
                 </div>
            <?php $i++;} ?>

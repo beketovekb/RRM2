@@ -142,7 +142,7 @@ require_once 'include/functions.php';
                             <div class="flex">
                             <?php foreach($napravlenia2 as $nap){  ?>
                                 <div class="img_directions">
-                                    <img src="<?php print($nap["Img_url_uslugi_site"]); ?>" alt="">
+                                    <img src="<?php print($nap["Img_more_uslugi_site"]); ?>" alt="">
                                 </div>
                                 <div class="content_directions">
                                     <h2><?php print($nap["Title_uslugi_site"]); ?></h2>
