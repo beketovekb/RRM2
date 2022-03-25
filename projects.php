@@ -87,6 +87,22 @@
                                         </g>
                                         </svg>
                                 </a>
+                                <div id="lang_selector" class="language-dropdown">
+                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
+                                        <span class="flag"></span>
+                                    </label>
+                                    <ul class="lang-list">
+                                        <li class="lang lang-ru selected" title="RU">
+                                        <span class="flag"></span>
+                                        </li>
+                                        <li class="lang lang-en " title="EN">
+                                        <span class="flag"></span>  
+                                        </li>
+                                        <li class="lang lang-kz" title="KZ">
+                                        <span class="flag"></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="burger">
 
