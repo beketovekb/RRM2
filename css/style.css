@@ -2352,4 +2352,49 @@ footer .f3 .f3_feed .shop_btn {
   height: 15px;
   margin: 0 5px;
 }
+
+.news_list .pagination {
+  margin-top: 10px;
+}
+
+.news_list .pagination .pagination_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.news_list .pagination .pagination_list .pagination_element {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.news_list .pagination .pagination_list .pagination_element:hover {
+  background-color: #c7c7c7;
+}
+
+.news_list .pagination .pagination_list .active {
+  background-color: #D69600;
+  color: #fff;
+}
+
+.news_list .pagination .pagination_list .active:hover {
+  background-color: #D69600;
+}
 /*# sourceMappingURL=style.css.map */

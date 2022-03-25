@@ -1786,4 +1786,34 @@ footer{
             }
         }
     }
+
+    .pagination{
+        margin-top: 10px;
+        .pagination_list {
+            display: flex;
+            justify-content: center;
+            .pagination_element {
+                width: 32px;
+                height: 32px;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #ddd;
+                background-color: #eee;
+                font-weight: 500;
+                font-size: 14px;
+                &:hover {
+                    background-color: #c7c7c7;
+                }
+            }
+            .active{
+                background-color: #D69600;
+                color: #fff;
+                &:hover {
+                    background-color: #D69600;
+                }
+            }
+        }
+    }
 }
