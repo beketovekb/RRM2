@@ -1,3 +1,10 @@
+<?php 
+require_once 'include/database.php';
+require_once 'include/functions.php'; 
+    $pos = $_GET['num'];
+    $napravlenia2 = get_more_napravlenia($link, "ru", $pos);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,14 +120,16 @@
                     <div class="container">
                         <div class="flex_center">
                             <div class="flex">
+                            <?php foreach($napravlenia2 as $nap){  ?>
                                 <div class="img_directions">
-                                    <img src="img/dir_img1.png" alt="">
+                                    <img src="<?php print($nap["Img_url_uslugi_site"]); ?>" alt="">
                                 </div>
                                 <div class="content_directions">
-                                    <h2>IT продукты и решения</h2>
-                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
-                                    <span>Сроки выполнения от 2-х месяцев</span>
+                                    <h2><?php print($nap["Title_uslugi_site"]); ?></h2>
+                                    <p><?php print($nap["Opisanie_uslugi_site"]); ?></p>
+                                    <span>Сроки выполнения <?php print($nap["Srok_uslugi_site"]); ?></span>
                                 </div>
+                                <?php } ?>
                             </div>
                             <div class="variable-width">
                                 <div class="slide_dir">

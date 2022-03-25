@@ -22,3 +22,25 @@ function get_napravlenia($link, $lng)
     return $napravlenia;
 }
 
+function get_more_napravlenia($link, $lng, $posi)
+{
+    $sql = "SELECT * FROM uslugi_site WHERE Lng_uslugi_site = '".$lng."' AND Position_uslugi_site = '".$posi."'";
+
+    $result = mysqli_query($link, $sql);
+
+    $napravlenia2 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $napravlenia2;
+}
+
+function get_project($link, $lng)
+{
+    $sql = "SELECT * FROM project_site WHERE Lng_project_site = '".$lng."' and Prioritet_project_site = '1'";
+
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+

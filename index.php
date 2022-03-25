@@ -11,7 +11,7 @@
     $napravlenia = get_napravlenia($link,"ru");
     $napravlenia_title;
     $napravlenia_img;
-     $napravlenia_type;
+    $napravlenia_type;
     foreach ($napravlenia as $napravlen) {
         $napravlenia_title[$napravlen["Position_uslugi_site"]]=$napravlen["Title_uslugi_site"];
     }
@@ -21,6 +21,8 @@
     foreach ($napravlenia as $napravlen) {
         $napravlenia_type[$napravlen["Position_uslugi_site"]]=$napravlen["Type_uslugi_site"];
     }
+
+    $projects = get_project($link,"ru");
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,15 +100,15 @@
                                         </svg>
                                 </a>
                                 <div id="lang_selector" class="language-dropdown">
-                                    <label for="toggle" class="lang-flag lang-en" title="Click to select the language">
+                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
                                         <span class="flag"></span>
                                     </label>
                                     <ul class="lang-list">
-                                        <li class="lang lang-en selected" title="EN">
-                                        <span class="flag"></span>  
-                                        </li>
-                                        <li class="lang lang-ru" title="RU">
+                                        <li class="lang lang-ru selected" title="RU">
                                         <span class="flag"></span>
+                                        </li>
+                                        <li class="lang lang-en " title="EN">
+                                        <span class="flag"></span>  
                                         </li>
                                         <li class="lang lang-kz" title="KZ">
                                         <span class="flag"></span>
@@ -218,7 +220,7 @@
                 <?php for ($i=1; $i <= 6; $i++) { ?>
                     <div class="directions_item d_item<?php print($i)?>" style = "background-image: url(<?php print($napravlenia_img[$i]);?>);">
                     <h3><?php print($napravlenia_title[$i]);?></h3>
-                    <a href="directions.php"><button><?php print($napravlenia_type[$i]);?></button></a>
+                    <a href="directions.php?num=<?php print($i); ?>"><button><?php print($napravlenia_type[$i]);?></button></a>
                     <div class="d_shadow"></div>
                 </div>
                 <?php } ?>
@@ -231,61 +233,21 @@
         <hr data-aos="flip-left">
         <span class="title_caption" data-aos="fade-up"><?php print($ftitle["11"]); ?></span>
         <div class="projects" data-aos="zoom-in">
-            <div class="projects_item p_item1">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
+            <?php $i=1; foreach ($projects as $project) { ?>
+                <div class="projects_item p_item<?php print($i); ?>" style="background-image: url(<?php print($project["Img_project_site"]); ?>);">
+                    <div class="p_shadow">
+                        <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
+                        <span class="project_direction"><?php print($project["Type_project_site"]); ?></span>
+                    </div>
                 </div>
-            </div>
-            <div class="projects_item p_item2">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
-            <div class="projects_item p_item3">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
-            <div class="projects_item p_item4">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
-            <div class="projects_item p_item5">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
-            <div class="projects_item p_item6">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
-            <div class="projects_item p_item7">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
-            <div class="projects_item p_item8">
-                <div class="p_shadow">
-                    <span class="project_title">Сайт компании “GROUP 2”</span>
-                    <span class="project_direction">Веб-сайты</span>
-                </div>
-            </div>
+           <?php $i++;} ?>
         </div>
     </section>
     <section class="s5_1" id="s5_1">
         <div class="container"> 
-            <h2 data-aos="fade-down">ПАРТНЕРЫ <span>НАШЕЙ КОМПАНИИ</span></h2>
+            <h2 data-aos="fade-down"><?php print($ftitle["12"]); ?></h2>
             <hr data-aos="flip-left">
-            <span class="title_caption" data-aos="fade-up">Вдохновляемся вашим доверием и сотрудничеством</span>
+            <span class="title_caption" data-aos="fade-up"><?php print($ftitle["13"]); ?></span>
             <div class="responsive" data-aos="zoom-in">
                 <img src="img/partner1.png" alt="">
                 <img src="img/partner2.png" alt="">
@@ -297,9 +259,9 @@
     </section>
     <section class="s7_1" id="s7_1">
         <div class="container">
-            <h2 data-aos="fade-down">НОВОСТИ <span>КОМПАНИИ</span></h2>
+            <h2 data-aos="fade-down"><?php print($ftitle["14"]); ?></h2>
             <hr data-aos="flip-left">
-            <span class="title_caption" data-aos="fade-up">Будьте в курсе наших событий</span>
+            <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
                 <div class="news_item n_item1" data-aos="zoom-in">
                     <div class="news_img1">
