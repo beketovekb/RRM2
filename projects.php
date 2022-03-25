@@ -153,16 +153,12 @@
                             </div>
                             <div class="voz">
                                 <div class="voz_item">
-                                    
-                                        <img class="voz_img" src="img/line_fill.png" alt="">
-                                    
+                                    <img class="voz_img" src="../img/line_fill.png" alt="">
                                     <h4>Заголовок</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
                                 </div>
                                 <div class="voz_item">
-                                    
                                     <img class="voz_img" src="img/pin_alt_fill.png" alt="">
-
                                     <h4>Заголовок</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
                                 </div>
