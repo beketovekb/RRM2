@@ -89,6 +89,7 @@ header {
         height: 100%;
         position: relative;
         z-index: 1;
+        overflow: unset;
         .header_nav {
             position: fixed;
             width: 100%;
@@ -1835,6 +1836,10 @@ footer{
                 background-image: url(../img/di1.jpg);
                 background-size: cover;
                 background-position: center;
+                display: none;
+                @media (max-width:900px) {
+                    display: block !important;
+                }
             }
             p{
                 // margin-top: 20px;
@@ -1904,3 +1909,20 @@ footer{
         border: 1px solid #ccc;
     }
 
+    .slider-pro {
+        display: block;
+        @media (max-width:900px) {
+            display: none;
+        }
+    }
+    .learn_more{
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        margin-top: 6px;
+        svg {
+            margin-left: 8px;
+            position: relative;
+            top: px;
+        }
+    }

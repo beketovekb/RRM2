@@ -103,6 +103,7 @@ header .header_bg {
   height: 100%;
   position: relative;
   z-index: 1;
+  overflow: unset;
 }
 
 header .header_bg .header_nav {
@@ -2420,6 +2421,13 @@ footer .f3 .f3_feed .shop_btn {
   background-image: url(../img/di1.jpg);
   background-size: cover;
   background-position: center;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .news_list .news_column .news_more_page .news_more_img {
+    display: block !important;
+  }
 }
 
 .news_list .news_column .news_more_page .news_slide {
@@ -2500,5 +2508,32 @@ footer .f3 .f3_feed .shop_btn {
   height: 150px !important;
   background-color: red;
   border: 1px solid #ccc;
+}
+
+.slider-pro {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .slider-pro {
+    display: none;
+  }
+}
+
+.learn_more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.learn_more svg {
+  margin-left: 8px;
+  position: relative;
+  top: px;
 }
 /*# sourceMappingURL=style.css.map */
