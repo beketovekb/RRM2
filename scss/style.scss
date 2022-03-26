@@ -1794,6 +1794,7 @@ footer{
             h3{
                 margin: 0;
                 font-size: 24px;
+                margin-top: 10px;
             }
             .news_options {
                 display: flex;
@@ -1821,7 +1822,7 @@ footer{
                 }
             }
             hr {
-                margin: 10px 0;
+                margin: 10px 0 20px;
                 width: 100%;
                 height: 1px;
                 border: none;
@@ -1836,7 +1837,7 @@ footer{
                 background-position: center;
             }
             p{
-                margin-top: 20px;
+                // margin-top: 20px;
             }
             .news_slide{
                 margin: 20px 0;
@@ -1895,3 +1896,11 @@ footer{
         }
     }
 }
+
+    .imgslider {
+        width: 150px;
+        height: 150px !important;
+        background-color: red;
+        border: 1px solid #ccc;
+    }
+

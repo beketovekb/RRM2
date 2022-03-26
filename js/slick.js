@@ -63,3 +63,9 @@ $('.responsive').slick({
     variableWidth: true
   });
           
+  $(document).ready(function(){
+    $( '#my-slider' ).sliderPro({
+        orientation: "vertical",
+         thumbnailsPosition: "bottom",
+    });
+});
