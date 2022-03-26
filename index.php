@@ -1,14 +1,18 @@
 <?php
   require_once 'include/database.php';
-  require_once 'include/functions.php'; 
+  require_once 'include/functions.php';
   
-    $titles = get_titles($link,"ru");
+  $lng;
+  if(isset($_GET['lng'])) $lng=$_GET['lng'];
+  else $lng = 'ru';
+  $lng = strtoupper($lng);
+    $titles = get_titles($link,$lng);
     $ftitle;
     foreach ($titles as $title) {
         $ftitle[$title["Number"]]=$title["Text"];
     }
 
-    $napravlenia = get_napravlenia($link,"ru");
+    $napravlenia = get_napravlenia($link,$lng);
     $napravlenia_title;
     $napravlenia_img;
     $napravlenia_type;
@@ -22,7 +26,7 @@
         $napravlenia_type[$napravlen["Position_uslugi_site"]]=$napravlen["Type_uslugi_site"];
     }
 
-    $projects = get_project($link,"ru");
+    $projects = get_project($link,$lng);
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,18 +104,18 @@
                                         </svg>
                                 </a>
                                 <div id="lang_selector" class="language-dropdown">
-                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
+                                    <label for="toggle" class="lang-flag lang-<?php print(strtolower($lng));?>" title="Click to select the language">
                                         <span class="flag"></span>
                                     </label>
                                     <ul class="lang-list">
-                                        <li class="lang lang-ru selected" title="RU">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-ru <?php if($lng=='RU') print('selected');?>" title="RU">
+                                        <a href="/?lng=ru"><span class="flag"></span></a>
                                         </li>
-                                        <li class="lang lang-en " title="EN">
-                                        <span class="flag"></span>  
+                                        <li class="lang lang-en <?php if($lng=='EN') print('selected');?>" title="EN">
+                                        <a href="/?lng=en"><span class="flag"></span> </a> 
                                         </li>
-                                        <li class="lang lang-kz" title="KZ">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-kz <?php if($lng=='KZ') print('selected');?>" title="KZ">
+                                        <a href="/?lng=kz"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -220,7 +224,7 @@
                 <?php for ($i=1; $i <= 6; $i++) { ?>
                     <div class="directions_item d_item<?php print($i)?>" style = "background-image: url(<?php print($napravlenia_img[$i]);?>);">
                     <h3><?php print($napravlenia_title[$i]);?></h3>
-                    <a href="directions.php?num=<?php print($i); ?>"><button><?php print($napravlenia_type[$i]);?></button></a>
+                    <a href="directions.php?num=<?php print($i); ?>&lng=<?php print($lng); ?>"><button><?php print($napravlenia_type[$i]);?></button></a>
                     <div class="d_shadow"></div>
                 </div>
                 <?php } ?>
@@ -238,7 +242,7 @@
                     <div class="p_shadow">
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
                         <span class="project_direction"><?php print($project["Type_project_site"]); ?></span>
-                        <a class="shop_btn project_learn_more" href="http://rrm2/projects.php?id=<?php print($project["Title_project_site"]); ?>">Подорбнее</a>
+                        <a class="shop_btn project_learn_more" href="http://rrm2/projects.php?id=<?php print($project["Title_project_site"]); ?>&lng=<?php print($lng); ?>">Подорбнее</a>
                     </div>
                 </div>
            <?php $i++;} ?>

@@ -66,3 +66,14 @@ function get_more_info_project($link, $lng, $id)
 
     return $projects;
 }
+
+function get_more_func_info_project($link, $lng, $id)
+{
+    $sql = "SELECT * FROM more_project_site WHERE Lng_more_project_site = '".$lng."' and 	Title_project_site = '".$id."'";
+    
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}

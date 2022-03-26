@@ -133,8 +133,8 @@
                 <!--order details list-->
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <a href="#" class="btn">View All</a>
+                        <h2>Заявкии</h2>
+                        <a href="#" class="btn">Показать все</a>
                     </div>
                     <table>
                         <thead>

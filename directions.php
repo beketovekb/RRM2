@@ -1,13 +1,19 @@
 <?php 
 require_once 'include/database.php';
-require_once 'include/functions.php'; 
+require_once 'include/functions.php';
+
+$lng;
+  if(isset($_GET['lng'])) $lng=$_GET['lng'];
+  else $lng = 'ru';
+  $lng = strtoupper($lng);
+
     $pos = $_GET['num'];
-    $napravlenia2 = get_more_napravlenia($link, "ru", $pos);
+    $napravlenia2 = get_more_napravlenia($link, $lng, $pos);
     $id;
     foreach($napravlenia2 as $nap){
         $id=$nap["id_uslugi_site"];
     }
-    $projects = get_more_project($link, "ru", $id);
+    $projects = get_more_project($link, $lng, $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,18 +92,18 @@ require_once 'include/functions.php';
                                         </svg>
                                 </a>
                                 <div id="lang_selector" class="language-dropdown">
-                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
+                                    <label for="toggle" class="lang-flag lang-<?php print(strtolower($lng));?>" title="Click to select the language">
                                         <span class="flag"></span>
                                     </label>
                                     <ul class="lang-list">
-                                        <li class="lang lang-ru selected" title="RU">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-ru <?php if($lng=='RU') print('selected');?>" title="RU">
+                                        <a href="directions.php?num=1&lng=RU"><span class="flag"></span></a>
                                         </li>
-                                        <li class="lang lang-en " title="EN">
-                                        <span class="flag"></span>  
+                                        <li class="lang lang-en <?php if($lng=='EN') print('selected');?>" title="EN">
+                                        <a href="directions.php?num=1&lng=EN"><span class="flag"></span> </a> 
                                         </li>
-                                        <li class="lang lang-kz" title="KZ">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-kz <?php if($lng=='KZ') print('selected');?>" title="KZ">
+                                        <a href="directions.php?num=1&lng=KZ"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>

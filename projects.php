@@ -1,8 +1,15 @@
 <?php 
 require_once 'include/database.php';
 require_once 'include/functions.php'; 
+
+$lng;
+  if(isset($_GET['lng'])) $lng=$_GET['lng'];
+  else $lng = 'ru';
+  $lng = strtoupper($lng);
+
     $id = str_replace("%20",' ',$_GET['id']);
-    $projects = get_more_info_project($link, "ru", $id);
+    $projects = get_more_info_project($link, $lng, $id);
+    $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,18 +88,18 @@ require_once 'include/functions.php';
                                         </svg>
                                 </a>
                                 <div id="lang_selector" class="language-dropdown">
-                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
+                                    <label for="toggle" class="lang-flag lang-<?php print(strtolower($lng));?>" title="Click to select the language">
                                         <span class="flag"></span>
                                     </label>
                                     <ul class="lang-list">
-                                        <li class="lang lang-ru selected" title="RU">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-ru <?php if($lng=='RU') print('selected');?>" title="RU">
+                                        <a href="projects.php?id=Сайт%20компании%20“GROUP%202”&lng=RU"><span class="flag"></span></a>
                                         </li>
-                                        <li class="lang lang-en " title="EN">
-                                        <span class="flag"></span>  
+                                        <li class="lang lang-en <?php if($lng=='EN') print('selected');?>" title="EN">
+                                        <a href="projects.php?id=Сайт%20компании%20“GROUP%202”&lng=EN"><span class="flag"></span> </a> 
                                         </li>
-                                        <li class="lang lang-kz" title="KZ">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-kz <?php if($lng=='KZ') print('selected');?>" title="KZ">
+                                        <a href="projects.php?id=Сайт%20компании%20“GROUP%202”&lng=KZ"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -134,40 +141,28 @@ require_once 'include/functions.php';
                 <div class="gen">
                     <div class="container">
                         <div class="flex_center">
-                            <?php foreach($projects as $project){ ?>
                             <div class="flex">
+                            <?php foreach($projects as $project){ ?>
                                 <div class="img_directions">
                                     <img src="img/dir_img1.png" alt="">
                                 </div>
                                 <div class="content_directions">
                                     <h2><?php print($project["Title_project_site"]); ?></h2>
-                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
-                                    <span>Сроки выполнения от 2-х месяцев</span>
+                                    <p><?php print($project["Opisanie_project_site"]); ?></p>
+                                    <span>Сроки выполнения <?php print($project["Srok_project_site"]); ?></span>
                                 </div>
+                                <? } ?>
                             </div>
                             <div class="voz">
+                                <?php foreach($projects_opisanie as $opisanie){ ?>
                                 <div class="voz_item">
-                                    <img class="voz_img" src="../img/line_fill.png" alt="">
-                                    <h4>Заголовок</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
+                                    <img class="voz_img" src="<?php print($opisanie["Img_more_project_site"]); ?>" alt="">
+                                    <h4><?php print($opisanie["Title_more_project_site"]); ?></h4>
+                                    <p><?php print($opisanie["Opisanie_more_project_site"]); ?></p>
                                 </div>
-                                <div class="voz_item">
-                                    <img class="voz_img" src="img/pin_alt_fill.png" alt="">
-                                    <h4>Заголовок</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
-                                </div>
-                                <div class="voz_item">
-                                    <img class="voz_img" src="img/bell_fill.png" alt="">
-                                    <h4>Заголовок</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
-                                </div>
-                                <div class="voz_item">
-                                    <img class="voz_img" src="img/tumer_fill.png" alt="">
-                                    <h4>Заголовок</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aliquid unde vel ut sit quaerat doloribus. Labore quos eum laboriosam.</p>
-                                </div>
+                                <?php } ?>
                             </div>
-                            <? } ?>
+                           
                         </div>
                     </div>
                 </div>
