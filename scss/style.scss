@@ -1717,7 +1717,7 @@ footer{
         grid-template-columns: repeat(1, 1fr);
         grid-auto-rows: minmax(150px, auto);
         grid-gap: 15px;
-        margin-top: 10px;
+        // margin-top: 10px;
         .news_item {
             // background-color: #f5f5f5;
             display: flex;
@@ -1781,6 +1781,84 @@ footer{
                         width: 2px;
                         height: 15px;
                         margin: 0 5px;
+                    }
+                }
+            }
+        }
+        .news_more_page {
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            // border-radius: 8px;
+            padding: 10px 20px;
+            h3{
+                margin: 0;
+                font-size: 24px;
+            }
+            .news_options {
+                display: flex;
+                align-items: center;
+                margin: 16px 0;
+                font-size: 14px;
+                color: #888;
+                svg {
+                    margin-right: 8px;
+                }
+                a {
+                    color: #888;
+                    display: flex;
+                    align-items: center;
+                }
+                span{
+                    display: flex;
+                    align-items: center;
+
+                }
+                hr {
+                    width: 2px;
+                    height: 15px;
+                    margin: 0 5px;
+                }
+            }
+            hr {
+                margin: 10px 0;
+                width: 100%;
+                height: 1px;
+                border: none;
+                background-color: #ccc;
+                
+            }
+            .news_more_img{
+                width: 100%;
+                height: 400px;
+                background-image: url(../img/di1.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+            p{
+                margin-top: 20px;
+            }
+            .news_slide{
+                margin: 20px 0;
+
+                h3{
+                    margin-bottom: 10px;
+                }
+                .last_news{
+                    display: flex;
+                    grid-gap: 20px;
+                    .last_news_item{
+                        .last_news_img{
+                            height: 150px;
+                            width: 100%;
+                            background-image: url(../img/di2.jpg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            margin-bottom: 10px;
+                        }
+                        .last_news_title{
+                            font-weight: 700;
+                        }
                     }
                 }
             }
