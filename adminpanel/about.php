@@ -21,10 +21,10 @@ foreach ($titles as $title) {
     <?php include "menu.php"; ?>
     <div class="details">
         <form action="../include/save.php" method="POST">
-            <div class="recentOrders">
+            <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
                     <h2>О нас</h2>
-                    <input type="submit" value="Save" class="btn" />
+                    <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="about">
                 </div>
                 <table>
