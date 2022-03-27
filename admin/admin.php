@@ -27,26 +27,26 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="logo-android"></ion-icon></span>
-                        <span class="title">Brand Name</span>
+                        <span class="icon"><ion-icon name="desktop-outline"></ion-icon></span>
+                        <span class="title">Админ панель</span>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/admin.php?str=main">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="/admin/admin.php?str=general">
-                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                        <span class="title">Customers</span>
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Главный блок</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                        <span class="title">Message</span>
+                    <a href="/admin/admin.php?str=menusite">
+                        <span class="icon"><ion-icon name="reorder-four-outline"></ion-icon></span>
+                        <span class="title">Меню</span>
                     </a>
                 </li>
                 <li>
