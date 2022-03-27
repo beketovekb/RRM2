@@ -529,9 +529,10 @@ body {
 }
 
 tbody {
-    border-bottom: 40px solid #fff;
+    border-bottom: 80px solid #fff;
 }
-.recentOrders table input {
+.recentOrders table input,
+.recentOrders table textarea {
     width: 100%;
     border: none;
     border: 1px solid #d69600 !important;
@@ -539,4 +540,30 @@ tbody {
     padding: 5px 10px;
     border-radius: 8px;
     outline: none;
+    max-width: 1000px;
+    min-height: 25px;
 }
+
+textarea::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  textarea::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset; */
+    background-color: transparent;
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
+                      transparent 25%,
+                      transparent 50%,
+                      rgba(255, 255, 255, .25) 50%,
+                      rgba(255, 255, 255, .25) 75%,
+                      transparent 75%,
+                      transparent);
+  }
+
+  .aboutOrders table tr td:nth-child(2){
+width: 75%;
+  } 
