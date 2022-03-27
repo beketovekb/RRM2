@@ -78,11 +78,23 @@ header {
             position: absolute;
             left: 0;
             bottom: 0;
+            @media (max-width:1200px) {
+                width: 25%;
+            }
+            @media (max-width:850px) {
+                width: 50%;
+            }
         }
         .robo2 {
             position: absolute;
             right: 0;
             bottom: 0;
+            @media (max-width:1200px) {
+                width: 25%;
+            }
+            @media (max-width:850px) {
+                width: 50%;
+            }
         }
     }
     .header_bg {
@@ -137,6 +149,9 @@ header {
                     letter-spacing: 5px;
                     line-height: 20px;
                 }
+                @media (max-width:680px) {
+                    display: none;
+                }
             }
             h1 {
                 font-family: Raleway, sans-serif;
@@ -168,8 +183,11 @@ header {
                     letter-spacing: 5px;
                 }
                 @media (max-width:680px) {
-                    font-size: 15.5px;
-                    letter-spacing: 5px;
+                    width: auto;
+                    white-space: normal;
+                    text-align: center;
+                    line-height: 48px;
+                    font-size: 32px;
                 }
             }
             .bottom_subtext {
@@ -202,6 +220,9 @@ header {
                     font-weight: 600;
                     letter-spacing: 5px;
                     padding-top: 10px;
+                }
+                @media (max-width:680px) {
+                    display: none;
                 }
             }
             .gen_buttons {
@@ -530,6 +551,9 @@ header {
         height: 400px;
         padding: 20px 40px;
         box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+        @media (max-width:680px) {
+            height: auto;
+        }
         h2 {
             text-align: center;
             color: #fff;
@@ -572,6 +596,12 @@ header {
                 position: relative;
                 top: 2px;
                 margin-right: 10px;
+            }
+            label {
+                
+                @media (max-width:680px) {
+                    font-size: 10px;
+                }
             }
         }
     }
@@ -1106,6 +1136,9 @@ footer{
         text-align: center;
         display: block;
         margin-top: 80px;
+        @media (max-width:680px) {
+            font-size: 10px;
+        }
     }
     ul{
         display: flex;
@@ -1287,7 +1320,7 @@ footer{
             display: none;
         }
         img{
-            height: 100%;
+            width:100%;
         }
     }
     .content_directions {

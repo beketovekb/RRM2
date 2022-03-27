@@ -93,10 +93,34 @@ header .bg_gray .robo1 {
   bottom: 0;
 }
 
+@media (max-width: 1200px) {
+  header .bg_gray .robo1 {
+    width: 25%;
+  }
+}
+
+@media (max-width: 850px) {
+  header .bg_gray .robo1 {
+    width: 50%;
+  }
+}
+
 header .bg_gray .robo2 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+@media (max-width: 1200px) {
+  header .bg_gray .robo2 {
+    width: 25%;
+  }
+}
+
+@media (max-width: 850px) {
+  header .bg_gray .robo2 {
+    width: 50%;
+  }
 }
 
 header .header_bg {
@@ -172,6 +196,12 @@ header .header_bg .gen .top_subtext {
   }
 }
 
+@media (max-width: 680px) {
+  header .header_bg .gen .top_subtext {
+    display: none;
+  }
+}
+
 header .header_bg .gen h1 {
   font-family: Raleway, sans-serif;
   font-weight: 800;
@@ -208,8 +238,11 @@ header .header_bg .gen h1 {
 
 @media (max-width: 680px) {
   header .header_bg .gen h1 {
-    font-size: 15.5px;
-    letter-spacing: 5px;
+    width: auto;
+    white-space: normal;
+    text-align: center;
+    line-height: 48px;
+    font-size: 32px;
   }
 }
 
@@ -248,6 +281,12 @@ header .header_bg .gen .bottom_subtext {
     font-weight: 600;
     letter-spacing: 5px;
     padding-top: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  header .header_bg .gen .bottom_subtext {
+    display: none;
   }
 }
 
@@ -733,6 +772,12 @@ header .burger .burger_menu .burger_line {
           box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+@media (max-width: 680px) {
+  .s2_1 .fback_form {
+    height: auto;
+  }
+}
+
 .s2_1 .fback_form h2 {
   text-align: center;
   color: #fff;
@@ -786,6 +831,12 @@ header .burger .burger_menu .burger_line {
   position: relative;
   top: 2px;
   margin-right: 10px;
+}
+
+@media (max-width: 680px) {
+  .s2_1 .fback_form .from_input-acept label {
+    font-size: 10px;
+  }
 }
 
 .s3_1 {
@@ -1482,6 +1533,12 @@ footer .right {
   margin-top: 80px;
 }
 
+@media (max-width: 680px) {
+  footer .right {
+    font-size: 10px;
+  }
+}
+
 footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1765,7 +1822,7 @@ footer .f3 .f3_feed .shop_btn {
 }
 
 .flex .img_directions img {
-  height: 100%;
+  width: 100%;
 }
 
 .flex .content_directions {
