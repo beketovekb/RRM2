@@ -28,7 +28,7 @@
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="desktop-outline"></ion-icon></span>
-                        <span class="title">Админ панель</span>
+                        <span class="title">Панель администратора</span>
                     </a>
                 </li>
                 <li>
