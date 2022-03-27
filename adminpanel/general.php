@@ -138,13 +138,9 @@ foreach ($titles as $title) {
         </form>
         <div class="recentCustomers">
             <div class="cardHeader">
-<<<<<<< HEAD
                 <h2>Фоновые изображения</h2>
-            
-=======
-                <h2>Изображение</h2>
             </div>
->>>>>>> 3ff0ed1ba91527a3ce79fcb3bcfbca720f8f2ab3
+
             <table>
                 <tr>
                 <td>
