@@ -31,7 +31,7 @@ foreach ($titles as $title) {
                     <thead>
                         <tr>
                             <td>Название</td>
-                            <td>Текс</td>
+                            <td>Текст</td>
                             <td>Язык</td>
                         </tr>
                     </thead>
@@ -62,6 +62,15 @@ foreach ($titles as $title) {
                             <td><input type="text" name="r5" style="width: 100%;" value="<?php print($ftitler['23']); ?>"></td>
                             <td>RU</td>
                         </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <td>Название</td>
+                            <td>Текст</td>
+                            <td>Язык</td>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <!--Englis-->
                         <tr>
                             <td>Верх</td>
@@ -88,6 +97,15 @@ foreach ($titles as $title) {
                             <td><input type="text" name="e5" style="width: 100%;" value="<?php print($ftitlee['23']); ?>"></td>
                             <td>ENG</td>
                         </tr>
+                        </tbody>
+                    <thead>
+                        <tr>
+                            <td>Название</td>
+                            <td>Текст</td>
+                            <td>Язык</td>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <!-- Kazakh-->
                         <tr>
                             <td>Верх</td>
@@ -128,7 +146,7 @@ foreach ($titles as $title) {
                         <div class="imgBx"><img src="img/img1.jpg"></div>
                     </td>
                     <td>
-                        <h4>Задни фон <br> <span>Главного окна</span></h4>
+                        <h4>Задний фон <br> <span>Главного окна</span></h4>
                     </td>
                 </tr>
                 <tr>
