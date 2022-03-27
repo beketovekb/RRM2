@@ -34,7 +34,7 @@ foreach ($titles as $title) {
             <thead>
                 <tr>
                     <td>Позиция</td>
-                    <td>Текс</td>
+                    <td>Текст</td>
                     <td>Язык</td>
                 </tr>
             </thead>
@@ -75,7 +75,9 @@ foreach ($titles as $title) {
                     <td><input type="text" name="r22" style="width: 100%;" value="<?php print($ftitler['22']);?>"></td>
                     <td>RU</td>
                 </tr>
-                <!--Englis-->
+            </tbody>
+            <!--Englis-->
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td><input type="text" name="e16" style="width: 100%;" value="<?php print($ftitlee['16']);?>"></td>
@@ -111,7 +113,9 @@ foreach ($titles as $title) {
                     <td><input type="text" name="e22" style="width: 100%;" value="<?php print($ftitlee['22']);?>"></td>
                     <td>EN</td>
                 </tr>
-                <!-- Kazakh-->
+            </tbody>
+            <!--KZ-->
+            <tbody>
                 <tr>
                     <td>1</td>
                     <td><input type="text" name="k16" style="width: 100%;" value="<?php print($ftitlek['16']);?>"></td>
