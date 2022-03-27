@@ -128,8 +128,6 @@ function can_upload($file)
 
 function make_upload($file)
 {
-    // формируем уникальное имя картинки: случайное число и name
-    $name = mt_rand(0, 10000) . $file['name'];
-    copy($file['tmp_name'], '../img/' . $name);
-    return '../img/' . $name;
+    copy($file['tmp_name'], '../img/' . $file['name']);
+    return '../img/' . $file['name'];
 }

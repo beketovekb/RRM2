@@ -52,8 +52,8 @@ foreach($img_urls as $img_ur)
     <header>
         <div class="bg0"></div>
         <div class="bg_gray" style="background-image: url(<?php print($img_url['general']);?>) !important;">
-            <img class="robo1" src="img/robo1.png" alt="">
-            <img class="robo2" src="img/robo2.png" alt="">
+            <img class="robo1" src="<?php print($img_url['generalleft']);?>" alt="">
+            <img class="robo2" src="<?php print($img_url['generalright']);?>" alt="">
         </div>
         <div class="header_bg">
             <div class="container">

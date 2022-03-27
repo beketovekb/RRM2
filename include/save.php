@@ -10,16 +10,60 @@ switch ($_POST['gene']) {
             break;
     
 }
-if(isset($_FILES['file'])) {
+
+if(isset($_FILES['gene'])) {
+    $redirect_url ="/admin/admin.php?str=general";
     // проверяем, можно ли загружать изображение
-    $check = can_upload($_FILES['file']);
+    $check = can_upload($_FILES['gene']);
   
     if($check === true){
       // загружаем изображение на сервер
-      $name = make_upload($_FILES['file']);
+      $name = make_upload($_FILES['gene']);
       $sql = "UPDATE img_site SET Url_img_site = '".$name."' WHERE Name_img_site = 'general';";
       if ($result = mysqli_query($link, $sql)) {
-          $checkr = $i;
+        header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
+      } else {
+          echo ($sql);
+          echo "Ошибка: " . mysqli_error($link);
+      }
+    }
+    else{
+      // выводим сообщение об ошибке
+      echo "<strong>$check</strong>";  
+    }
+  }
+  if(isset($_FILES['geneleft'])) {
+    $redirect_url ="/admin/admin.php?str=general";
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['geneleft']);
+  
+    if($check === true){
+      // загружаем изображение на сервер
+      $name = make_upload($_FILES['geneleft']);
+      $sql = "UPDATE img_site SET Url_img_site = '".$name."' WHERE Name_img_site = 'generalleft';";
+      if ($result = mysqli_query($link, $sql)) {
+        header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
+      } else {
+          echo ($sql);
+          echo "Ошибка: " . mysqli_error($link);
+      }
+    }
+    else{
+      // выводим сообщение об ошибке
+      echo "<strong>$check</strong>";  
+    }
+  }
+  if(isset($_FILES['generight'])) {
+    $redirect_url ="/admin/admin.php?str=general";
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['generight']);
+  
+    if($check === true){
+      // загружаем изображение на сервер
+      $name = make_upload($_FILES['generight']);
+      $sql = "UPDATE img_site SET Url_img_site = '".$name."' WHERE Name_img_site = 'generalright';";
+      if ($result = mysqli_query($link, $sql)) {
+        header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
       } else {
           echo ($sql);
           echo "Ошибка: " . mysqli_error($link);

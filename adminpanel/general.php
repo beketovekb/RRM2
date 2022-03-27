@@ -142,17 +142,36 @@ foreach ($titles as $title) {
             </div>
             <table>
                 <tr>
-                    <td width="60px">
-                        <div class="imgBx"><img src="img/img1.jpg"></div>
-                    </td>
-                    <td>
+                <td>
                         <h4>Задний фон <br> <span>Главного окна</span></h4>
                     </td>
-                </tr>
-                <tr>
                     <td width="60px">
                         <form action="../include/save.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="gene">
+                            <input type="submit" value="Загрузить файл!">
+                        </form>
+
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                        <h4>Задний фон <br> <span>Левый</span></h4>
+                    </td>
+                    <td width="60px">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="geneleft">
+                            <input type="submit" value="Загрузить файл!">
+                        </form>
+
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                        <h4>Задний фон <br> <span>Правый</span></h4>
+                    </td>
+                    <td width="60px">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="generight">
                             <input type="submit" value="Загрузить файл!">
                         </form>
 
