@@ -491,3 +491,7 @@ body {
         color: var(--white);
     }
 }
+
+tbody {
+    border-bottom: 20px solid #fff;
+}
