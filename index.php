@@ -29,9 +29,8 @@ $projects = get_project($link, $lng);
 
 $img_url;
 $img_urls = get_img($link);
-foreach($img_urls as $img_ur)
-{
-    $img_url[$img_ur['Name_img_site']]=$img_ur['Url_img_site'];
+foreach ($img_urls as $img_ur) {
+    $img_url[$img_ur['Name_img_site']] = $img_ur['Url_img_site'];
 }
 ?>
 <!DOCTYPE html>
@@ -51,9 +50,9 @@ foreach($img_urls as $img_ur)
 <body>
     <header>
         <div class="bg0"></div>
-        <div class="bg_gray" style="background-image: url(<?php print($img_url['general']);?>) !important;">
-            <img class="robo1" src="<?php print($img_url['generalleft']);?>" alt="">
-            <img class="robo2" src="<?php print($img_url['generalright']);?>" alt="">
+        <div class="bg_gray" style="background-image: url(<?php print($img_url['general']); ?>) !important;">
+            <img class="robo1" src="<?php print($img_url['generalleft']); ?>" alt="">
+            <img class="robo2" src="<?php print($img_url['generalright']); ?>" alt="">
         </div>
         <div class="header_bg">
             <div class="container">
@@ -190,13 +189,16 @@ foreach($img_urls as $img_ur)
                 <div class="caption" data-aos="fade-right">
                     <?php print($ftitle["5"]); ?>
                 </div>
-                <div class="img_about" data-aos="flip-right"></div>
+                <div class="img_about" style="background: url(<?php print($img_url['about']); ?>); width: 40%;
+    height: auto;
+    background-size: cover;
+    background-position: -250px center;" data-aos="flip-right"></div>
             </div>
         </div>
     </section>
     <section class="s2_1" id="s2_1">
         <div class="bg_fback"></div>
-        <img src="img/img_feedback.jpg" class="img_fback" alt="">
+        <img src="<?php print($img_url['feedback']); ?>" class="img_fback" alt="">
         <div class="container">
             <div class="fback_conent">
                 <div class="fback_text" data-aos="fade-right">
