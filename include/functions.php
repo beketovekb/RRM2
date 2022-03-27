@@ -10,6 +10,17 @@ function get_titles($link, $lng)
 
     return $titles;
 }
+function get_titles_admin($link)
+{
+    $sql = "SELECT * FROM title_site";
+
+    $result = mysqli_query($link, $sql);
+
+    $titles = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $titles;
+}
+
 
 function get_napravlenia($link, $lng)
 {
@@ -58,7 +69,7 @@ function get_more_project($link, $lng, $id)
 
 function get_more_info_project($link, $lng, $id)
 {
-    $sql = "SELECT * FROM project_site WHERE Lng_project_site = '".$lng."' and 	Title_project_site = '".$id."'";
+    $sql = "SELECT * FROM project_site WHERE Lng_project_site = '".$lng."' and uk_project_site = '".$id."'";
     
     $result = mysqli_query($link, $sql);
 
@@ -69,7 +80,7 @@ function get_more_info_project($link, $lng, $id)
 
 function get_more_func_info_project($link, $lng, $id)
 {
-    $sql = "SELECT * FROM more_project_site WHERE Lng_more_project_site = '".$lng."' and 	Title_project_site = '".$id."'";
+    $sql = "SELECT * FROM more_project_site WHERE Lng_more_project_site = '".$lng."' and Title_project_site = '".$id."'";
     
     $result = mysqli_query($link, $sql);
 

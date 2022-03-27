@@ -7,9 +7,11 @@ $lng;
   else $lng = 'ru';
   $lng = strtoupper($lng);
 
-    $id = str_replace("%20",' ',$_GET['id']);
+    $id = $_GET['id'];
     $projects = get_more_info_project($link, $lng, $id);
-    $projects_opisanie = get_more_func_info_project($link, $lng, $id);
+    $tit;
+    foreach($projects as $project){$tit=$project['Title_project_site'];}
+    $projects_opisanie = get_more_func_info_project($link, $lng, $tit);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,13 +95,13 @@ $lng;
                                     </label>
                                     <ul class="lang-list">
                                         <li class="lang lang-ru <?php if($lng=='RU') print('selected');?>" title="RU">
-                                        <a href="projects.php?id=Сайт%20компании%20“GROUP%202”&lng=RU"><span class="flag"></span></a>
+                                        <a href="projects.php?id=<?php print($id);?>&lng=RU"><span class="flag"></span></a>
                                         </li>
                                         <li class="lang lang-en <?php if($lng=='EN') print('selected');?>" title="EN">
-                                        <a href="projects.php?id=Сайт%20компании%20“GROUP%202”&lng=EN"><span class="flag"></span> </a> 
+                                        <a href="projects.php?id=<?php print($id);?>&lng=EN"><span class="flag"></span> </a> 
                                         </li>
                                         <li class="lang lang-kz <?php if($lng=='KZ') print('selected');?>" title="KZ">
-                                        <a href="projects.php?id=Сайт%20компании%20“GROUP%202”&lng=KZ"><span class="flag"></span></a>
+                                        <a href="projects.php?id=<?php print($id);?>&lng=KZ"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>
