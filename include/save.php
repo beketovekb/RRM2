@@ -6,74 +6,113 @@ switch ($_POST['gene']) {
         set_general();
         break;
     case 'menu':
-            set_menu();
-            break;
-    
+        set_menu();
+        break;
+    case 'about':
+        set_about();
+        break;
 }
 
-if(isset($_FILES['gene'])) {
-    $redirect_url ="/admin/admin.php?str=general";
+if (isset($_FILES['gene'])) {
+    $redirect_url = "/admin/admin.php?str=general";
     // проверяем, можно ли загружать изображение
     $check = can_upload($_FILES['gene']);
-  
-    if($check === true){
-      // загружаем изображение на сервер
-      $name = make_upload($_FILES['gene']);
-      $sql = "UPDATE img_site SET Url_img_site = '".$name."' WHERE Name_img_site = 'general';";
-      if ($result = mysqli_query($link, $sql)) {
-        header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
-      } else {
-          echo ($sql);
-          echo "Ошибка: " . mysqli_error($link);
-      }
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['gene']);
+        $sql = "UPDATE img_site SET Url_img_site = '" . $name . "' WHERE Name_img_site = 'general';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
     }
-    else{
-      // выводим сообщение об ошибке
-      echo "<strong>$check</strong>";  
-    }
-  }
-  if(isset($_FILES['geneleft'])) {
-    $redirect_url ="/admin/admin.php?str=general";
+}
+if (isset($_FILES['geneleft'])) {
+    $redirect_url = "/admin/admin.php?str=general";
     // проверяем, можно ли загружать изображение
     $check = can_upload($_FILES['geneleft']);
-  
-    if($check === true){
-      // загружаем изображение на сервер
-      $name = make_upload($_FILES['geneleft']);
-      $sql = "UPDATE img_site SET Url_img_site = '".$name."' WHERE Name_img_site = 'generalleft';";
-      if ($result = mysqli_query($link, $sql)) {
-        header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
-      } else {
-          echo ($sql);
-          echo "Ошибка: " . mysqli_error($link);
-      }
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['geneleft']);
+        $sql = "UPDATE img_site SET Url_img_site = '" . $name . "' WHERE Name_img_site = 'generalleft';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
     }
-    else{
-      // выводим сообщение об ошибке
-      echo "<strong>$check</strong>";  
-    }
-  }
-  if(isset($_FILES['generight'])) {
-    $redirect_url ="/admin/admin.php?str=general";
+}
+if (isset($_FILES['generight'])) {
+    $redirect_url = "/admin/admin.php?str=general";
     // проверяем, можно ли загружать изображение
     $check = can_upload($_FILES['generight']);
-  
-    if($check === true){
-      // загружаем изображение на сервер
-      $name = make_upload($_FILES['generight']);
-      $sql = "UPDATE img_site SET Url_img_site = '".$name."' WHERE Name_img_site = 'generalright';";
-      if ($result = mysqli_query($link, $sql)) {
-        header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
-      } else {
-          echo ($sql);
-          echo "Ошибка: " . mysqli_error($link);
-      }
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['generight']);
+        $sql = "UPDATE img_site SET Url_img_site = '" . $name . "' WHERE Name_img_site = 'generalright';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
     }
-    else{
-      // выводим сообщение об ошибке
-      echo "<strong>$check</strong>";  
+}
+if (isset($_FILES['abo'])) {
+    $redirect_url = "/admin/admin.php?str=general";
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['abo']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['abo']);
+        $sql = "UPDATE img_site SET Url_img_site = '" . $name . "' WHERE Name_img_site = 'about';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
     }
-  }
+}
+if (isset($_FILES['fed'])) {
+    $redirect_url = "/admin/admin.php?str=feedback";
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['fed']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['fed']);
+        $sql = "UPDATE img_site SET Url_img_site = '" . $name . "' WHERE Name_img_site = 'feedback';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
 
 function set_general(){
     require_once 'database.php';
@@ -230,5 +269,55 @@ function set_menu(){
             header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
         }   
     }
+}
+function set_about(){
+    require_once 'database.php';
+    if(isset($_POST['r16']))
+    {
+        $redirect_url ="/admin/admin.php?str=about";
+        for ($i=4; $i <=5; $i++) { 
+            $r[$i] = $_POST['r'.$i];
+            $e[$i] = $_POST['e'.$i];
+            $k[$i] = $_POST['k'.$i];
+        }
+        $checkr=1;
+        $checke=1;
+        $checkk=1;
+    
+        for ($i=4; $i <=5; $i++)
+        {
+            $sql = "UPDATE `title_site` SET `Text` = '".$r[$i]."' WHERE Number = '".$i."' AND Lng_title = 'ru';";
+            if($result = mysqli_query($link, $sql)){
+                $checkr=$i;
+            } else{
+                echo($sql);
+                echo "Ошибка: " . mysqli_error($link);
+            }
+        }
+        for ($i=4; $i <=5; $i++)
+        {
+            $sql = "UPDATE `title_site` SET `Text` = '".$e[$i]."' WHERE Number = '".$i."' AND Lng_title = 'en';";
+            if($result = mysqli_query($link, $sql)){
+                $checke=$i;
+            } else{
+                echo($sql);
+                echo "Ошибка: " . mysqli_error($link);
+            }
+        }
+        for ($i=4; $i <=5; $i++)
+        {
+            $sql = "UPDATE `title_site` SET `Text` = '".$k[$i]."' WHERE Number = '".$i."' AND Lng_title = 'kz';";
+            if($result = mysqli_query($link, $sql)){
+                $checkk=$i;
+            } else{
+                echo($sql);
+                echo "Ошибка: " . mysqli_error($link);
+            }
+        }
+        if($checkr==5 and $checke==5 and $checkk==5)
+        {
+            header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
+        }   
     }
+}
 ?>
