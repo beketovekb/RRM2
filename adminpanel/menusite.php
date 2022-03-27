@@ -27,7 +27,7 @@ foreach ($titles as $title) {
     <div class="recentOrders">
         <div class="cardHeader">
             <h2>Меню</h2>
-            <input type="submit" value="Save"  class="btn"/>
+            <input type="submit" value="Сохранить"  class="btn"/>
             <input type="text" name="fun" style="width: 100%; display: none; " value="menu">
         </div>
         <table>
