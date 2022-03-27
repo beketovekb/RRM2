@@ -77,6 +77,13 @@ foreach ($titles as $title) {
                 </tr>
             </tbody>
             <!--Englis-->
+            <thead>
+                <tr>
+                    <td>Позиция</td>
+                    <td>Текст</td>
+                    <td>Язык</td>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <td>1</td>
@@ -115,6 +122,13 @@ foreach ($titles as $title) {
                 </tr>
             </tbody>
             <!--KZ-->
+            <thead>
+                <tr>
+                    <td>Позиция</td>
+                    <td>Текст</td>
+                    <td>Язык</td>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <td>1</td>
