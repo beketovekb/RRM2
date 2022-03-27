@@ -1,15 +1,18 @@
 <?php
 require_once 'functions.php';
 require_once 'database.php';
-switch ($_POST['gene']) {
+switch ($_POST['fun']) {
     case 'general':
         set_general();
         break;
     case 'menu':
-        set_menu();
+        set_menu($link);
         break;
     case 'about':
-        set_about();
+        set_about($link);
+        break;
+    case 'feedback':
+        set_feedback($link);
         break;
 }
 
@@ -113,6 +116,8 @@ if (isset($_FILES['fed'])) {
         echo "<strong>$check</strong>";
     }
 }
+
+
 
 function set_general(){
     require_once 'database.php';
@@ -220,104 +225,78 @@ function set_general(){
         }
     }
 }
-function set_menu(){
-    require_once 'database.php';
+function set_menu($link){
     if(isset($_POST['r16']))
     {
         $redirect_url ="/admin/admin.php?str=menusite";
-        for ($i=16; $i <=22; $i++) { 
-            $r[$i] = $_POST['r'.$i];
-            $e[$i] = $_POST['e'.$i];
-            $k[$i] = $_POST['k'.$i];
-        }
-        $checkr=1;
-        $checke=1;
-        $checkk=1;
-    
-        for ($i=16; $i <=22; $i++)
-        {
-            $sql = "UPDATE `title_site` SET `Text` = '".$r[$i]."' WHERE Number = '".$i."' AND Lng_title = 'ru';";
-            if($result = mysqli_query($link, $sql)){
-                $checkr=$i;
-            } else{
-                echo($sql);
-                echo "Ошибка: " . mysqli_error($link);
-            }
-        }
-        for ($i=16; $i <=22; $i++)
-        {
-            $sql = "UPDATE `title_site` SET `Text` = '".$e[$i]."' WHERE Number = '".$i."' AND Lng_title = 'en';";
-            if($result = mysqli_query($link, $sql)){
-                $checke=$i;
-            } else{
-                echo($sql);
-                echo "Ошибка: " . mysqli_error($link);
-            }
-        }
-        for ($i=16; $i <=22; $i++)
-        {
-            $sql = "UPDATE `title_site` SET `Text` = '".$k[$i]."' WHERE Number = '".$i."' AND Lng_title = 'kz';";
-            if($result = mysqli_query($link, $sql)){
-                $checkk=$i;
-            } else{
-                echo($sql);
-                echo "Ошибка: " . mysqli_error($link);
-            }
-        }
-        if($checkr==22 and $checke==22 and $checkk==22)
+        if(set_bd(16,22,$link))
         {
             header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
         }   
     }
 }
-function set_about(){
+function set_about($link){
     require_once 'database.php';
-    if(isset($_POST['r16']))
+    if(isset($_POST['r4']))
     {
         $redirect_url ="/admin/admin.php?str=about";
-        for ($i=4; $i <=5; $i++) { 
-            $r[$i] = $_POST['r'.$i];
-            $e[$i] = $_POST['e'.$i];
-            $k[$i] = $_POST['k'.$i];
-        }
-        $checkr=1;
-        $checke=1;
-        $checkk=1;
-    
-        for ($i=4; $i <=5; $i++)
-        {
-            $sql = "UPDATE `title_site` SET `Text` = '".$r[$i]."' WHERE Number = '".$i."' AND Lng_title = 'ru';";
-            if($result = mysqli_query($link, $sql)){
-                $checkr=$i;
-            } else{
-                echo($sql);
-                echo "Ошибка: " . mysqli_error($link);
-            }
-        }
-        for ($i=4; $i <=5; $i++)
-        {
-            $sql = "UPDATE `title_site` SET `Text` = '".$e[$i]."' WHERE Number = '".$i."' AND Lng_title = 'en';";
-            if($result = mysqli_query($link, $sql)){
-                $checke=$i;
-            } else{
-                echo($sql);
-                echo "Ошибка: " . mysqli_error($link);
-            }
-        }
-        for ($i=4; $i <=5; $i++)
-        {
-            $sql = "UPDATE `title_site` SET `Text` = '".$k[$i]."' WHERE Number = '".$i."' AND Lng_title = 'kz';";
-            if($result = mysqli_query($link, $sql)){
-                $checkk=$i;
-            } else{
-                echo($sql);
-                echo "Ошибка: " . mysqli_error($link);
-            }
-        }
-        if($checkr==5 and $checke==5 and $checkk==5)
+        if(set_bd(4,5,$link))
         {
             header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
         }   
     }
+}
+function set_feedback($link){
+    
+    if(isset($_POST['r6']))
+    {
+        $redirect_url ="/admin/admin.php?str=feedback";
+        if(set_bd(6,7,$link) && set_bd(24,29,$link))
+        {
+            header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
+        }   
+    }
+}
+function set_bd($i1, $i2,$link)
+{
+    $$checkr = 1;
+    $$checke = 1;
+    $checkk = 1;
+    for ($i = $i1; $i <= $i2; $i++) {
+        $r[$i] = $_POST['r' . $i];
+        $e[$i] = $_POST['e' . $i];
+        $k[$i] = $_POST['k' . $i];
+    }
+    for ($i = $i1; $i <= $i2; $i++) {
+        $sql = "UPDATE `title_site` SET `Text` = '" . $r[$i] . "' WHERE Number = '" . $i . "' AND Lng_title = 'ru';";
+        if (mysqli_query($link, $sql)) {
+            $checkr = $i;
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    }
+    for ($i = $i1; $i <= $i2; $i++) {
+        $sql = "UPDATE `title_site` SET `Text` = '" . $e[$i] . "' WHERE Number = '" . $i . "' AND Lng_title = 'en';";
+        if (mysqli_query($link, $sql)) {
+            $checke = $i;
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    }
+    for ($i = $i1; $i <= $i2; $i++) {
+        $sql = "UPDATE `title_site` SET `Text` = '" . $k[$i] . "' WHERE Number = '" . $i . "' AND Lng_title = 'kz';";
+        if (mysqli_query($link, $sql)) {
+            $checkk = $i;
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    }
+    if ($checkr == $i2 and $checke == $i2 and $checkk == $i2) {
+        return true;
+    }
+    
 }
 ?>
