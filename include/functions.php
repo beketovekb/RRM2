@@ -109,6 +109,16 @@ function get_directions($link)
 
     return $directions;
 }
+function get_direction($link, $pos)
+{
+    $sql = "SELECT * FROM `uslugi_site` WHERE Position_uslugi_site = '".$pos."'";
+    
+    $result = mysqli_query($link, $sql);
+
+    $directions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $directions;
+}
 
 
 function can_upload($file)
