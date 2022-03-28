@@ -44,6 +44,7 @@ foreach ($img_urls as $img_ur) {
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
     <title>Regulus Robotics Machine</title>
 </head>
 
@@ -183,7 +184,7 @@ foreach ($img_urls as $img_ur) {
     </header>
     <section class="s1_1" id="s1_1">
         <div class="container">
-            <h2 data-aos="fade-down"><?php print($ftitle["4"]); ?></h2>
+            <h2 data-aos="fade-down"><span><?php print($ftitle["4"]); ?></span></h2>
             <hr data-aos="flip-left">
             <div class="f6to4">
                 <div class="caption" data-aos="fade-right">
@@ -231,7 +232,7 @@ foreach ($img_urls as $img_ur) {
     </section>
     <section class="s3_1" id="s3_1">
         <div class="container">
-            <h2 data-aos="fade-down"> <?php print($ftitle["8"]); ?></h2>
+            <h2 data-aos="fade-down"><span><?php print($ftitle["8"]); ?></span> </h2>
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["9"]); ?></span>
             <div class="directions" data-aos="zoom-in">
@@ -247,7 +248,7 @@ foreach ($img_urls as $img_ur) {
         </div>
     </section>
     <section class="s4_1" id="s4_1">
-        <h2 data-aos="fade-down"><?php print($ftitle["10"]); ?></h2>
+        <h2 data-aos="fade-down"><span><?php print($ftitle["10"]); ?></span></h2>
         <hr data-aos="flip-left">
         <span class="title_caption" data-aos="fade-up"><?php print($ftitle["11"]); ?></span>
         <div class="projects" data-aos="zoom-in">

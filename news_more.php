@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <link rel="stylesheet" href="css/slider-pro.css"/>
+    <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
     <title>Regulus Robotics Machine</title>
 </head>
 
