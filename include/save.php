@@ -14,6 +14,16 @@ switch ($_POST['fun']) {
     case 'feedback':
         set_feedback($link);
         break;
+    case 'directionsInfo':
+        if(isset($_POST['r8']))
+    {
+        $redirect_url ="/admin/admin.php?str=directions";
+        if(set_bd(8,9,$link))
+        {
+            header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
+        }   
+    }
+    break;
 }
 
 if (isset($_FILES['gene'])) {

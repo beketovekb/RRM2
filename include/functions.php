@@ -99,6 +99,16 @@ function get_img($link)
 
     return $urls;
 }
+function get_directions($link)
+{
+    $sql = "SELECT * FROM uslugi_site";
+    
+    $result = mysqli_query($link, $sql);
+
+    $directions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $directions;
+}
 
 
 function can_upload($file)
