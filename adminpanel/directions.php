@@ -113,7 +113,7 @@ $direcrtions = get_directions($link);
                             <td><?php print($direcrtion['Title_uslugi_site']);?></td>
                             <td><?php if(strlen($direcrtion['Opisanie_uslugi_site'])>=60){print(substr($direcrtion['Opisanie_uslugi_site'], 0, 60)."...");} else {print($direcrtion['Opisanie_uslugi_site']);}?></td>
                             <td><?php print($direcrtion['Position_uslugi_site']);?></td>
-                            <td><a href="/adminpanel/editDirection.php?pos=<?php print($direcrtion['Position_uslugi_site']);?>"><button>Редактировать</button></a></td>
+                            <td><a href="/adminpanel/editDirection.php?pos=<?php print($direcrtion['Position_uslugi_site']);?>" class="btn">Редактировать</a></td>
                         </tr>
                     </tbody>
                     <?php }
