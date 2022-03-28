@@ -342,7 +342,7 @@ foreach ($img_urls as $img_ur) {
                         Мы осуществили поставку первых в Казахстане роботов THESPIAN, PEPPER, NAO-V6, ROBOTIS MINI, BIOLOID, CRUZR UPTECH. </span>
                 </div>
                 <div class="f2_info">
-                    <h3>О Компании</h3>
+                    <h3>Наши контакты</h3>
                     <span><img src="img/place.png" alt=""> г. Алматы, Казахстан,
                         проспект Гагарина 309, офис 23 <br>
                         г. Нур-Султан, Казахстан, ул.​Тарас
