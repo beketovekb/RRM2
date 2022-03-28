@@ -3,7 +3,7 @@ require_once 'functions.php';
 require_once 'database.php';
 switch ($_POST['fun']) {
     case 'general':
-        set_general();
+        set_general($link);
         break;
     case 'menu':
         set_menu($link);
@@ -126,11 +126,54 @@ if (isset($_FILES['fed'])) {
         echo "<strong>$check</strong>";
     }
 }
+if (isset($_FILES['dir'])) {
+    $pos = $_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['dir']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['dir']);
+        $sql = "UPDATE uslugi_site SET Img_url_uslugi_site = '".$name."' WHERE Position_uslugi_site = '".$pos."'";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo($pos);
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
+if (isset($_FILES['dird'])) {
+    $pos = $_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['dird']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['dird']);
+        $sql = "UPDATE uslugi_site SET Img_more_uslugi_site = '".$name."' WHERE Position_uslugi_site = '".$pos."'";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo($pos);
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
 
 
 
-function set_general(){
-    require_once 'database.php';
+function set_general($link){
     if (isset($_POST['r1'])) {
         $redirect_url = "/admin/admin.php?str=general";
         $r[1] = $_POST['r1'];
