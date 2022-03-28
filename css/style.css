@@ -1035,6 +1035,9 @@ header .burger .burger_menu .burger_line {
   margin-top: 16px;
   font-weight: 600;
   color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .s4_1 {
@@ -1509,6 +1512,9 @@ header .burger .burger_menu .burger_line {
   margin-top: 24px;
   font-weight: 600;
   color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .s8_1 {

@@ -243,7 +243,7 @@ foreach ($img_urls as $img_ur) {
                     </div>
                 <?php } ?>
             </div>
-            <a href="https://robotprostore.kz/"><button class="shop_btn">Перейти в магазин</button></a>
+            <a href="https://robotprostore.kz/" class="shop_btn">Перейти в магазин</a>
         </div>
     </section>
     <section class="s4_1" id="s4_1">
@@ -289,7 +289,7 @@ foreach ($img_urls as $img_ur) {
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
-                <div class="news_item n_item1" data-aos="zoom-in">
+                <a href="news_more.php" class="news_item n_item1" data-aos="zoom-in">
                     <div class="news_img1">
                         <div class="news_day">
                             20 янв
@@ -297,13 +297,13 @@ foreach ($img_urls as $img_ur) {
                     </div>
                     <h4>Lego Educations</h4>
                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</span>
-                    <a href="#" class="learn_more">Читать подробнее
+                    <span class="learn_more">Читать подробнее
                         <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600" />
                         </svg>
-                    </a>
-                </div>
-                <div class="news_item n_item2" data-aos="zoom-in">
+                    </span>
+                </a>
+                <a href="news_more.php" class="news_item n_item2" data-aos="zoom-in">
                     <div class="news_img2">
                         <div class="news_day">
                             25 фев
@@ -311,13 +311,13 @@ foreach ($img_urls as $img_ur) {
                     </div>
                     <h4>CRUZR</h4>
                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</span>
-                    <a href="#" class="learn_more">Читать подробнее
+                    <span href="#" class="learn_more">Читать подробнее
                         <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600" />
                         </svg>
-                    </a>
-                </div>
-                <div class="news_item n_item3" data-aos="zoom-in">
+                    </span>
+                </a>
+                <a href="news_more.php" class="news_item n_item3" data-aos="zoom-in">
                     <div class="news_img3">
                         <div class="news_day">
                             03 мар
@@ -325,14 +325,14 @@ foreach ($img_urls as $img_ur) {
                     </div>
                     <h4>ROBOTICS</h4>
                     <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</span>
-                    <a href="#" class="learn_more">Читать подробнее
+                    <span href="#" class="learn_more">Читать подробнее
                         <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600" />
                         </svg>
-                    </a>
-                </div>
+                </span>
+                </a>
             </div>
-            <button class="news_more">Больше новостей</buttom>
+            <a href="news_list.php" class="news_more">Больше новостей</a>
         </div>
     </section>
     <!-- <section class="s8_1" id="s8_1">
