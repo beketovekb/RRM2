@@ -34,7 +34,7 @@
                 <li>
                     <a href="/admin/admin.php?str=main">
                         <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
-                        <span class="title">Dashboard</span>
+                        <span class="title">Dashboard2</span>
                     </a>
                 </li>
                 <li>
