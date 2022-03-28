@@ -231,7 +231,7 @@ foreach ($img_urls as $img_ur) {
     </section>
     <section class="s3_1" id="s3_1">
         <div class="container">
-            <h2 data-aos="fade-down"> <span><?php print($ftitle["8"]); ?></span></h2>
+            <h2 data-aos="fade-down"> <?php print($ftitle["8"]); ?></h2>
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["9"]); ?></span>
             <div class="directions" data-aos="zoom-in">
@@ -275,6 +275,11 @@ foreach ($img_urls as $img_ur) {
                 <img src="img/partner3.png" alt="">
                 <img src="img/partner4.png" alt="">
                 <img src="img/partner5.png" alt="">
+                <img src="img/partner6.png" alt="">
+                <img src="img/partner7.png" alt="">
+                <img src="img/partner8.png" alt="">
+                <img src="img/partner9.png" alt="">
+                <img src="img/partner10.png" alt="">
             </div>
         </div>
     </section>
@@ -342,7 +347,7 @@ foreach ($img_urls as $img_ur) {
                         Мы осуществили поставку первых в Казахстане роботов THESPIAN, PEPPER, NAO-V6, ROBOTIS MINI, BIOLOID, CRUZR UPTECH. </span>
                 </div>
                 <div class="f2_info">
-                    <h3>О Компании</h3>
+                    <h3>Наши контакты</h3>
                     <span><img src="img/place.png" alt=""> г. Алматы, Казахстан,
                         проспект Гагарина 309, офис 23 <br>
                         г. Нур-Султан, Казахстан, ул.​Тарас

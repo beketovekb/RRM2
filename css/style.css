@@ -626,7 +626,7 @@ header .burger .burger_menu .burger_line {
   height: auto;
   width: 100%;
   background-color: #fff;
-  padding: 120px 0 120px 0;
+  padding: 90px 0 90px 0;
 }
 
 .s1_1 h2 {
@@ -842,7 +842,7 @@ header .burger .burger_menu .burger_line {
 .s3_1 {
   height: auto;
   background-color: #fff;
-  padding: 120px 0 120px 0;
+  padding: 90px 0 90px 0;
 }
 
 .s3_1 h2 {
@@ -1040,7 +1040,7 @@ header .burger .burger_menu .burger_line {
 .s4_1 {
   height: auto;
   background-color: #fff;
-  padding: 120px 0 120px 0;
+  padding: 90px 0 90px 0;
 }
 
 .s4_1 h2 {
@@ -1216,7 +1216,7 @@ header .burger .burger_menu .burger_line {
 .s5_1 {
   height: auto;
   background-color: #fff;
-  padding: 120px 0 120px 0;
+  padding: 90px 0 90px 0;
 }
 
 .s5_1 h2 {
@@ -1263,7 +1263,7 @@ header .burger .burger_menu .burger_line {
 }
 
 .s5_1 .slick-dots {
-  bottom: 0;
+  bottom: -32px;
 }
 
 .s6_1 {
@@ -1360,7 +1360,7 @@ header .burger .burger_menu .burger_line {
 .s7_1 {
   height: auto;
   background-color: #fff;
-  padding: 120px 0 120px 0;
+  padding: 90px 0 90px 0;
 }
 
 .s7_1 h2 {
@@ -1902,6 +1902,15 @@ footer .f3 .f3_feed .shop_btn {
     margin: auto;
     margin-top: 25px;
   }
+}
+
+.responsive .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .variable-width .slick-track {

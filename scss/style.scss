@@ -450,7 +450,7 @@ header {
     height: auto;
     width: 100%;
     background-color: #fff;
-    padding: 120px 0 120px 0;
+    padding: 90px 0 90px 0;
     h2 {
         text-align: center;
         text-transform: uppercase;
@@ -610,7 +610,7 @@ header {
 .s3_1 {
     height: auto;
     background-color: #fff;
-    padding: 120px 0 120px 0;
+    padding: 90px 0 90px 0;
     h2 {
         text-align: center;
         text-transform: uppercase;
@@ -765,7 +765,7 @@ header {
 .s4_1{
     height: auto;
     background-color: #fff;
-    padding: 120px 0 120px 0;
+    padding: 90px 0 90px 0;
     h2 {
         text-align: center;
         text-transform: uppercase;
@@ -891,7 +891,7 @@ header {
 .s5_1 {
     height: auto;
     background-color: #fff;
-    padding: 120px 0 120px 0;
+    padding: 90px 0 90px 0;
     h2 {
         text-align: center;
         text-transform: uppercase;
@@ -928,7 +928,7 @@ header {
         opacity: 1;
     }
     .slick-dots{
-        bottom: 0;
+        bottom: -32px;
     }
 }
 
@@ -1003,7 +1003,7 @@ header {
 .s7_1 {
     height: auto;
     background-color: #fff;
-    padding: 120px 0 120px 0;
+    padding: 90px 0 90px 0;
     h2 {
         text-align: center;
         text-transform: uppercase;
@@ -1375,6 +1375,10 @@ footer{
             }
         }
     }
+}
+.responsive  .slick-track{
+    display: flex;
+    align-items: center;
 }
 .variable-width{
     // position: relative;

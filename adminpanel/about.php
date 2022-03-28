@@ -98,7 +98,7 @@ foreach ($titles as $title) {
             <table>
                 <tr>
                 <td>
-                        <h4>Изображения</h4>
+                        <h4>Фоновое изображение</h4>
                     </td>
                     <td width="60px">
                         <form action="../include/save.php" method="post" enctype="multipart/form-data">
