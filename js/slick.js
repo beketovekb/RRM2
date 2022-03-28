@@ -3,7 +3,7 @@ $('.responsive').slick({
     infinite: false,
     speed: 300,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     infinite: true,

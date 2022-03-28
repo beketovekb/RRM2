@@ -928,7 +928,7 @@ header {
         opacity: 1;
     }
     .slick-dots{
-        bottom: 0;
+        bottom: -32px;
     }
 }
 
@@ -1375,6 +1375,10 @@ footer{
             }
         }
     }
+}
+.responsive  .slick-track{
+    display: flex;
+    align-items: center;
 }
 .variable-width{
     // position: relative;
