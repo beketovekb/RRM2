@@ -206,46 +206,46 @@
                             <div class="news_slide">
                                 <h3>Последние новости</h3>
                                 <div class="last_news">
-                                    <div class="last_news_item">
+                                    <a href="news_more.php" class="last_news_item">
                                         <div class="last_news_img"></div>
                                         <div class="last_news_title">Сайт компании "GROUP 2"</div>
                                         <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <a href="#" class="learn_more">Читать подробнее 
+                                        <span href="#" class="learn_more">Читать подробнее 
                                             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
                                             </svg>
-                                        </a>
-                                    </div>
-                                    <div class="last_news_item">
+                                        </span>
+                                    </a>
+                                    <a href="news_more.php" class="last_news_item">
                                         <div class="last_news_img"></div>
                                         <div class="last_news_title">Сайт компании "GROUP 2"</div>
                                         <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <a href="#" class="learn_more">Читать подробнее 
+                                        <span href="#" class="learn_more">Читать подробнее 
                                             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
                                             </svg>
-                                        </a>
-                                    </div>
-                                    <div class="last_news_item">
+                                        </span>
+                                    </a>
+                                    <a href="news_more.php" class="last_news_item">
                                         <div class="last_news_img"></div>
                                         <div class="last_news_title">Сайт компании "GROUP 2"</div>
                                         <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <a href="#" class="learn_more">Читать подробнее 
+                                        <span href="#" class="learn_more">Читать подробнее 
                                             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
                                             </svg>
-                                        </a>
-                                    </div>
-                                    <div class="last_news_item">
+                                        </span>
+                                    </a>
+                                    <a href="news_more.php" class="last_news_item">
                                         <div class="last_news_img"></div>
                                         <div class="last_news_title">Сайт компании "GROUP 2"</div>
                                         <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <a href="#" class="learn_more">Читать подробнее 
+                                        <span href="#" class="learn_more">Читать подробнее 
                                             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
                                             </svg>
-                                        </a>
-                                    </div>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
