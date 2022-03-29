@@ -69,9 +69,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Sign Out</span>
+                    <a href="/admin/admin.php?str=newProject">
+                        <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
+                        <span class="title">Добавить новый проект</span>
                     </a>
                 </li>
             </ul>

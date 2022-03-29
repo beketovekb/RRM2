@@ -24,6 +24,9 @@ switch ($_POST['fun']) {
         }   
     }
     break;
+    case 'editDirection':
+        edit_directions($link);
+        break;
 }
 
 if (isset($_FILES['gene'])) {
@@ -349,6 +352,56 @@ function set_bd($i1, $i2,$link)
     }
     if ($checkr == $i2 and $checke == $i2 and $checkk == $i2) {
         return true;
+    }
+    
+}
+
+function edit_directions($link)
+{
+    $pos=$_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
+    $srok=str_replace("'","\'",$_POST['srok_ru']);
+    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'ru'";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $type=str_replace("'","\'",$_POST['btn_en']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
+    $srok=str_replace("'","\'",$_POST['srok_en']);
+    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'en'";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $type=str_replace("'","\'",$_POST['btn_kz']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
+    $srok=str_replace("'","\'",$_POST['srok_kz']);
+    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'kz'";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     }
     
 }

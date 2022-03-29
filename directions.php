@@ -154,7 +154,7 @@ $lng;
                                 <div class="content_directions">
                                     <h2><?php print($nap["Title_uslugi_site"]); ?></h2>
                                     <p><?php print($nap["Opisanie_uslugi_site"]); ?></p>
-                                    <span>Сроки выполнения <?php print($nap["Srok_uslugi_site"]); ?></span>
+                                    <span><?php print($nap["Srok_uslugi_site"]); ?></span>
                                 </div>
                                 <?php } ?>
                             </div>
