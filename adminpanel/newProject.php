@@ -56,8 +56,9 @@ echo($_GET['pos']);
                                     <td>Тип направления</td>
                                     <td><select name="btn_ru">
                                             <option disabled>Выберите тип</option>
-                                            <option value="ПЕРЕЙТИ К УСЛУГАМ">Услуги</option>
-                                            <option value="ПЕРЕЙТИ К ПРОДУКТАМ">Продукты</option>
+                                            <?php for ($i=1; $i<=count($title_ru) ; $i+1) { ?>
+                                                <option value="<?php print($i);?>"><?php print($title_ru[$i]); ?></option>
+                                            <?php }?>
                                         </select></td>
                                     <td>RU</td>
                                 </tr>
