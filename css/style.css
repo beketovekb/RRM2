@@ -127,7 +127,6 @@ header .header_bg {
   height: 100%;
   position: relative;
   z-index: 1;
-  overflow: unset;
 }
 
 header .header_bg .header_nav {
@@ -1828,7 +1827,7 @@ footer .f3 .f3_feed .shop_btn {
 }
 
 .flex .img_directions img {
-  width: 100%;
+  height: 100%;
 }
 
 .flex .content_directions {
