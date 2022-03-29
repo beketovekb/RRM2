@@ -1,5 +1,6 @@
 <?php
-echo($_GET['pos']);
+require_once '../include/functions.php';
+require_once '../include/database.php';
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
