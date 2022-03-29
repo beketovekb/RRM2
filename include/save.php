@@ -356,24 +356,10 @@ function set_bd($i1, $i2,$link)
     
 }
 
-$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
- 
-function generate_string($input, $strength = 16) {
-    $input_length = strlen($input);
-    $random_string = '';
-    for($i = 0; $i < $strength; $i++) {
-        $random_character = $input[mt_rand(0, $input_length - 1)];
-        $random_string .= $random_character;
-    }
- 
-    return $random_string;
-}
-
 function edit_directions($link)
 {
     $pos=$_POST['pos'];
-    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $id = generate_string($permitted_chars, 16);
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
     $ru=false;
     $en=false;
     $kz=false;
@@ -413,7 +399,6 @@ function edit_directions($link)
         echo ($sql);
         echo "Ошибка: " . mysqli_error($link);
     }
-    $redirect_url = "/admin/admin.php?str=newProject&pos=".$id;
     if($ru && $en && $kz)
     {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);

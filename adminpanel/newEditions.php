@@ -1,6 +1,11 @@
 <?php
 require_once '../include/functions.php';
 require_once '../include/database.php';
+$napravlenia = get_napravlenia($link, 'ru');
+$title_ru;
+foreach ($napravlenia as $napravlen) {
+    $title_ru[$napravlen["Position_uslugi_site"]] = $napravlen["Title_uslugi_site"];
+}
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -57,8 +62,9 @@ require_once '../include/database.php';
                                     <td>Тип направления</td>
                                     <td><select name="btn_ru">
                                             <option disabled>Выберите тип</option>
-                                            <option value="ПЕРЕЙТИ К УСЛУГАМ">Услуги</option>
-                                            <option value="ПЕРЕЙТИ К ПРОДУКТАМ">Продукты</option>
+                                            <?php for ($i=1; $i<=count($title_ru) ; $i+1) { ?>
+                                                <option value="<?php print($i);?>"><?php print($title_ru[$i]); ?></option>
+                                            <?php }?>
                                         </select></td>
                                     <td>RU</td>
                                 </tr>
