@@ -20,6 +20,8 @@ function consoleBG() {
         $('.logo_color').css('opacity', '0');
         $('header .soc path').css('fill', 'white');
         $('.burger_line').css('background-color', 'white');
+        $('.lang-ru .flag').css('color', 'white');
+        $('.language-dropdown .flag').css('color', 'white');
     } else {
         $('.header_nav').css('background-color', 'white');
         $('.shadow_up').css('background', 'transparent');
@@ -28,6 +30,8 @@ function consoleBG() {
         $('.logo_color').css('opacity', '1');
         $('header .soc path').css('fill', '#1e1e1e');
         $('.burger_line').css('background-color', 'black');
+        $('.lang-ru .flag').css('color', 'black');
+        $('.language-dropdown .flag').css('color', 'black');
     }
 }
 consoleBG();

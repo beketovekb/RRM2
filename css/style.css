@@ -2162,6 +2162,10 @@ footer .f3 .f3_feed .shop_btn {
   color: #fff;
 }
 
+.language-dropdown .lang .flag::before {
+  background-color: transparent;
+}
+
 .language-dropdown .lang-en .flag {
   color: #fff;
 }
@@ -2169,8 +2173,20 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown .lang-en .flag::before {
   content: 'EN';
   position: relative;
-  top: -8px;
+  top: -10px;
   font-size: 14px;
+  background-color: #d69600;
+  padding: 5px;
+  /* border-radius: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .language-dropdown .lang-ru .flag {
@@ -2180,8 +2196,20 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown .lang-ru .flag::before {
   content: 'RU';
   position: relative;
-  top: -8px;
+  top: -10px;
   font-size: 14px;
+  background-color: #d69600;
+  padding: 5px;
+  /* border-radius: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .language-dropdown .lang-kz .flag {
@@ -2191,8 +2219,20 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown .lang-kz .flag::before {
   content: 'KZ';
   position: relative;
-  top: -8px;
+  top: -10px;
   font-size: 14px;
+  background-color: #d69600;
+  padding: 5px;
+  /* border-radius: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .language-dropdown label, .language-dropdown ul li {

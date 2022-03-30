@@ -1584,6 +1584,11 @@ footer{
             color: #fff;
         }
     }
+    .lang .flag {
+        &::before {
+            background-color: transparent;
+        }
+    }
     .lang-en{
     //   border-left: 4px solid #E2162C;
       .flag{
@@ -1592,8 +1597,14 @@ footer{
         &::before{
             content: 'EN';
             position: relative;
-            top: -8px;
+            top: -10px;
             font-size: 14px;
+            background-color: #d69600;
+            padding: 5px;
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
       }
     }
@@ -1605,8 +1616,14 @@ footer{
         &::before{
             content: 'RU';
             position: relative;
-            top: -8px;
+            top: -10px;
             font-size: 14px;
+            background-color: #d69600;
+            padding: 5px;
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
       }
     }
@@ -1618,8 +1635,14 @@ footer{
         &::before{
             content: 'KZ';
             position: relative;
-            top: -8px;
+            top: -10px;
             font-size: 14px;
+            background-color: #d69600;
+            padding: 5px;
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
       }
     }
