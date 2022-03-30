@@ -15,17 +15,21 @@ switch ($_POST['fun']) {
         set_feedback($link);
         break;
     case 'directionsInfo':
-        if(isset($_POST['r8']))
-    {
-        $redirect_url ="/admin/admin.php?str=directions";
-        if(set_bd(8,9,$link))
-        {
-            header('Location: http://'.$_SERVER['HTTP_HOST'].$redirect_url);
-        }   
-    }
-    break;
+        if (isset($_POST['r8'])) {
+            $redirect_url = "/admin/admin.php?str=directions";
+            if (set_bd(8, 9, $link)) {
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+            }
+        }
+        break;
     case 'editDirection':
         edit_directions($link);
+        break;
+    case 'newProject':
+        new_project($link);
+        break;
+    case 'newEdit':
+        new_edit($link);
         break;
 }
 
@@ -403,6 +407,154 @@ function edit_directions($link)
     {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     }
+    
+}
+
+function generate_string($input, $strength = 16) {
+    $input_length = strlen($input);
+    $random_string = '';
+    for($i = 0; $i < $strength; $i++) {
+        $random_character = $input[mt_rand(0, $input_length - 1)];
+        $random_string .= $random_character;
+    }
+ 
+    return $random_string;
+}
+
+function new_project($link)
+{
+    $pos=$_POST['pos'];
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $id=generate_string($permitted_chars, 16);
+    $redirect_url = "/admin/admin.php?str=newEditions&pos=".$id."&new=1";
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+    $check = can_upload($_FILES['newproj']);
+    $name='';
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['newproj']);
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['type_ru']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
+    $srok=str_replace("'","\'",$_POST['srok_ru']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'ru', '".$type."', '".$opisanie."', '".$srok."')";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $type=str_replace("'","\'",$_POST['btn_en']);
+    $type_proj =str_replace("'","\'",$_POST['type_en']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
+    $srok=str_replace("'","\'",$_POST['srok_en']);
+    $prioritet = $_POST['prioritet_en'];
+    $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'en', '".$type."', '".$opisanie."', '".$srok."')";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $type=str_replace("'","\'",$_POST['btn_kz']);
+    $type_proj =str_replace("'","\'",$_POST['type_kz']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
+    $srok=str_replace("'","\'",$_POST['srok_kz']);
+    $prioritet = $_POST['prioritet_kz'];
+    $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'kz', '".$type."', '".$opisanie."', '".$srok."')";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+    
+}
+
+function new_edit($link)
+{
+    $col=(int)$_POST['kol'];
+    if($col<=4)
+    {
+    $pos=$_POST['pos'];
+    $col = $col+1;
+    $redirect_url = "/admin/admin.php?str=newEditions&pos=".$pos."&new=".(string)$col;
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+    $check = can_upload($_FILES['newedit']);
+    $name='';
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['newedit']);
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
+
+    $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site) VALUES (NULL, '".$pos."', '".$title."', '".$name."', '".$opisanie."', 'ru')";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
+    $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site) VALUES (NULL, '".$pos."', '".$title."', '".$name."', '".$opisanie."', 'ru')";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
+    $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site) VALUES (NULL, '".$pos."', '".$title."', '".$name."', '".$opisanie."', 'ru')";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+    if($col>4)
+    {
+        $redirect_url = "/admin/admin.php?str=newProject";
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+} else
+{
+    $redirect_url = "/admin/admin.php?str=newProject";
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+}
     
 }
 ?>

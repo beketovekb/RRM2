@@ -11,7 +11,7 @@ $lng;
     $projects = get_more_info_project($link, $lng, $id);
     $tit;
     foreach($projects as $project){$tit=$project['Title_project_site'];}
-    $projects_opisanie = get_more_func_info_project($link, $lng, $tit);
+    $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -147,7 +147,7 @@ $lng;
                             <div class="flex">
                             <?php foreach($projects as $project){ ?>
                                 <div class="img_directions">
-                                    <img src="img/dir_img1.png" alt="">
+                                    <img src="<?php print($project["Img_project_site"]); ?>" alt="">
                                 </div>
                                 <div class="content_directions">
                                     <h2><?php print($project["Title_project_site"]); ?></h2>

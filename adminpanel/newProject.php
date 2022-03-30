@@ -1,5 +1,12 @@
 <?php
-echo($_GET['pos']);
+require_once '../include/functions.php';
+require_once '../include/database.php';
+
+$napravlenia = get_napravlenia($link, 'ru');
+$title_ru;
+foreach ($napravlenia as $napravlen) {
+    $title_ru[$napravlen["Position_uslugi_site"]] = $napravlen["Title_uslugi_site"];
+}
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -38,6 +45,16 @@ echo($_GET['pos']);
                     <tbody>
                                 <!--Russian-->
                                 <tr>
+                                    <td>Приоритет</td>
+                                    <td><input type="text" name="prioritet_ru" style="width: 100%;" value=""></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип проекта</td>
+                                    <td><input type="text" name="type_ru" style="width: 100%;" value=""></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_ru" style="width: 100%;" value=""></td>
                                     <td>RU</td>
@@ -56,8 +73,8 @@ echo($_GET['pos']);
                                     <td>Тип направления</td>
                                     <td><select name="btn_ru">
                                             <option disabled>Выберите тип</option>
-                                            <?php for ($i=1; $i<=count($title_ru) ; $i+1) { ?>
-                                                <option value="<?php print($i);?>"><?php print($title_ru[$i]); ?></option>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
+                                                <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
                                             <?php }?>
                                         </select></td>
                                     <td>RU</td>
@@ -72,7 +89,17 @@ echo($_GET['pos']);
                     </thead>
                     <tbody>
 
-                                <!--Russian-->
+                                <!--English-->
+                                <tr>
+                                    <td>Приоритет</td>
+                                    <td><input type="text" name="prioritet_en" style="width: 100%;" value=""></td>
+                                    <td>ENG</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип проекта</td>
+                                    <td><input type="text" name="type_en" style="width: 100%;" value=""></td>
+                                    <td>ENG</td>
+                                </tr>
                                 <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_en" style="width: 100%;" value=""></td>
@@ -92,8 +119,9 @@ echo($_GET['pos']);
                                     <td>Тип направления</td>
                                     <td><select name="btn_en">
                                             <option disabled>Выберите тип</option>
-                                            <option value="GO TO SERVICES">Услуги</option>
-                                            <option value="GO TO PRODUCTS">Продукты</option>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
+                                                <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
+                                            <?php }?>
                                         </select></td>
                                     <td>ENG</td>
                                 </tr>
@@ -106,7 +134,17 @@ echo($_GET['pos']);
                         </tr>
                     </thead>
                     <tbody>
-                                <!--Russian-->
+                                <!--Kazakh-->
+                                <tr>
+                                    <td>Приоритет</td>
+                                    <td><input type="text" name="prioritet_kz" style="width: 100%;" value=""></td>
+                                    <td>KZ</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип проекта</td>
+                                    <td><input type="text" name="type_kz" style="width: 100%;" value=""></td>
+                                    <td>KZ</td>
+                                </tr>
                                 <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_kz" style="width: 100%;" value=""></td>
@@ -126,8 +164,9 @@ echo($_GET['pos']);
                                     <td>Тип направления</td>
                                     <td><select name="btn_kz">
                                             <option disabled>Выберите тип</option>
-                                            <option value="ҚЫЗМЕТТЕРГЕ ӨТУ">Услуги</option>
-                                            <option value="ӨНІМДЕРГЕ ӨТУ">Продукты</option>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
+                                                <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
+                                            <?php }?>
                                         </select></td>
                                     <td>KZ</td>
                                 </tr>

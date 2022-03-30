@@ -137,7 +137,7 @@ function can_upload($file)
     // нас интересует последний элемент массива - расширение
     $mime = strtolower(end($getMime));
     // объявим массив допустимых расширений
-    $types = array('jpg', 'png', 'gif', 'bmp', 'jpeg');
+    $types = array('jpg', 'png', 'svg', 'ico', 'jpeg');
 
     // если расширение не входит в список допустимых - return
     if (!in_array($mime, $types))
