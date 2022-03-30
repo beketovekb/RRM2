@@ -101,7 +101,7 @@ function get_img($link)
 }
 function get_directions($link)
 {
-    $sql = "SELECT * FROM uslugi_site";
+    $sql = "SELECT * FROM uslugi_site ORDER BY Position_uslugi_site";
     
     $result = mysqli_query($link, $sql);
 

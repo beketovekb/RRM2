@@ -120,25 +120,6 @@ $direcrtions = get_directions($link);
                     } ?>
                 </table>
             </div>
-        <div class="recentCustomers">
-            <div class="cardHeader">
-                <h2>Изображение</h2>
-            </div>
-            <table>
-                <tr>
-                <td>
-                        <h4>Изображения</h4>
-                    </td>
-                    <td width="60px">
-                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
-                            <input type="file" name="abo">
-                            <input type="submit" value="Загрузить файл!">
-                        </form>
-
-                    </td>
-                </tr>
-            </table>
-        </div>
     </div>
 
 
