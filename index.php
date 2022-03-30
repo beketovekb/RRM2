@@ -49,6 +49,17 @@ foreach ($img_urls as $img_ur) {
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="stars_window">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+        </div>
+        <div class="logo_block Loader">
+            <img class="preloader_logo_img" src="img/preloader_logo.png" alt="">
+            <h2>Regulus Robotics Machine</h2>
+        </div>
+    </div>
     <header>
         <div class="bg0"></div>
         <div class="bg_gray" style="background-image: url(<?php print($img_url['general']); ?>) !important;">
@@ -162,6 +173,18 @@ foreach ($img_urls as $img_ur) {
                                     <a href="#s9_1">
                                         <li><?php print($ftitle["22"]); ?></li>
                                     </a>
+                                    <div class="language_mobile">
+
+                                        <a href="/?lng=en">
+                                            EN
+                                        </a>
+                                        <a href="/?lng=ru">
+                                            RU
+                                        </a>
+                                        <a href="/?lng=kz">
+                                            KZ
+                                        </a>
+                                    </div>
                                 </ul>
                             </div>
                         </nav>
@@ -191,9 +214,9 @@ foreach ($img_urls as $img_ur) {
                     <?php print($ftitle["5"]); ?>
                 </div>
                 <div class="img_about" style="background: url(<?php print($img_url['about']); ?>); width: 40%;
-    height: auto;
-    background-size: cover;
-    background-position: -250px center;" data-aos="flip-right"></div>
+        height: auto;
+        background-size: cover;
+        background-position: -250px center;" data-aos="flip-right"></div>
             </div>
         </div>
     </section>
@@ -400,5 +423,6 @@ foreach ($img_urls as $img_ur) {
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
+<script type="text/javascript" src="js/preloader.js"></script>
 
 </html>

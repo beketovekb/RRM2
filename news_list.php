@@ -14,6 +14,17 @@
 </head>
 
 <body class="news_body">
+<div class="preloader">
+        <div class="stars_window">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+        </div>
+        <div class="logo_block Loader">
+            <img class="preloader_logo_img" src="img/preloader_logo.png" alt="">
+            <h2>Regulus Robotics Machine</h2>
+        </div>
+    </div>
     <div class="stars_window">
         <div id='stars'></div>
         <div id='stars2'></div>
@@ -373,5 +384,6 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
+<script type="text/javascript" src="js/preloader.js"></script>
 
 </html>
