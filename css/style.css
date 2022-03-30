@@ -2154,26 +2154,51 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown {
   display: inline-block;
   position: relative;
-  height: 30px;
+  height: 10px;
   margin-left: 10px;
 }
 
+.language-dropdown label span {
+  color: #fff;
+}
+
 .language-dropdown .lang-en .flag {
-  background-image: url("../img/eng.png");
+  color: #fff;
+}
+
+.language-dropdown .lang-en .flag::before {
+  content: 'EN';
+  position: relative;
+  top: -8px;
+  font-size: 14px;
 }
 
 .language-dropdown .lang-ru .flag {
-  background-image: url("../img/ru.png");
+  color: #fff;
+}
+
+.language-dropdown .lang-ru .flag::before {
+  content: 'RU';
+  position: relative;
+  top: -8px;
+  font-size: 14px;
 }
 
 .language-dropdown .lang-kz .flag {
-  background-image: url("../img/kz.png");
+  color: #fff;
+}
+
+.language-dropdown .lang-kz .flag::before {
+  content: 'KZ';
+  position: relative;
+  top: -8px;
+  font-size: 14px;
 }
 
 .language-dropdown label, .language-dropdown ul li {
   display: block;
   width: 40px;
-  height: 30px;
+  height: 10px;
   padding: 0px 6px;
   cursor: pointer;
 }
@@ -2768,5 +2793,22 @@ footer .f3 .f3_feed .shop_btn {
             box-shadow: 0 0 0 1.7rem #fff;
     opacity: 1;
   }
+}
+
+.burger a {
+  margin: 5px;
+  margin-top: 20px;
+}
+
+.burger a img {
+  width: 24px;
+}
+
+.language_mobile {
+  margin-bottom: 20px;
+}
+
+.language_mobile a {
+  font-weight: 700;
 }
 /*# sourceMappingURL=style.css.map */

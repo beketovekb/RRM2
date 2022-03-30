@@ -173,6 +173,18 @@ foreach ($img_urls as $img_ur) {
                                     <a href="#s9_1">
                                         <li><?php print($ftitle["22"]); ?></li>
                                     </a>
+                                    <div class="language_mobile">
+
+                                        <a href="/?lng=en">
+                                            EN
+                                        </a>
+                                        <a href="/?lng=ru">
+                                            RU
+                                        </a>
+                                        <a href="/?lng=kz">
+                                            KZ
+                                        </a>
+                                    </div>
                                 </ul>
                             </div>
                         </nav>
