@@ -2,7 +2,7 @@ AOS.init();
 
 $(window).scroll(function() {
     $(".bg_gray").css("top", ($(this).scrollTop() / 15 * 5) + "px");
-    $(".img_fback").css("top", ($(this).scrollTop() / 120 * 5) + "px");
+    // $(".img_fback").css("top", ($(this).scrollTop() / 120 * 5) + "px");
     $(".img_feed").css("top", ($(this).scrollTop() / 100 + 5) + "px");
     $(".robo1").css("bottom", ($(this).scrollTop() / 25 * 5) + "px");
     $(".robo2").css("bottom", ($(this).scrollTop() / 25 * 5) + "px");

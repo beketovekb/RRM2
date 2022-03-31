@@ -509,10 +509,13 @@ header {
     }
     .img_fback {
         position: fixed;
-        object-fit: contain;
-        top: 0px;
+        -o-object-fit: contain;
+        object-fit: cover;
         z-index: -400;
         width: 100%;
+        height: 100%;
+        top: 0;
+    }
         
         @media (max-width:1200px) {
             position: absolute;
@@ -605,7 +608,6 @@ header {
             }
         }
     }
-}
 
 .s3_1 {
     height: auto;
@@ -2140,4 +2142,8 @@ footer{
 
     .mob-preoject{
         display: block !important;
+    }
+
+    .overflow_unset{
+        overflow: unset;
     }

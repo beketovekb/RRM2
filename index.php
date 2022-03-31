@@ -80,7 +80,7 @@ foreach ($img_urls as $img_ur) {
             <img class="robo1" src="<?php print($img_url['generalleft']); ?>" alt="">
             <img class="robo2" src="<?php print($img_url['generalright']); ?>" alt="">
         </div>
-        <div class="header_bg">
+        <div class="header_bg overflow_unset">
             <div class="container">
                 <div class="header_nav">
                     <div class="shadow_up"></div>
