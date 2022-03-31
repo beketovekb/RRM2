@@ -59,25 +59,25 @@ $lng;
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
                             <ul>
-                                <a href="#s1_1">
+                            <a href="index.php?iac=1">
                                     <li>О компании</li>
                                 </a>
-                                <a href="#s3_1">
+                                <a href="index.php?iac=3">
                                     <li>Навправления</li>
                                 </a>
-                                <a href="#s4_1">
+                                <a href="index.php?iac=4">
                                     <li>Проекты</li>
                                 </a>
-                                <a href="#s5_1">
+                                <a href="index.php?iac=5">
                                     <li>Партнеры</li>
                                 </a>
-                                <a href="#s7_1">
+                                <a href="index.php?iac=7">
                                     <li>Новости</li>
                                 </a>
-                                <a href="https://robotprostore.kz/">
+                                <a href="">
                                     <li>Магазин</li>
                                 </a>
-                                <a href="#s9_1">
+                                <a href="index.php?iac=9">
                                     <li>Контакты</li>
                                 </a>
                             </ul>
@@ -127,27 +127,27 @@ $lng;
                                     <div class="burger_line"></div>
                                 </div>
                                 <ul class="none">
-                                    <a href="index.php#s1_1">
-                                        <li>О компании</li>
-                                    </a>
-                                    <a href="index.php#s3_1">
-                                        <li>Навправления</li>
-                                    </a>
-                                    <a href="index.php#s4_1">
-                                        <li>Проекты</li>
-                                    </a>
-                                    <a href="index.php#s5_1">
-                                        <li>Партнеры</li>
-                                    </a>
-                                    <a href="index.php#s7_1">
-                                        <li>Новости</li>
-                                    </a>
-                                    <a href="">
-                                        <li>Магазин</li>
-                                    </a>
-                                    <a href="index.php#s9_1">
-                                        <li>Контакты</li>
-                                    </a>
+                                <a href="index.php?iac=1">
+                                    <li>О компании</li>
+                                </a>
+                                <a href="index.php?iac=3">
+                                    <li>Навправления</li>
+                                </a>
+                                <a href="index.php?iac=4">
+                                    <li>Проекты</li>
+                                </a>
+                                <a href="index.php?iac=5">
+                                    <li>Партнеры</li>
+                                </a>
+                                <a href="index.php?iac=7">
+                                    <li>Новости</li>
+                                </a>
+                                <a href="">
+                                    <li>Магазин</li>
+                                </a>
+                                <a href="index.php?iac=9">
+                                    <li>Контакты</li>
+                                </a>
                                 </ul>
                             </div>
                         </nav>

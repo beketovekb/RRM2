@@ -1,6 +1,20 @@
 <?php
 require_once 'include/database.php';
 require_once 'include/functions.php';
+if(isset($_GET['iac']))
+{
+    $loc;
+    switch($_GET['iac'])
+    {
+        case '1': $loc='#s1_1';break;
+        case '3': $loc='#s3_1';break;
+        case '4': $loc='#s4_1';break;
+        case '5': $loc='#s5_1';break;
+        case '7': $loc='#s7_1';break;
+        case '9': $loc='#s9_1';break;
+    }
+    header('Location: index.php'. $loc);
+}
 
 $lng;
 if (isset($_GET['lng'])) $lng = $_GET['lng'];
