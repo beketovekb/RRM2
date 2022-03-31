@@ -25,6 +25,7 @@ $lng;
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/slider-pro.css"/>
     <title>Regulus Robotics Machine</title>
 </head>
 
@@ -162,42 +163,42 @@ $lng;
                                 </div> -->
 
 
-                                
+
                                 <div class="slider-pro sp-vertical" id="my-slider">
-                                <div class="sp-slides sp-slides-container">
-                                    <!-- Slide 1 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di1.jpg"/>
-                                    </div>
-        
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di2.jpg"/>
-                                    </div>
+                                    <div class="sp-slides sp-slides-container">
+                                        <!-- Slide 1 -->
+                                        <div class="sp-slide">
+                                            <img class="sp-image" src="img/di1.jpg"/>
+                                        </div>
+            
+                                        <!-- Slide 2 -->
+                                        <div class="sp-slide">
+                                            <img class="sp-image" src="img/di2.jpg"/>
+                                        </div>
 
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di3.jpg"/>
-                                    </div>
+                                        <!-- Slide 2 -->
+                                        <div class="sp-slide">
+                                            <img class="sp-image" src="img/di3.jpg"/>
+                                        </div>
 
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di4.jpg"/>
-                                    </div>
+                                        <!-- Slide 2 -->
+                                        <div class="sp-slide">
+                                            <img class="sp-image" src="img/di4.jpg"/>
+                                        </div>
 
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di5.jpg"/>
+                                        <!-- Slide 2 -->
+                                        <div class="sp-slide">
+                                            <img class="sp-image" src="img/di5.jpg"/>
+                                        </div>
+                                    </div>
+                                    <div class="sp-thumbnails sp-thumbnails-container sp-right-thumbnails sp-has-pointer sp-swiping">
+                                        <img class="sp-thumbnail" src="img/di1.jpg" data-src="img/di1.jpg"/>
+                                        <img class="sp-thumbnail" src="img/di2.jpg" data-src="img/di2.jpg"/>
+                                        <img class="sp-thumbnail" src="img/di3.jpg" data-src="img/di3.jpg"/>
+                                        <img class="sp-thumbnail" src="img/di4.jpg" data-src="img/di4.jpg"/>
+                                        <img class="sp-thumbnail" src="img/di5.jpg" data-src="img/di5.jpg"/>
                                     </div>
                                 </div>
-                                <div class="sp-thumbnails sp-thumbnails-container sp-right-thumbnails sp-has-pointer sp-swiping">
-                                    <img class="sp-thumbnail" src="img/di1.jpg" data-src="img/di1.jpg"/>
-                                    <img class="sp-thumbnail" src="img/di2.jpg" data-src="img/di2.jpg"/>
-                                    <img class="sp-thumbnail" src="img/di3.jpg" data-src="img/di3.jpg"/>
-                                    <img class="sp-thumbnail" src="img/di4.jpg" data-src="img/di4.jpg"/>
-                                    <img class="sp-thumbnail" src="img/di5.jpg" data-src="img/di5.jpg"/>
-                                </div>
-                            </div>
 
 
 
@@ -233,5 +234,6 @@ $lng;
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
 <script type="text/javascript" src="js/preloader.js"></script>
+<script src="js/jquery.sliderPro.js"></script>
 
 </html>
