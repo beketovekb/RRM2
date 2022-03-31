@@ -31,6 +31,9 @@ switch ($_POST['fun']) {
     case 'newEdit':
         new_edit($link);
         break;
+    case 'editEdit':
+        edit_edit($link);
+        break;
     case 'editProject':
         edit_projects($link);
         break;
@@ -215,6 +218,29 @@ if (isset($_FILES['newimgproj'])) {
         // загружаем изображение на сервер
         $name = make_upload($_FILES['newimgproj']);
         $sql = "INSERT INTO `img_project` (`id_img_project`, `uk_project_site`, `Url_img_project`) VALUES (NULL, '".$pos."', '".$name."')";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo($pos);
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
+if (isset($_FILES['editEdit'])) {
+    $pos = $_POST['pos'];
+    $dop = $_POST['dop'];
+    $redirect_url = "/admin/admin.php?str=editEditions&pos=".$pos."&dop=".$dop;
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['editEdit']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['editEdit']);
+        $sql = "UPDATE `more_project_site` SET `Img_more_project_site` = '".$name."' WHERE `Title_project_site` = '".$pos."' AND `uk_more_project_site` = '".$dop."'";
         if ($result = mysqli_query($link, $sql)) {
             header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
         } else {
@@ -656,6 +682,53 @@ function edit_projects($link)
     {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     }
+}
+
+function edit_edit($link)
+{
+    $col = (int)$_POST['kol'];
+        $pos = $_POST['pos'];
+        $dop = $_POST['dop'];
+        $col = $col + 1;
+        $redirect_url = "/admin/admin.php?str=editEditions&pos=" . $pos . "&dop=" . (string)$dop;
+        $ru = false;
+        $en = false;
+        $kz = false;
+
+        $title = str_replace("'", "\'", $_POST['title_ru']);
+        $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
+
+        $sql = "UPDATE `more_project_site` SET `Title_more_project_site` = '".$title."', `Opisanie_more_project_site` = '".$opisanie."' WHERE `Title_project_site` = '".$pos."' AND `uk_more_project_site` = '".$dop."' AND `Lng_more_project_site` = 'ru'";
+        if (mysqli_query($link, $sql)) {
+            $ru = true;
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+
+        $title = str_replace("'", "\'", $_POST['title_en']);
+        $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
+        $sql = "UPDATE `more_project_site` SET `Title_more_project_site` = '".$title."', `Opisanie_more_project_site` = '".$opisanie."' WHERE `Title_project_site` = '".$pos."' AND `uk_more_project_site` = '".$dop."' AND `Lng_more_project_site` = 'en'";
+        if (mysqli_query($link, $sql)) {
+            $en = true;
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+
+        $title = str_replace("'", "\'", $_POST['title_kz']);
+        $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
+        $sql = "UPDATE `more_project_site` SET `Title_more_project_site` = '".$title."', `Opisanie_more_project_site` = '".$opisanie."' WHERE `Title_project_site` = '".$pos."' AND `uk_more_project_site` = '".$dop."' AND `Lng_more_project_site` = 'kz'";
+        if (mysqli_query($link, $sql)) {
+            $kz = true;
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+        if ($ru && $en && $kz) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        }
+        
 }
 
 ?>

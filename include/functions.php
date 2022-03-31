@@ -152,6 +152,25 @@ function edit_project($link, $uk)
     return $projects;
 }
 
+function spisok_editions($link, $uk)
+{
+    $sql = "SELECT * FROM `more_project_site` WHERE `Title_project_site` = '".$uk."' AND Lng_more_project_site = 'ru'";
+    $result = mysqli_query($link, $sql);
+
+    $editions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $editions;
+}
+
+function spisok_edition($link, $uk, $dop)
+{
+    $sql = "SELECT * FROM `more_project_site` WHERE `Title_project_site` = '".$uk."' AND uk_more_project_site = '".$dop."'";
+    $result = mysqli_query($link, $sql);
+
+    $editions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $editions;
+}
 
 function can_upload($file)
 {
