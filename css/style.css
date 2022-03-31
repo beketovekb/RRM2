@@ -2863,4 +2863,8 @@ label .flag::before {
 .img_preject img {
   width: 100%;
 }
+
+.mob-preoject {
+  display: block !important;
+}
 /*# sourceMappingURL=style.css.map */
