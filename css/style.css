@@ -879,8 +879,7 @@ header .burger .burger_menu .burger_line {
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: (240px)[2];
       grid-template-rows: repeat(2, 240px);
-      grid-template-areas: "di1 di2 di2 di3"
- "di4 di4 di5 di6";
+      grid-template-areas: "di1 di2 di2 di3" "di4 di4 di5 di6";
   margin-top: 60px;
   position: relative;
 }
@@ -891,8 +890,7 @@ header .burger .burger_menu .burger_line {
         grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: (240px)[2];
         grid-template-rows: repeat(2, 240px);
-        grid-template-areas: "di1 di2 di3"
- "di4 di5 di6";
+        grid-template-areas: "di1 di2 di3" "di4 di5 di6";
   }
 }
 
@@ -902,9 +900,7 @@ header .burger .burger_menu .burger_line {
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: (240px)[3];
         grid-template-rows: repeat(3, 240px);
-        grid-template-areas: "di1 di2"
- "di3 di4 "
- "di5 di6";
+        grid-template-areas: "di1 di2" "di3 di4 " "di5 di6";
   }
 }
 
@@ -914,12 +910,7 @@ header .burger .burger_menu .burger_line {
         grid-template-columns: repeat(1, 1fr);
     -ms-grid-rows: (240px)[6];
         grid-template-rows: repeat(6, 240px);
-        grid-template-areas: "di1"
- "di2"
- "di3"
- "di4"
- "di5"
- "di6";
+        grid-template-areas: "di1" "di2" "di3" "di4" "di5" "di6";
   }
 }
 
@@ -2863,5 +2854,13 @@ footer .f3 .f3_feed .shop_btn {
 
 label .flag::before {
   background-color: transparent !important;
+}
+
+.img_preject {
+  width: 100%;
+}
+
+.img_preject img {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

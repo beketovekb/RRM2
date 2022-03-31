@@ -174,10 +174,11 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                     <div class="container">
                         <div class="flex_center">
                             <div class="flex">
-                                
-                                    <div class="img_directions">
+                                <?php if($col<=0) {?>
+                                <div class="img_preject">
                                     <img src="<?php print($project["Img_project_site"]); ?>" alt="">
                                 </div>
+                                <?php }?>
 
 
                                 <?php if($col>0)
