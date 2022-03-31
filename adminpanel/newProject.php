@@ -31,10 +31,10 @@ foreach ($napravlenia as $napravlen) {
                         <h4>Изображения на главной странице</h4>
                     </td>
                     <td width="60px">
-                        <input type="file" name="newproj">
+                        <input type="file" name="newproj" id="img">
                     </td>
                     <td>
-                        <div class="projects_general_img"></div>
+                        <div class="projects_general_img" id="bac"></div>
                     </td>
                 </tr>
                 </tbody>
@@ -179,7 +179,10 @@ foreach ($napravlenia as $napravlen) {
         </form>
 
     </div>
-
-
-
 </div>
+<script>
+    document.getElementById('img').onchange = function () {
+        alert('Selected file: ' + this.value);
+  document.getElementById('bac').style.backgroundImage="url("+this.value+")"; // specify the image path here
+};
+</script>
