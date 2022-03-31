@@ -12,11 +12,11 @@ $kol= $_GET['new'];
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
                     <h2><?php print($name); ?></h2>
-                    <a href="/admin/admin.php?str=newProject" class="btn">Закончить</a>
+                    <a href="/admin/admin.php?str=spisokProject" class="btn">Закончить</a>
                     <input type="submit" value="Next" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="newEdit">
                     <input type="text" name="kol" style="width: 100%; display: none; " value="<?php print($kol);?>">
-                    <input type="text" name="pos" style="width: 100%;  " value="<?php print($id);?>">
+                    <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($id);?>">
                 </div>
                 <table>
                 <thead>
