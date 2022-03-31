@@ -175,12 +175,13 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                         <div class="flex_center">
                             <div class="flex">
                                 
-                                    <!-- <div class="img_directions">
+                                    <div class="img_directions">
                                     <img src="<?php print($project["Img_project_site"]); ?>" alt="">
-                                </div> -->
+                                </div>
 
 
-                                
+                                <?php if($col>0)
+                                {?>
                                     <div class="slider-pro sp-vertical" id="my-slider">
                                         <div class="sp-slides sp-slides-container">
                                             <!-- Slide 1 -->
@@ -199,6 +200,7 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                                         </div>
                                         
                                     </div>
+                                <?php }?>
                                     
 
 
@@ -235,6 +237,6 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
 <script type="text/javascript" src="js/preloader.js"></script>
-<?php {print("<script src=\"js/jquery.sliderPro.js\"></script>");}?>
+<?php if ($col>0){print("<script src=\"js/jquery.sliderPro.js\"></script>");}?>
 
 </html>
