@@ -2162,10 +2162,6 @@ footer .f3 .f3_feed .shop_btn {
   color: #fff;
 }
 
-.language-dropdown .lang .flag::before {
-  background-color: transparent;
-}
-
 .language-dropdown .lang-en .flag {
   color: #fff;
 }
@@ -2175,7 +2171,7 @@ footer .f3 .f3_feed .shop_btn {
   position: relative;
   top: -10px;
   font-size: 14px;
-  background-color: #d69600;
+  background-color: #fff;
   padding: 5px;
   /* border-radius: 100%; */
   display: -webkit-box;
@@ -2198,7 +2194,7 @@ footer .f3 .f3_feed .shop_btn {
   position: relative;
   top: -10px;
   font-size: 14px;
-  background-color: #d69600;
+  background-color: #fff;
   padding: 5px;
   /* border-radius: 100%; */
   display: -webkit-box;
@@ -2221,7 +2217,7 @@ footer .f3 .f3_feed .shop_btn {
   position: relative;
   top: -10px;
   font-size: 14px;
-  background-color: #d69600;
+  background-color: #fff;
   padding: 5px;
   /* border-radius: 100%; */
   display: -webkit-box;
@@ -2238,7 +2234,7 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown label, .language-dropdown ul li {
   display: block;
   width: 40px;
-  height: 10px;
+  height: 7px;
   padding: 0px 6px;
   cursor: pointer;
 }
@@ -2248,6 +2244,10 @@ footer .f3 .f3_feed .shop_btn {
   visibility: hidden;
   opacity: 0;
   z-index: 1;
+}
+
+.language-dropdown ul.lang-list .lang a {
+  font-weight: 400 !important;
 }
 
 .language-dropdown ul.lang-list li:last-child {
@@ -2850,5 +2850,9 @@ footer .f3 .f3_feed .shop_btn {
 
 .language_mobile a {
   font-weight: 700;
+}
+
+label .flag::before {
+  background-color: transparent !important;
 }
 /*# sourceMappingURL=style.css.map */
