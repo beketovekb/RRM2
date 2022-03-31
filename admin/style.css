@@ -630,3 +630,12 @@ width: 75%;
     font-weight: 500;
     font-size: 14px;
   }
+
+  
+  .projects_general_img {
+    background-image: url('../img/di1.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+  }

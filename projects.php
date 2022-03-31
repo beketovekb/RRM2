@@ -157,9 +157,51 @@ $lng;
                         <div class="flex_center">
                             <div class="flex">
                             <?php foreach($projects as $project){ ?>
-                                <div class="img_directions">
+                                <!-- <div class="img_directions">
                                     <img src="<?php print($project["Img_project_site"]); ?>" alt="">
+                                </div> -->
+
+
+                                
+                                <div class="slider-pro sp-vertical" id="my-slider">
+                                <div class="sp-slides sp-slides-container">
+                                    <!-- Slide 1 -->
+                                    <div class="sp-slide">
+                                        <img class="sp-image" src="img/di1.jpg"/>
+                                    </div>
+        
+                                    <!-- Slide 2 -->
+                                    <div class="sp-slide">
+                                        <img class="sp-image" src="img/di2.jpg"/>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="sp-slide">
+                                        <img class="sp-image" src="img/di3.jpg"/>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="sp-slide">
+                                        <img class="sp-image" src="img/di4.jpg"/>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="sp-slide">
+                                        <img class="sp-image" src="img/di5.jpg"/>
+                                    </div>
                                 </div>
+                                <div class="sp-thumbnails sp-thumbnails-container sp-right-thumbnails sp-has-pointer sp-swiping">
+                                    <img class="sp-thumbnail" src="img/di1.jpg" data-src="img/di1.jpg"/>
+                                    <img class="sp-thumbnail" src="img/di2.jpg" data-src="img/di2.jpg"/>
+                                    <img class="sp-thumbnail" src="img/di3.jpg" data-src="img/di3.jpg"/>
+                                    <img class="sp-thumbnail" src="img/di4.jpg" data-src="img/di4.jpg"/>
+                                    <img class="sp-thumbnail" src="img/di5.jpg" data-src="img/di5.jpg"/>
+                                </div>
+                            </div>
+
+
+
+
                                 <div class="content_directions">
                                     <h2><?php print($project["Title_project_site"]); ?></h2>
                                     <p><?php print($project["Opisanie_project_site"]); ?></p>

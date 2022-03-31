@@ -31,7 +31,10 @@ foreach ($napravlenia as $napravlen) {
                         <h4>Изображения на главной странице</h4>
                     </td>
                     <td width="60px">
-                            <input type="file" name="newproj">
+                        <input type="file" name="newproj">
+                    </td>
+                    <td>
+                        <div class="projects_general_img"></div>
                     </td>
                 </tr>
                 </tbody>
