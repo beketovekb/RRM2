@@ -1584,6 +1584,7 @@ footer{
             color: #fff;
         }
     }
+
     .lang-en{
     //   border-left: 4px solid #E2162C;
       .flag{
@@ -1592,8 +1593,15 @@ footer{
         &::before{
             content: 'EN';
             position: relative;
-            top: -8px;
+            top: -10px;
             font-size: 14px;
+            background-color: #fff;
+            padding: 5px;
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // box-shadow: 0 5px 5px #00000063;
         }
       }
     }
@@ -1605,8 +1613,15 @@ footer{
         &::before{
             content: 'RU';
             position: relative;
-            top: -8px;
+            top: -10px;
             font-size: 14px;
+            background-color: #fff;
+            padding: 5px;
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // box-shadow: 0 5px 5px #00000063;
         }
       }
     }
@@ -1618,15 +1633,22 @@ footer{
         &::before{
             content: 'KZ';
             position: relative;
-            top: -8px;
+            top: -10px;
             font-size: 14px;
+            background-color: #fff;
+            padding: 5px;
+            /* border-radius: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // box-shadow: 0 5px 5px #00000063;
         }
       }
     }
     label, ul li{
       display: block;
       width: 40px;
-      height: 10px;
+      height: 7px;
     //   background: #fff;
       padding: 0px 6px;
       cursor: pointer;
@@ -1636,6 +1658,9 @@ footer{
       visibility: hidden;
       opacity: 0;
       z-index: 1;
+      .lang a{
+          font-weight: 400 !important;
+      }
       li{
         // border-bottom: 1px solid #ECECEC;
         &:last-child{
@@ -2098,4 +2123,10 @@ footer{
         a{
             font-weight: 700;
         }
+    }
+
+
+
+    label .flag::before {
+        background-color: transparent !important;
     }

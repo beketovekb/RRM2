@@ -2169,8 +2169,20 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown .lang-en .flag::before {
   content: 'EN';
   position: relative;
-  top: -8px;
+  top: -10px;
   font-size: 14px;
+  background-color: #fff;
+  padding: 5px;
+  /* border-radius: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .language-dropdown .lang-ru .flag {
@@ -2180,8 +2192,20 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown .lang-ru .flag::before {
   content: 'RU';
   position: relative;
-  top: -8px;
+  top: -10px;
   font-size: 14px;
+  background-color: #fff;
+  padding: 5px;
+  /* border-radius: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .language-dropdown .lang-kz .flag {
@@ -2191,14 +2215,26 @@ footer .f3 .f3_feed .shop_btn {
 .language-dropdown .lang-kz .flag::before {
   content: 'KZ';
   position: relative;
-  top: -8px;
+  top: -10px;
   font-size: 14px;
+  background-color: #fff;
+  padding: 5px;
+  /* border-radius: 100%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .language-dropdown label, .language-dropdown ul li {
   display: block;
   width: 40px;
-  height: 10px;
+  height: 7px;
   padding: 0px 6px;
   cursor: pointer;
 }
@@ -2208,6 +2244,10 @@ footer .f3 .f3_feed .shop_btn {
   visibility: hidden;
   opacity: 0;
   z-index: 1;
+}
+
+.language-dropdown ul.lang-list .lang a {
+  font-weight: 400 !important;
 }
 
 .language-dropdown ul.lang-list li:last-child {
@@ -2810,5 +2850,9 @@ footer .f3 .f3_feed .shop_btn {
 
 .language_mobile a {
   font-weight: 700;
+}
+
+label .flag::before {
+  background-color: transparent !important;
 }
 /*# sourceMappingURL=style.css.map */

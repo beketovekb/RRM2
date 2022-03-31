@@ -20,14 +20,22 @@ function consoleBG() {
         $('.logo_color').css('opacity', '0');
         $('header .soc path').css('fill', 'white');
         $('.burger_line').css('background-color', 'white');
+        $('.lang-ru .flag').css('color', 'white');
+        $('.language-dropdown .flag').css('color', 'white');
+        $('.lang-list .flag').css('color', 'black');
+        $('.lang-list .flag').css('box-shadow', '0 5px 5px #00000063');
     } else {
         $('.header_nav').css('background-color', 'white');
         $('.shadow_up').css('background', 'transparent');
-        $('header nav ul a').css('color', 'black');
+        $('header nav ul a').css('color', '#1f1f1f');
         $('.logo_light').css('opacity', '0');
         $('.logo_color').css('opacity', '1');
         $('header .soc path').css('fill', '#1e1e1e');
-        $('.burger_line').css('background-color', 'black');
+        $('.burger_line').css('background-color', '#1f1f1f');
+        $('.lang-ru .flag').css('color', '#1f1f1f');
+        $('.language-dropdown .flag').css('color', '#1f1f1f');
+        $('.lang-list .flag').css('color', 'black');
+        $('.lang-list .flag').css('box-shadow', '0 5px 5px #00000063');
     }
 }
 consoleBG();
