@@ -66,6 +66,17 @@ function get_more_project($link, $lng, $id)
     return $projects;
 }
 
+function get_all_projects($link)
+{
+    $sql = "SELECT * FROM project_site WHERE Lng_project_site = 'ru'";
+
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+
 
 function get_more_info_project($link, $lng, $id)
 {

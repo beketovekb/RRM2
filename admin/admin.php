@@ -74,6 +74,12 @@
                         <span class="title">Добавить новый проект</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/admin/admin.php?str=spisokProject">
+                        <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+                        <span class="title">Список проектов</span>
+                    </a>
+                </li>
             </ul>
         </div>
 
