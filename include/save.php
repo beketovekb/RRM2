@@ -31,6 +31,9 @@ switch ($_POST['fun']) {
     case 'newEdit':
         new_edit($link);
         break;
+    case 'editProject':
+        edit_projects($link);
+        break;
 }
 
 if (isset($_FILES['gene'])) {
@@ -122,6 +125,26 @@ if (isset($_FILES['fed'])) {
         // загружаем изображение на сервер
         $name = make_upload($_FILES['fed']);
         $sql = "UPDATE img_site SET Url_img_site = '" . $name . "' WHERE Name_img_site = 'feedback';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
+if (isset($_FILES['editProj'])) {
+    $redirect_url = "/admin/admin.php?str=editProject&pos=".$_POST['pos'];
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['editProj']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['editProj']);
+        $sql = "UPDATE project_site SET Img_project_site = '".$name."' WHERE uk_project_site = '".$_POST['pos']."';";
         if ($result = mysqli_query($link, $sql)) {
             header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
         } else {
@@ -579,4 +602,60 @@ function new_edit($link)
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     }
 }
+
+function edit_projects($link)
+{
+    $pos=$_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editProject&pos=".$pos;
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['type_ru']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
+    $srok=str_replace("'","\'",$_POST['srok_ru']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'ru'";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $type=str_replace("'","\'",$_POST['btn_en']);
+    $type_proj =str_replace("'","\'",$_POST['type_en']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
+    $srok=str_replace("'","\'",$_POST['srok_en']);
+    $prioritet = $_POST['prioritet_en'];
+    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'en'";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $type=str_replace("'","\'",$_POST['btn_kz']);
+    $type_proj =str_replace("'","\'",$_POST['type_kz']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
+    $srok=str_replace("'","\'",$_POST['srok_kz']);
+    $prioritet = $_POST['prioritet_kz'];
+    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'kz'";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+}
+
 ?>

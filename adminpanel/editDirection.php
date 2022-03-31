@@ -5,6 +5,7 @@ $pos = $_GET['pos'];
 $directions = get_direction($link, $pos);
 $name;
 foreach ($directions as $direction) {
+    if($direction['Lng_uslugi_site']==='ru')
     $name = $direction['Title_uslugi_site'];
 }
 ?>

@@ -1,34 +1,50 @@
 <?php
-$titles = get_titles_admin($link);
-$ftitler;
-$ftitlee;
-$ftitlek;
-foreach ($titles as $title) {
-    switch ($title["Lng_title"]) {
-        case 'ru':
-            $ftitler[$title["Number"]] = $title["Text"];
-            break;
-        case 'en':
-            $ftitlee[$title["Number"]] = $title["Text"];
-            break;
-        case 'kz':
-            $ftitlek[$title["Number"]] = $title["Text"];
-            break;
-    }
+require_once '../include/functions.php';
+require_once '../include/database.php';
+
+$napravlenia = get_napravlenia($link, 'ru');
+$title_ru;
+foreach ($napravlenia as $napravlen) {
+    $title_ru[$napravlen["Position_uslugi_site"]] = $napravlen["Title_uslugi_site"];
 }
-$direcrtions = get_directions($link);
+
+$pos = $_GET['pos'];
+$projects = edit_project($link,$pos);
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
     <div class="details">
-        <form action="../include/save.php" method="POST">
+    <div class="recentCustomers">
+            <div class="cardHeader">
+                <h2>Изображение</h2>
+            </div>
+            <table>
+                <tr>
+                <td>
+                        <h4>Изображение на <br> главной странице</h4>
+                    </td>
+                    <td width="60px">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="editProj">
+                            <input type="submit" value="Загрузить файл!">
+                            <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <form action="../include/save.php" method="POST" enctype="multipart/form-data">
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
-                    <h2>Направления</h2>
+                    <h2><?php print($name); ?></h2>
                     <input type="submit" value="Сохранить" class="btn" />
-                    <input type="text" name="fun" style="width: 100%; display: none; " value="directionsInfo">
+                    <input type="text" name="fun" style="width: 100%; display: none; " value="editProject">
+                    <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
                 </div>
+                
                 <table>
+                <?php foreach($projects as $project) { ?>
+                <?php if($project['Lng_project_site']==='ru'){ ?>
                     <thead>
                         <tr>
                             <td>Название</td>
@@ -37,18 +53,47 @@ $direcrtions = get_directions($link);
                         </tr>
                     </thead>
                     <tbody>
-                        <!--Russian-->
-                        <tr>
-                            <td>Заголовок</td>
-                            <td><input type="text" name="r8" style="width: 100%;" value="<?php print($ftitler['8']); ?>"></td>
-                            <td>RU</td>
-                        </tr>
-                        <tr>
-                            <td>Описание</td>
-                            <td><textarea name="r9" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitler['9']); ?></textarea></td>
-                            <td>RU</td>
-                        </tr>
+                                <!--Russian-->
+                                
+                                <tr>
+                                    <td>Приоритет</td>
+                                    <td><input type="text" name="prioritet_ru" style="width: 100%;" value="<?php print($project['Prioritet_project_site']);?>"></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип проекта</td>
+                                    <td><input type="text" name="type_ru" style="width: 100%;" value="<?php print($project['Type_project_site']);?>"></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Заголовок</td>
+                                    <td><input type="text" name="title_ru" style="width: 100%;" value="<?php print($project['Title_project_site']);?>"></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Описание</td>
+                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print($project['Opisanie_project_site']);?></textarea></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Под описанием</td>
+                                    <td><input type="text" name="srok_ru" style="width: 100%;" value="<?php print($project['Srok_project_site']);?>"></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип направления</td>
+                                    <td><select name="btn_ru">
+                                            <option disabled>Выберите тип</option>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
+                                                <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
+                                            <?php }?>
+                                        </select></td>
+                                    <td>RU</td>
+                                </tr>
+                                
                     </tbody>
+                    <?php }?>
+                    <?php if($project['Lng_project_site']==='en'){ ?>
                     <thead>
                         <tr>
                             <td>Название</td>
@@ -57,71 +102,98 @@ $direcrtions = get_directions($link);
                         </tr>
                     </thead>
                     <tbody>
-                        <!--Englis-->
-                        <tr>
-                            <td>Заголовок</td>
-                            <td><input type="text" name="e8" style="width: 100%;" value="<?php print($ftitlee['8']); ?>"></td>
-                            <td>ENG</td>
-                        </tr>
-                        <tr>
-                            <td>Описание</td>
-                            <td><textarea name="e9" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitlee['9']); ?></textarea></td>
-                            <td>ENG</td>
-                        </tr>
-                        </tbody>
-                    <thead>
-                        <tr>
-                            <td>Название</td>
-                            <td>Текст</td>
-                            <td>Язык</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Kazakh-->
-                        <tr>
-                            <td>Заголовок</td>
-                            <td><input type="text" name="k8" style="width: 100%;" value="<?php print($ftitlek['8']); ?>"></td>
-                            <td>KZ</td>
-                        </tr>
-                        <tr>
-                            <td>Описание</td>
-                            <td><textarea name="k9" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitlek['9']); ?></textarea></td>
-                            <td>KZ</td>
-                        </tr>
+                        
+                                <!--English-->
+                                <tr>
+                                    <td>Приоритет</td>
+                                    <td><input type="text" name="prioritet_en" style="width: 100%;" value="<?php print($project['Prioritet_project_site']);?>"></td>
+                                    <td>ENG</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип проекта</td>
+                                    <td><input type="text" name="type_en" style="width: 100%;" value="<?php print($project['Type_project_site']);?>"></td>
+                                    <td>ENG</td>
+                                </tr>
+                                <tr>
+                                    <td>Заголовок</td>
+                                    <td><input type="text" name="title_en" style="width: 100%;" value="<?php print($project['Title_project_site']);?>"></td>
+                                    <td>ENG</td>
+                                </tr>
+                                <tr>
+                                    <td>Описание</td>
+                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print($project['Opisanie_project_site']);?></textarea></td>
+                                    <td>ENG</td>
+                                </tr>
+                                <tr>
+                                    <td>Под описанием</td>
+                                    <td><input type="text" name="srok_en" style="width: 100%;" value="<?php print($project['Srok_project_site']);?>"></td>
+                                    <td>ENG</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип направления</td>
+                                    <td><select name="btn_en">
+                                            <option disabled>Выберите тип</option>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
+                                                <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
+                                            <?php }?>
+                                        </select></td>
+                                    <td>ENG</td>
+                                </tr>
+                            
                     </tbody>
+                    <?php }?>
+                    <?php if($project['Lng_project_site']==='kz'){ ?>
+                    <thead>
+                        <tr>
+                            <td>Название</td>
+                            <td>Текст</td>
+                            <td>Язык</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                                <!--Kazakh-->
+                                <tr>
+                                    <td>Приоритет</td>
+                                    <td><input type="text" name="prioritet_kz" style="width: 100%;" value="<?php print($project['Prioritet_project_site']);?>"></td>
+                                    <td>KZ</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип проекта</td>
+                                    <td><input type="text" name="type_kz" style="width: 100%;" value="<?php print($project['Type_project_site']);?>"></td>
+                                    <td>KZ</td>
+                                </tr>
+                                <tr>
+                                    <td>Заголовок</td>
+                                    <td><input type="text" name="title_kz" style="width: 100%;" value="<?php print($project['Title_project_site']);?>"></td>
+                                    <td>KZ</td>
+                                </tr>
+                                <tr>
+                                    <td>Описание</td>
+                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print($project['Opisanie_project_site']);?></textarea></td>
+                                    <td>KZ</td>
+                                </tr>
+                                <tr>
+                                    <td>Под описанием</td>
+                                    <td><input type="text" name="srok_kz" style="width: 100%;" value="<?php print($project['Srok_project_site']);?>"></td>
+                                    <td>KZ</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип направления</td>
+                                    <td><select name="btn_kz">
+                                            <option disabled>Выберите тип</option>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
+                                                <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
+                                            <?php }?>
+                                        </select></td>
+                                    <td>KZ</td>
+                                </tr>
+                    </tbody>
+                    <?php }?>
+                    <?php }?>
                 </table>
+                
             </div>
         </form>
-            <div class="recentOrders aboutOrders">
-                <div class="cardHeader">
-                    <h2>Направления</h2>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Название</td>
-                            <td>Описание</td>
-                            <td>Позиция</td>
-                            <td>Кнопка</td>
-                        </tr>
-                    </thead>
-                    <?php foreach($direcrtions as $direcrtion) {
-                        if($direcrtion['Lng_uslugi_site']==='ru'){ ?>
-                    <tbody>
-                        <!--Russian-->
-                        <tr>
-                            <td><?php print($direcrtion['Title_uslugi_site']);?></td>
-                            <td><?php if(strlen($direcrtion['Opisanie_uslugi_site'])>=60){print(substr($direcrtion['Opisanie_uslugi_site'], 0, 60)."...");} else {print($direcrtion['Opisanie_uslugi_site']);}?></td>
-                            <td><?php print($direcrtion['Position_uslugi_site']);?></td>
-                            <td><a href="/admin/admin.php?str=editDirection&pos=<?php print($direcrtion['Position_uslugi_site']);?>" class="btn">Редактировать</a></td>
-                        </tr>
-                    </tbody>
-                    <?php }
-                    } ?>
-                </table>
-            </div>
+
     </div>
-
-
-
 </div>

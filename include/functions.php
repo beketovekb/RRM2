@@ -142,6 +142,16 @@ function get_img_project($link, $uk)
     return $urls;
 }
 
+function edit_project($link, $uk)
+{
+    $sql = "SELECT * FROM project_site WHERE uk_project_site = '".$uk."'";
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+
 
 function can_upload($file)
 {

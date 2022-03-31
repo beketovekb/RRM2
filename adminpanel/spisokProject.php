@@ -21,7 +21,7 @@ $projects = get_all_projects($link);
                         <!--Russian-->
                         <tr>
                             <td><?php print($direcrtion['Title_project_site']);?></td>
-                            <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(substr($direcrtion['Opisanie_project_site'], 0, 60)."...");} else {print($direcrtion['Opisanie_uslugi_site']);}?></td>
+                            <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(substr($direcrtion['Opisanie_project_site'], 0, 60)."...");} else {print($direcrtion['Opisanie_project_site']);}?></td>
                             <td><a href="/admin/admin.php?str=editProject&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Редактировать</a></td>
                         </tr>
                     </tbody>
