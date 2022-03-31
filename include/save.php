@@ -230,6 +230,28 @@ if (isset($_FILES['newimgproj'])) {
         echo "<strong>$check</strong>";
     }
 }
+if (isset($_FILES['addimgproj'])) {
+    $pos = $_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editProject&pos=".$pos;
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['addimgproj']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['addimgproj']);
+        $sql = "INSERT INTO `img_project` (`id_img_project`, `uk_project_site`, `Url_img_project`) VALUES (NULL, '".$pos."', '".$name."')";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo($pos);
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
 if (isset($_FILES['editEdit'])) {
     $pos = $_POST['pos'];
     $dop = $_POST['dop'];

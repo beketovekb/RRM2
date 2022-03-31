@@ -11,6 +11,7 @@ foreach ($napravlenia as $napravlen) {
 $pos = $_GET['pos'];
 $projects = edit_project($link, $pos);
 $editions = spisok_editions($link, $pos);
+$imgs = get_img_project($link, $pos);
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -214,6 +215,31 @@ $editions = spisok_editions($link, $pos);
 
             </div>
         </form>
+        <div class="recentCustomers">
+            <div class="cardHeader">
+                <h2>Дополнительные изображения</h2>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <h4>Добавить изображение</h4>
+                    </td>
+                    <td width="60px">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="addimgproj">
+                            <input type="submit" value="Загрузить файл!">
+                            <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
+                        </form>
+                    </td>
+                </tr>
+                <?php foreach ($imgs as $img) { ?>
+                    <tr>
+                        <td><div style="background: url(<?php print($img['Url_img_project']); ?>) 100% 100% no-repeat; background-size: cover; width: 100px; height: 100px;"></div></td>
+                        <td><a href="../include/delete.php?type=imgproj&pos=<?php print($img['uk_project_site']);?>&ig=<?php print($img['Url_img_project']);?>" class="btn">Удалить</a></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
 
     </div>
 </div>
