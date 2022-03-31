@@ -183,7 +183,7 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 
                                 <?php if($col>0)
                                 {?>
-                                    <div class="slider-pro sp-vertical" id="my-slider">
+                                    <div class="slider-pro sp-vertical mob-preoject" id="my-slider">
                                         <div class="sp-slides sp-slides-container">
                                             <!-- Slide 1 -->
                                             <?php for ($i=0; $i<=$col; $i++) { ?> 
