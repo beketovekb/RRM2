@@ -10,8 +10,17 @@ $lng = strtoupper($lng);
 $id = $_GET['id'];
 $projects = get_more_info_project($link, $lng, $id);
 $tit;
+$ur;
 foreach ($projects as $project) {
     $tit = $project['Title_project_site'];
+    $ur[0]=$project["Img_project_site"];
+}
+$urls = get_img_project($link,$id);
+$col=0;
+foreach($urls as $url)
+{
+    $col++;
+    $ur[$col]= $url['Url_img_project'];
 }
 $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 ?>
@@ -165,52 +174,36 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                     <div class="container">
                         <div class="flex_center">
                             <div class="flex">
-                                <?php foreach ($projects as $project) { ?>
+                                
                                     <!-- <div class="img_directions">
                                     <img src="<?php print($project["Img_project_site"]); ?>" alt="">
                                 </div> -->
 
 
-
+                                
                                     <div class="slider-pro sp-vertical" id="my-slider">
                                         <div class="sp-slides sp-slides-container">
                                             <!-- Slide 1 -->
+                                            <?php for ($i=0; $i<=$col; $i++) { ?> 
                                             <div class="sp-slide">
-                                                <img class="sp-image" src="img/di1.jpg" />
+                                                <img class="sp-image" src="<?php print($ur[$i]);?>" />
                                             </div>
+                                            <? } ?>
 
-                                            <!-- Slide 2 -->
-                                            <div class="sp-slide">
-                                                <img class="sp-image" src="img/di2.jpg" />
-                                            </div>
-
-                                            <!-- Slide 2 -->
-                                            <div class="sp-slide">
-                                                <img class="sp-image" src="img/di3.jpg" />
-                                            </div>
-
-                                            <!-- Slide 2 -->
-                                            <div class="sp-slide">
-                                                <img class="sp-image" src="img/di4.jpg" />
-                                            </div>
-
-                                            <!-- Slide 2 -->
-                                            <div class="sp-slide">
-                                                <img class="sp-image" src="img/di5.jpg" />
-                                            </div>
                                         </div>
+                                        
                                         <div class="sp-thumbnails sp-thumbnails-container sp-right-thumbnails sp-has-pointer sp-swiping">
-                                            <img class="sp-thumbnail" src="img/di1.jpg" data-src="img/di1.jpg" />
-                                            <img class="sp-thumbnail" src="img/di2.jpg" data-src="img/di2.jpg" />
-                                            <img class="sp-thumbnail" src="img/di3.jpg" data-src="img/di3.jpg" />
-                                            <img class="sp-thumbnail" src="img/di4.jpg" data-src="img/di4.jpg" />
-                                            <img class="sp-thumbnail" src="img/di5.jpg" data-src="img/di5.jpg" />
+                                        <?php for ($i=0; $i<=$col; $i++) { ?> 
+                                            <img class="sp-thumbnail" src="<?php print($ur[$i]);?>" data-src="<?php print($ur[$i]);?>" />
+                                            <? } ?>
                                         </div>
+                                        
                                     </div>
+                                    
 
 
 
-
+                                    <?php foreach($projects as $project) { ?>
                                     <div class="content_directions">
                                         <h2><?php print($project["Title_project_site"]); ?></h2>
                                         <p><?php print($project["Opisanie_project_site"]); ?></p>
@@ -242,6 +235,6 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
 <script type="text/javascript" src="js/preloader.js"></script>
-<script src="js/jquery.sliderPro.js"></script>
+<?php {print("<script src=\"js/jquery.sliderPro.js\"></script>");}?>
 
 </html>

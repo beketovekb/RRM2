@@ -131,6 +131,17 @@ function get_direction($link, $pos)
     return $directions;
 }
 
+function get_img_project($link, $uk)
+{
+    $sql = "SELECT * FROM img_project WHERE  uk_project_site = '".$uk."'";
+    
+    $result = mysqli_query($link, $sql);
+
+    $urls = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $urls;
+}
+
 
 function can_upload($file)
 {
