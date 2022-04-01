@@ -1,4 +1,8 @@
-AOS.init();
+var URL = window.location.pathname;
+if(URL=='index.php')
+{
+  AOS.init();
+}
 
 $(window).scroll(function() {
     $(".bg_gray").css("top", ($(this).scrollTop() / 15 * 5) + "px");
