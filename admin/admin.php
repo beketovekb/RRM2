@@ -87,6 +87,18 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/admin/admin.php?str=listpartner">
+                        <span class="icon"><ion-icon name="duplicate-outline"></ion-icon></span>
+                        <span class="title">Добавить новости</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/admin.php?str=listpartner">
+                        <span class="icon"><ion-icon name="file-tray-stacked-outline"></ion-icon></span>
+                        <span class="title">Список новостей</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/admin/admin.php?str=footer">
                         <span class="icon"><ion-icon name="at-outline"></ion-icon></span>
                         <span class="title">Контакты</span>
