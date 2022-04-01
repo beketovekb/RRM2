@@ -809,11 +809,23 @@ function new_news($link)
     $ru = false;
     $en = false;
     $kz = false;
+    $date = $_POST['date'];
+
+    $check = can_upload($_FILES['newnews']);
+    $name='';
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['newnews']);
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
 
     $title = str_replace("'", "\'", $_POST['title_ru']);
     $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
+    $napravlenia = str_replace("'", "\'", $_POST['napravlenia_ru']);
 
-    /*$sql = "UPDATE `more_project_site` SET `Title_more_project_site` = '" . $title . "', `Opisanie_more_project_site` = '" . $opisanie . "' WHERE `Title_project_site` = '" . $pos . "' AND `uk_more_project_site` = '" . $dop . "' AND `Lng_more_project_site` = 'ru'";
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'ru')";
     if (mysqli_query($link, $sql)) {
         $ru = true;
     } else {
@@ -821,8 +833,34 @@ function new_news($link)
         echo "Ошибка: " . mysqli_error($link);
     }
 
+    //English
+    $title = str_replace("'", "\'", $_POST['title_en']);
+    $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
+    $napravlenia = str_replace("'", "\'", $_POST['napravlenia_en']);
+
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'en')";
+    if (mysqli_query($link, $sql)) {
+        $en = true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    //Kazakh
+    $title = str_replace("'", "\'", $_POST['title_kz']);
+    $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
+    $napravlenia = str_replace("'", "\'", $_POST['napravlenia_kz']);
+
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'kz')";
+    if (mysqli_query($link, $sql)) {
+        $kz = true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
     if ($ru && $en && $kz) {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
-    }*/
+    }
 }
 ?>
