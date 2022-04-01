@@ -87,7 +87,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/admin.php?str=listpartner">
+                    <a href="/admin/admin.php?str=newNews">
                         <span class="icon"><ion-icon name="duplicate-outline"></ion-icon></span>
                         <span class="title">Добавить новости</span>
                     </a>
