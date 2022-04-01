@@ -14,7 +14,7 @@ foreach ($napravlenia as $napravlen) {
         <form action="../include/save.php" method="POST" enctype="multipart/form-data">
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
-                    <h2><?php print($name); ?></h2>
+                    <h2>Новый проект</h2>
                     <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="newProject">
                 </div>

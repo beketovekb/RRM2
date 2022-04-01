@@ -80,6 +80,18 @@
                         <span class="title">Список проектов</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/admin/admin.php?str=listpartner">
+                        <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
+                        <span class="title">Партнеры</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/admin.php?str=footer">
+                        <span class="icon"><ion-icon name="at-outline"></ion-icon></span>
+                        <span class="title">Контакты</span>
+                    </a>
+                </li>
             </ul>
         </div>
 

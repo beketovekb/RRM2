@@ -22,6 +22,30 @@ switch ($_POST['fun']) {
             }
         }
         break;
+    case 'partners':
+        if (isset($_POST['r12'])) {
+            $redirect_url = "/admin/admin.php?str=listpartner";
+            if (set_bd(12, 13, $link)) {
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+            }
+        }
+        break;
+    case 'textproj':
+        if (isset($_POST['r10'])) {
+            $redirect_url = "/admin/admin.php?str=spisokProject";
+            if (set_bd(10, 11, $link)) {
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+            }
+        }
+        break;
+    case 'footer':
+        if (isset($_POST['r32'])) {
+            $redirect_url = "/admin/admin.php?str=footer";
+            if (set_bd(32, 39, $link)) {
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+            }
+        }
+        break;
     case 'editDirection':
         edit_directions($link);
         break;
@@ -263,6 +287,27 @@ if (isset($_FILES['editEdit'])) {
         // загружаем изображение на сервер
         $name = make_upload($_FILES['editEdit']);
         $sql = "UPDATE `more_project_site` SET `Img_more_project_site` = '".$name."' WHERE `Title_project_site` = '".$pos."' AND `uk_more_project_site` = '".$dop."'";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo($pos);
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
+if (isset($_FILES['newpart'])) {
+    $redirect_url = "/admin/admin.php?str=listpartner";
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['newpart']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['newpart']);
+        $sql = "INSERT INTO `partners` (`id_partners`, `img_partners`, `url_partners`, `name_partners`) VALUES (NULL, '".$name."', NULL, NULL);";
         if ($result = mysqli_query($link, $sql)) {
             header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
         } else {

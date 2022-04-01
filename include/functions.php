@@ -142,6 +142,17 @@ function get_img_project($link, $uk)
     return $urls;
 }
 
+function get_partners($link)
+{
+    $sql = "SELECT * FROM partners";
+    
+    $result = mysqli_query($link, $sql);
+
+    $part = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $part;
+}
+
 function edit_project($link, $uk)
 {
     $sql = "SELECT * FROM project_site WHERE uk_project_site = '".$uk."'";

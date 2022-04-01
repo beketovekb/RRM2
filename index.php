@@ -46,6 +46,7 @@ $img_urls = get_img($link);
 foreach ($img_urls as $img_ur) {
     $img_url[$img_ur['Name_img_site']] = $img_ur['Url_img_site'];
 }
+$partners = get_partners($link);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -281,7 +282,7 @@ foreach ($img_urls as $img_ur) {
                     </div>
                 <?php } ?>
             </div>
-            <a href="https://robotprostore.kz/" class="shop_btn">Перейти в магазин</a>
+            <a href="https://robotprostore.kz/" class="shop_btn"><?php print($ftitle["31"]); ?></a>
         </div>
     </section>
     <section class="s4_1" id="s4_1">
@@ -308,16 +309,7 @@ foreach ($img_urls as $img_ur) {
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["13"]); ?></span>
             <div class="responsive" data-aos="zoom-in">
-                <img src="img/partner1.png" alt="">
-                <img src="img/partner2.png" alt="">
-                <img src="img/partner3.png" alt="">
-                <img src="img/partner4.png" alt="">
-                <img src="img/partner5.png" alt="">
-                <img src="img/partner6.png" alt="">
-                <img src="img/partner7.png" alt="">
-                <img src="img/partner8.png" alt="">
-                <img src="img/partner9.png" alt="">
-                <img src="img/partner10.png" alt="">
+                <?php foreach($partners as $partner) { ?><img src="<?php print($partner['img_partners']);?>" alt=""> <?php } ?>
             </div>
         </div>
     </section>
@@ -380,23 +372,19 @@ foreach ($img_urls as $img_ur) {
         <div class="container">
             <div class="f3" data-aos="zoom-in-up">
                 <div class="f1_about">
-                    <h3>О Компании</h3>
-                    <span>Компания Regulus Robotics Machine (RRM) создана в 2016-м году в качестве платформы для интернет-магазина роботехнической продукции. Наша продуктовая линейка — это образовательные и сервисные роботы, интерактивное оборудование, цифровые лаборатории, 3D принтеры и программные решения. Мы всегда в погоне за лучшим продуктом и лучшим сервисом.
-                        Мы осуществили поставку первых в Казахстане роботов THESPIAN, PEPPER, NAO-V6, ROBOTIS MINI, BIOLOID, CRUZR UPTECH. </span>
+                    <h3><?php print($ftitle["32"]); ?></h3>
+                    <span><?php print($ftitle["33"]); ?></span>
                 </div>
                 <div class="f2_info">
-                    <h3>Наши контакты</h3>
-                    <span><img src="img/place.png" alt=""> г. Алматы, Казахстан,
-                        проспект Гагарина 309, офис 23 <br>
-                        г. Нур-Султан, Казахстан, ул.​Тарас
-                        Шевченко, 4/1, оф.414c</span>
-                    <span><img src="img/phone.png" alt=""> +7 701 800 2178</span>
-                    <span><img src="img/email.png" alt=""> info@robotprostore.kz</span>
-                    <span><img src="img/insta.png" alt=""> @robotprostore</span>
+                    <h3><?php print($ftitle["34"]); ?></h3>
+                    <span><img src="img/place.png" alt=""> <?php print($ftitle["35"]); ?></span>
+                    <span><img src="img/phone.png" alt=""> <?php print($ftitle["36"]); ?></span>
+                    <span><img src="img/email.png" alt=""> <?php print($ftitle["37"]); ?></span>
+                    <span><img src="img/insta.png" alt=""> <?php print($ftitle["38"]); ?></span>
                 </div>
                 <div class="f3_feed">
                     <h3>Оставьте заявку</h3>
-                    <span>Отправьте нам заявку и<br> наши менеджеры с вами свяжутся.</span>
+                    <span><?php print($ftitle["39"]); ?></span>
                     <form action="">
                         <input type="text" placeholder="Введите Ваше имя">
                         <input type="text" placeholder="Введите Ваш номер">
