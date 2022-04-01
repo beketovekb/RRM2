@@ -156,8 +156,11 @@ if (isset($_GET['str'])) {
         }
         list.forEach((item) => item.addEventListener('mouseover', activeLink));
         $(function() {
-            $('.edit_accordion').click(function() {
-                $('.toggle_accordion').toggleClass('accordion');
+            $('.edit_accordion1').click(function() {
+                $('.toggle_accordion1').toggleClass('accordion');
+            });
+            $('.edit_accordion2').click(function() {
+                $('.toggle_accordion2').toggleClass('accordion');
             });
         });
     </script>
