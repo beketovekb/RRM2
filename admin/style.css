@@ -327,7 +327,7 @@ body {
 .details table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .details table thead td {
@@ -404,7 +404,7 @@ body {
 .recentCustomers {
     position: relative;
     display: grid;
-    max-height: 500px;
+    /* max-height: 500px; */
     padding: 20px;
     height: fit-content;
     padding: 20px;
@@ -679,4 +679,17 @@ textarea::-webkit-scrollbar-thumb {
     height: 65px;
     min-height: 0 !important;
     overflow: hidden;
+}
+.edit_accordion1 svg,
+.edit_accordion2 svg {
+    transform: rotate(180deg);
+}
+.accordion  .edit_accordion1 svg,
+.accordion  .edit_accordion2 svg {
+    transform: rotate(0deg);
+}
+.edit_accordion1,
+.edit_accordion2 {
+    cursor: pointer;
+    user-select: none;
 }
