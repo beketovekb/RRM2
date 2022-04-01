@@ -183,6 +183,16 @@ function spisok_edition($link, $uk, $dop)
     return $editions;
 }
 
+function get_news($link)
+{
+    $sql = "SELECT * FROM news";
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+
 function can_upload($file)
 {
     // если имя пустое, значит файл не выбран
