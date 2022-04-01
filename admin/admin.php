@@ -106,10 +106,15 @@ if (isset($_GET['str'])) {
                     </a>
                 </li>
                 <li>
+<<<<<<< HEAD
                     <a href="/admin/admin.php?str=listpartner">
                         <span class="icon">
                             <ion-icon name="duplicate-outline"></ion-icon>
                         </span>
+=======
+                    <a href="/admin/admin.php?str=newNews">
+                        <span class="icon"><ion-icon name="duplicate-outline"></ion-icon></span>
+>>>>>>> f389770e37c48e61526bcbe034b51b0e16d922b9
                         <span class="title">Добавить новости</span>
                     </a>
                 </li>
