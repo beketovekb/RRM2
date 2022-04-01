@@ -647,3 +647,22 @@ textarea::-webkit-scrollbar-thumb {
     height: 100px;
     width: 100px;
 }
+
+.navigation ul {
+    height: 100vh;
+    overflow: auto;
+}
+
+
+.navigation ul::-webkit-scrollbar {
+    width: 0px;
+}
+
+.navigation ul::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset; */
+    background-color: transparent;
+}
+
+.navigation ul::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
