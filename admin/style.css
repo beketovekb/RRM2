@@ -299,6 +299,11 @@ body {
 .cardHeader h2 {
     font-weight: 600;
     color: var(--orange);
+    display: flex;
+    align-items: center;
+}
+.cardHeader h2  svg {
+    margin-right: 10px;
 }
 
 .btn {
@@ -310,6 +315,9 @@ body {
     border-radius: 6px;
     border: none;
     cursor: pointer;
+    
+    width: fit-content;
+    margin-left: auto;
 }
 
 .btn:hover {
@@ -665,4 +673,10 @@ textarea::-webkit-scrollbar-thumb {
 
 .navigation ul::-webkit-scrollbar-thumb {
     background-color: transparent;
+}
+
+.accordion{
+    height: 65px;
+    min-height: 0 !important;
+    overflow: hidden;
 }
