@@ -383,37 +383,38 @@ $partners = get_partners($link);
                     <span><img src="img/insta.png" alt=""> <?php print($ftitle["38"]); ?></span>
                 </div>
                 <div class="f3_feed">
-                    <h3>Оставьте заявку</h3>
+                    <h3><?php print($ftitle["40"]); ?></h3>
                     <span><?php print($ftitle["39"]); ?></span>
                     <form action="">
                         <input type="text" placeholder="Введите Ваше имя">
                         <input type="text" placeholder="Введите Ваш номер">
-                        <button class="shop_btn">Перейти в магазин</button>
+                        <button class="shop_btn"><?php print($ftitle["23"]); ?></button>
                     </form>
                 </div>
             </div>
             <span class="right">© SKIMAKSSS | All Rights Reserved. | 2022</span>
             <ul>
+      
                 <a href="#s1_1">
-                    <li>О компании</li>
+                    <li><?php print($ftitle["16"]); ?></li>
                 </a>
                 <a href="#s3_1">
-                    <li>Навправления</li>
+                    <li><?php print($ftitle["17"]); ?></li>
                 </a>
                 <a href="#s4_1">
-                    <li>Проекты</li>
+                    <li><?php print($ftitle["18"]); ?></li>
                 </a>
                 <a href="#s5_1">
-                    <li>Партнеры</li>
+                    <li><?php print($ftitle["19"]); ?></li>
                 </a>
                 <a href="#s7_1">
-                    <li>Новости</li>
+                    <li><?php print($ftitle["20"]); ?></li>
                 </a>
                 <a href="">
-                    <li>Магазин</li>
+                    <li><?php print($ftitle["21"]); ?></li>
                 </a>
                 <a href="#s9_1">
-                    <li>Контакты</li>
+                    <li><?php print($ftitle["22"]); ?></li>
                 </a>
             </ul>
         </div>
