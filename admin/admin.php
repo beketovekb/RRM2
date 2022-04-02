@@ -112,7 +112,7 @@ if (isset($_GET['str'])) {
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/admin.php?str=listpartner">
+                    <a href="/admin/admin.php?str=listNews">
                         <span class="icon">
                             <ion-icon name="file-tray-stacked-outline"></ion-icon>
                         </span>

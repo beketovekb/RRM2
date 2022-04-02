@@ -38,6 +38,14 @@ switch ($_POST['fun']) {
             }
         }
         break;
+    case 'textnews':
+        if (isset($_POST['r14'])) {
+            $redirect_url = "/admin/admin.php?str=listNews";
+            if (set_bd(14, 15, $link)) {
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+            }
+        }
+        break;
     case 'footer':
         if (isset($_POST['r32'])) {
             $redirect_url = "/admin/admin.php?str=footer";
@@ -63,6 +71,9 @@ switch ($_POST['fun']) {
         break;
     case 'newNews':
         new_news($link);
+        break;
+    case 'editNews':
+        edit_news($link);
         break;
 }
 
@@ -862,5 +873,58 @@ function new_news($link)
     if ($ru && $en && $kz) {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     }
+}
+
+function edit_news($link)
+{
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $id = generate_string($permitted_chars, 16);
+    $redirect_url = "/admin/admin.php?str=listNews";
+    $ru = false;
+    $en = false;
+    $kz = false;
+    $date = $_POST['date'];
+
+    $title = str_replace("'", "\'", $_POST['title_ru']);
+    $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
+    $napravlenia = str_replace("'", "\'", $_POST['napravlenia_ru']);
+
+    /*$sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'ru')";
+    if (mysqli_query($link, $sql)) {
+        $ru = true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    //English
+    $title = str_replace("'", "\'", $_POST['title_en']);
+    $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
+    $napravlenia = str_replace("'", "\'", $_POST['napravlenia_en']);
+
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'en')";
+    if (mysqli_query($link, $sql)) {
+        $en = true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    //Kazakh
+    $title = str_replace("'", "\'", $_POST['title_kz']);
+    $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
+    $napravlenia = str_replace("'", "\'", $_POST['napravlenia_kz']);
+
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'kz')";
+    if (mysqli_query($link, $sql)) {
+        $kz = true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    if ($ru && $en && $kz) {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }*/
 }
 ?>
