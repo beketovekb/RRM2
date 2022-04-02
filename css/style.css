@@ -536,13 +536,13 @@ header .logo_link {
 header .logo_light {
   opacity: 1;
   position: absolute;
-  left: 0;
+  left: 20px;
 }
 
 header .logo_color {
   opacity: 0;
   position: absolute;
-  left: 0;
+  left: 20px;
 }
 
 header .logo {
