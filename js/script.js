@@ -1,12 +1,13 @@
-AOS.init();
 
-$(window).scroll(function() {
-    $(".bg_gray").css("top", ($(this).scrollTop() / 15 * 5) + "px");
-    // $(".img_fback").css("top", ($(this).scrollTop() / 120 * 5) + "px");
-    $(".img_feed").css("top", ($(this).scrollTop() / 100 + 5) + "px");
-    $(".robo1").css("bottom", ($(this).scrollTop() / 25 * 5) + "px");
-    $(".robo2").css("bottom", ($(this).scrollTop() / 25 * 5) + "px");
-});
+  AOS.init();
+
+// $(window).scroll(function() {
+//     $(".bg_gray").css("top", ($(this).scrollTop() / 15 * 5) + "px");
+//     // $(".img_fback").css("top", ($(this).scrollTop() / 120 * 5) + "px");
+//     $(".img_feed").css("top", ($(this).scrollTop() / 100 + 5) + "px");
+//     $(".robo1").css("bottom", ($(this).scrollTop() / 25 * 5) + "px");
+//     $(".robo2").css("bottom", ($(this).scrollTop() / 25 * 5) + "px");
+// });
 
 
 
@@ -42,21 +43,21 @@ consoleBG();
 
 $(window).scroll(function() {
     consoleBG();
-});
+}); 
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 
 for (let anchor of anchors) {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault()
-
-        const blockID = anchor.getAttribute('href').substr(1)
-
-        document.getElementById(blockID).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        })
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href').substr(1)
+    
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
     })
+  })
 }
 
 
@@ -69,23 +70,24 @@ $(function() {
 
 
 
-$(document).ready(function() {
-    $(".lang-flag").click(function() {
-        $(".language-dropdown").toggleClass("open");
+$(document).ready(function(){
+    $(".lang-flag").click(function(){
+      $(".language-dropdown").toggleClass("open");
     });
-    $("ul.lang-list li").click(function() {
-        $("ul.lang-list li").removeClass("selected");
-        $(this).addClass("selected");
-        if ($(this).hasClass('lang-en')) {
-            $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-kz").removeClass("lang-ru");
-            $("#lang_selected").html("<p>EN</p>")
-        } else if ($(this).hasClass('lang-ru')) {
-            $(".language-dropdown").find(".lang-flag").addClass("lang-ru").removeClass("lang-kz").removeClass("lang-en");
-            $("#lang_selected").html("<p>PT</p>")
-        } else {
-            $(".language-dropdown").find(".lang-flag").addClass("lang-kz").removeClass("lang-en").removeClass("lang-ru");
-            $("#lang_selected").html("<p>ES</p>")
-        }
-        $(".language-dropdown").removeClass("open");
+    $("ul.lang-list li").click(function(){
+      $("ul.lang-list li").removeClass("selected");
+      $(this).addClass("selected");
+      if($(this).hasClass('lang-en')){
+        $(".language-dropdown").find(".lang-flag").addClass("lang-en").removeClass("lang-kz").removeClass("lang-ru");
+        $("#lang_selected").html("<p>EN</p>")
+      }else if($(this).hasClass('lang-ru')){
+        $(".language-dropdown").find(".lang-flag").addClass("lang-ru").removeClass("lang-kz").removeClass("lang-en");
+      $("#lang_selected").html("<p>PT</p>")
+      }else{
+        $(".language-dropdown").find(".lang-flag").addClass("lang-kz").removeClass("lang-en").removeClass("lang-ru");
+        $("#lang_selected").html("<p>ES</p>")
+      }
+      $(".language-dropdown").removeClass("open");
     });
-})
+  })
+

@@ -15,7 +15,7 @@
 </head>
 
 <body class="news_body">
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="stars_window">
             <div id="stars"></div>
             <div id="stars2"></div>
@@ -25,7 +25,7 @@
             <img class="preloader_logo_img" src="img/preloader_logo.png" alt="">
             <h2>Regulus Robotics Machine</h2>
         </div>
-    </div>
+    </div> -->
     <div class="stars_window">
         <div id='stars'></div>
         <div id='stars2'></div>
