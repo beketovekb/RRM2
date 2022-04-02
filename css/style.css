@@ -536,13 +536,13 @@ header .logo_link {
 header .logo_light {
   opacity: 1;
   position: absolute;
-  left: 0;
+  left: 20px;
 }
 
 header .logo_color {
   opacity: 0;
   position: absolute;
-  left: 0;
+  left: 20px;
 }
 
 header .logo {
@@ -708,13 +708,6 @@ header .burger .burger_menu .burger_line {
   object-fit: cover;
   z-index: -400;
   width: 100%;
-}
-
-@media (max-width: 1200px) {
-  .s2_1 {
-    position: absolute;
-    top: 0 !important;
-  }
 }
 
 .fback_conent {
@@ -2646,6 +2639,12 @@ footer .f3 .f3_feed .shop_btn {
   background-color: #1D2124;
 }
 
+@media (max-width: 680px) {
+  .preloader h2 {
+    display: none;
+  }
+}
+
 .imgslider {
   width: 150px;
   height: 150px !important;
@@ -2716,6 +2715,13 @@ footer .f3 .f3_feed .shop_btn {
           animation: 2s opa forwards;
 }
 
+@media (max-width: 680px) {
+  .preloader_logo_img {
+    margin-top: -20px;
+    width: 170px;
+  }
+}
+
 @-webkit-keyframes opa {
   100% {
     opacity: 1;
@@ -2746,6 +2752,12 @@ footer .f3 .f3_feed .shop_btn {
   width: 100%;
   max-width: 33.6rem;
   margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  .Loader {
+    max-width: 16rem;
+  }
 }
 
 .Loader:before, .Loader:after {
