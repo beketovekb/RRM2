@@ -673,11 +673,12 @@ function new_edit($link)
     if ($col <= 4) {
         $pos = $_POST['pos'];
         $col = $col + 1;
-        $redirect_url = "/admin/admin.php?str=newEditions&pos=" . $pos . "&new=" . (string)$col;
+        $redirect_url = "/admin/admin.php?str=editProject&pos=" . $pos;
         $ru = false;
         $en = false;
         $kz = false;
-
+        $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $id=generate_string($permitted_chars, 16);
         $check = can_upload($_FILES['newedit']);
         $name = '';
         if ($check === true) {
@@ -691,7 +692,7 @@ function new_edit($link)
         $title = str_replace("'", "\'", $_POST['title_ru']);
         $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
 
-        $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'ru')";
+        $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'ru', '".$id."')";
         if (mysqli_query($link, $sql)) {
             $ru = true;
         } else {
@@ -701,7 +702,7 @@ function new_edit($link)
 
         $title = str_replace("'", "\'", $_POST['title_en']);
         $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
-        $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'en')";
+        $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'en', '".$id."')";
         if (mysqli_query($link, $sql)) {
             $en = true;
         } else {
@@ -711,7 +712,7 @@ function new_edit($link)
 
         $title = str_replace("'", "\'", $_POST['title_kz']);
         $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
-        $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'kz')";
+        $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'kz', '".$id."')";
         if (mysqli_query($link, $sql)) {
             $kz = true;
         } else {

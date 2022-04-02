@@ -12,7 +12,7 @@ $kol= $_GET['new'];
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
                     <h2><?php print($name); ?></h2>
-                    <input type="submit" value="Next" class="btn" />
+                    <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="newEdit">
                     <input type="text" name="kol" style="width: 100%; display: none; " value="<?php print($kol);?>">
                     <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($id);?>">
