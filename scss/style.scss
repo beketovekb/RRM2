@@ -508,13 +508,14 @@ header {
         position: absolute;
     }
     .img_fback {
-        position: fixed;
+        // position: fixed;
+        position: absolute;
         -o-object-fit: contain;
         object-fit: cover;
         z-index: -400;
         width: 100%;
-        height: 100%;
-        top: 0;
+        // height: 100%;
+        // top: 0;
     }
         
         @media (max-width:1200px) {
@@ -2051,7 +2052,6 @@ footer{
     .preloader_logo_img {
         z-index: 1;
         width: 300px;
-        filter: brightness(20);
         margin-top: -80px;
         opacity: 0;
         animation: 2s opa forwards;
