@@ -8,7 +8,7 @@ switch($_GET['type'])
         drop_project($link);
         break; 
     case 'opis':
-    drop_project($link);
+        drop_opisanie($link);
     break;
     case 'imgproj':
         drop_img($link);

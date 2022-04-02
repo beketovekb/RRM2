@@ -11,6 +11,10 @@ foreach ($napravlenia as $napravlen) {
 $pos = $_GET['pos'];
 $projects = edit_project($link, $pos);
 $editions = spisok_editions($link, $pos);
+$col=0;
+foreach ($editions as $edition) {
+    $col++;
+}
 $imgs = get_img_project($link, $pos);
 ?>
 <div class="main">
@@ -204,7 +208,7 @@ $imgs = get_img_project($link, $pos);
                         <tr>
                             <td>Добавить новое</td>
                             <td>Для того чтобы добавить новое дополнение</td>
-                            <td></td>
+                            <td><a href="/admin/admin.php?str=newEditions&pos=<?php print($pos);?>&new=<?php print($col);?>" class="btn">Добавить</a></td>
                         </tr>
                     <?php foreach($editions as $edition) { ?>
                     
