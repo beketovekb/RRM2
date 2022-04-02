@@ -210,7 +210,7 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                                     <div class="content_directions">
                                         <h2><?php print($project["Title_project_site"]); ?></h2>
                                         <p><?php print($project["Opisanie_project_site"]); ?></p>
-                                        <span>Сроки выполнения <?php print($project["Srok_project_site"]); ?></span>
+                                        <span><?php print($project["Srok_project_site"]); ?></span>
                                     </div>
                                 <? } ?>
                             </div>

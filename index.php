@@ -294,7 +294,7 @@ $partners = get_partners($link);
                 <div class="projects_item p_item<?php print($i); ?>" style="background-image: url(<?php print($project["Img_project_site"]); ?>);">
                     <div class="p_shadow">
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
-                        <span class="project_direction"><?php print($project["Type_project_site"]); ?></span>
+                        <span class="project_direction"><?php print($napravlenia_title[$project["Type_project_site"]]); ?></span> <!--Здесь-->
                         <a class="shop_btn project_learn_more" href="/projects.php?id=<?php print($project["uk_project_site"]); ?>&lng=<?php print($lng); ?>">Подорбнее</a>
                     </div>
                 </div>
