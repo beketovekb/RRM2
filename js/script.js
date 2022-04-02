@@ -1,6 +1,4 @@
 
-  AOS.init();
-
 // $(window).scroll(function() {
 //     $(".bg_gray").css("top", ($(this).scrollTop() / 15 * 5) + "px");
 //     // $(".img_fback").css("top", ($(this).scrollTop() / 120 * 5) + "px");
