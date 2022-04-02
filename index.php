@@ -47,6 +47,7 @@ foreach ($img_urls as $img_ur) {
     $img_url[$img_ur['Name_img_site']] = $img_ur['Url_img_site'];
 }
 $partners = get_partners($link);
+$news = get_index_news($link, $lng);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -318,48 +319,24 @@ $partners = get_partners($link);
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
+                <!-- Отсюда -->
+                <?php foreach ($news as $new) {?>
                 <a href="news_more.php" class="news_item " data-aos="zoom-in">
-                    <div class="news_img">
+                    <div class="news_img" style="background-image: url(<?php print($new['img_news']); ?>);">
                         <div class="news_day">
-                            20 янв
+                        <?php print(date_index($new['date_reliz_news'],$lng)); ?>
                         </div>
                     </div>
-                    <h4>Lego Educations</h4>
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</span>
+                    <h4><?php print($new['title_news']); ?></h4>
+                    <span><?php print($new['opisanie_news']); ?></span>
                     <span class="learn_more">Читать подробнее
                         <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600" />
                         </svg>
                     </span>
                 </a>
-                <a href="news_more.php" class="news_item n_item2" data-aos="zoom-in">
-                    <div class="news_img">
-                        <div class="news_day">
-                            25 фев
-                        </div>
-                    </div>
-                    <h4>CRUZR</h4>
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</span>
-                    <span href="#" class="learn_more">Читать подробнее
-                        <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600" />
-                        </svg>
-                    </span>
-                </a>
-                <a href="news_more.php" class="news_item n_item3" data-aos="zoom-in">
-                    <div class="news_img">
-                        <div class="news_day">
-                            03 мар
-                        </div>
-                    </div>
-                    <h4>ROBOTICS</h4>
-                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</span>
-                    <span href="#" class="learn_more">Читать подробнее
-                        <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600" />
-                        </svg>
-                </span>
-                </a>
+                <?php }?>
+                <!-- Досюдя -->
             </div>
             <a href="news_list.php" class="news_more">Больше новостей</a>
         </div>

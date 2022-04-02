@@ -193,6 +193,16 @@ function get_news($link)
     return $projects;
 }
 
+function get_index_news($link, $lng)
+{
+    $sql = "SELECT * FROM `news` WHERE Lng_news = '".$lng."' ORDER BY `date_reliz_news` DESC LIMIT 3";
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+
 function get_curent_news($link, $uk)
 {
     $sql = "SELECT * FROM news WHERE uk_news = '".$uk."'";
@@ -245,4 +255,61 @@ function make_upload($file)
     $id=generate_string($permitted_chars, 5);
     copy($file['tmp_name'], '../img/' . $id.$file['name']);
     return '../img/' .$id. $file['name'];
+}
+
+function date_index($dt, $lng)
+{
+    $lng = strtolower($lng);
+    $arr_ru = [
+        'янв',
+        'фев',
+        'мар',
+        'апр',
+        'май',
+        'июнь',
+        'июль',
+        'авг',
+        'сен',
+        'окт',
+        'ноя',
+        'дек'
+    ];
+    $arr_kz = [
+        'қаң',
+        'ақп',
+        'Нау',
+        'сәу',
+        'мам',
+        'мау',
+        'шіл',
+        'там',
+        'қыр',
+        'қаз',
+        'қар',
+        'жел'
+    ];
+    $arr_en = [
+        'Jan',
+        'Feb',
+        'mar',
+        'Apr',
+        'May',
+        'June',
+        'July',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+    ];
+    $day = $dt[8] . $dt[9];
+    $month = (int)$dt[5] . $dt[6];
+    switch($lng)
+    {
+        case 'ru': $month= $arr_ru[$month-1]; break;
+        case 'en': $month= $arr_en[$month-1];break;
+        case 'kz': $month= $arr_kz[$month-1];break;
+    }
+
+    return $day." ".$month;
 }
