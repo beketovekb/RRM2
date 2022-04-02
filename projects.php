@@ -41,7 +41,7 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
 </head>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="stars_window">
             <div id="stars"></div>
             <div id="stars2"></div>
@@ -51,7 +51,7 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
             <img class="preloader_logo_img" src="img/preloader_logo.png" alt="">
             <h2>Regulus Robotics Machine</h2>
         </div>
-    </div>
+    </div> -->
     <div class="stars_window">
         <div id='stars'></div>
         <div id='stars2'></div>

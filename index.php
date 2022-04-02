@@ -64,7 +64,7 @@ $partners = get_partners($link);
 </head>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="stars_window">
             <div id="stars"></div>
             <div id="stars2"></div>
@@ -74,7 +74,7 @@ $partners = get_partners($link);
             <img class="preloader_logo_img" src="img/preloader_logo.png" alt="">
             <h2>Regulus Robotics Machine</h2>
         </div>
-    </div>
+    </div> -->
     <header>
         <div class="bg0"></div>
         <div class="bg_gray" style="background-image: url(<?php print($img_url['general']); ?>) !important;">
@@ -426,6 +426,6 @@ $partners = get_partners($link);
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
-<script type="text/javascript" src="js/preloader.js"></script>
+<!-- <script type="text/javascript" src="js/preloader.js"></script> -->
 
 </html>
