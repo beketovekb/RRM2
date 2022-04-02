@@ -231,7 +231,7 @@ $partners = get_partners($link);
                 <div class="img_about" style="background: url(<?php print($img_url['about']); ?>); width: 40%;
         height: auto;
         background-size: cover;
-        background-position: -250px center;" data-aos="flip-right"></div>
+        background-position: center center;" data-aos="flip-right"></div>
             </div>
         </div>
     </section>

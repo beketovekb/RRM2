@@ -193,6 +193,16 @@ function get_news($link)
     return $projects;
 }
 
+function get_curent_news($link, $uk)
+{
+    $sql = "SELECT * FROM news WHERE uk_news = '".$uk."'";
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+
 function can_upload($file)
 {
     // если имя пустое, значит файл не выбран

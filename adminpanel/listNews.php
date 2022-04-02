@@ -30,10 +30,10 @@ foreach ($titles as $title) {
                             <path d="M12 13L11.2929 13.7071L12 14.4142L12.7071 13.7071L12 13ZM5.29289 7.70711L11.2929 13.7071L12.7071 12.2929L6.70711 6.29289L5.29289 7.70711ZM12.7071 13.7071L18.7071 7.70711L17.2929 6.29289L11.2929 12.2929L12.7071 13.7071Z" fill="#d69600" />
                             <path d="M17 18L7 18" stroke="#d69600" stroke-width="2" />
                         </svg>
-                        Основной текст блока "Проекты"
+                        Основной текст блока "Новости"
                     </h2>
                     <input type="submit" value="Сохранить" class="btn" />
-                    <input type="text" name="fun" style="width: 100%; display: none; " value="textproj">
+                    <input type="text" name="fun" style="width: 100%; display: none; " value="textnews">
                 </div>
                 <table>
                     <thead>
@@ -106,7 +106,7 @@ foreach ($titles as $title) {
                         <path d="M12 13L11.2929 13.7071L12 14.4142L12.7071 13.7071L12 13ZM5.29289 7.70711L11.2929 13.7071L12.7071 12.2929L6.70711 6.29289L5.29289 7.70711ZM12.7071 13.7071L18.7071 7.70711L17.2929 6.29289L11.2929 12.2929L12.7071 13.7071Z" fill="#d69600" />
                         <path d="M17 18L7 18" stroke="#d69600" stroke-width="2" />
                     </svg>
-                    Список проектов
+                    Список новостей
                 </h2>
                 </div>
                 <table>
@@ -124,8 +124,8 @@ foreach ($titles as $title) {
                         <tr>
                             <td><?php print($ne['title_news']);?></td>
                             <td><?php if(strlen($ne['opisanie_news'])>=60){print(substr($ne['opisanie_news'], 0, 60)."...");} else {print($ne['opisanie_news']);}?></td>
-                            <td><a href="/admin/admin.php?str=editProject&pos=<?php print($ne['uk_news']);?>" class="btn">Редактировать</a></td>
-                            <td><a href="../include/delete.php?type=proj&pos=<?php print($ne['uk_news']);?>" class="btn">Удалить</a></td>
+                            <td><a href="/admin/admin.php?str=editNews&pos=<?php print($ne['uk_news']);?>" class="btn">Редактировать</a></td>
+                            <td><a href="../include/delete.php?type=news&pos=<?php print($ne['uk_news']);?>" class="btn">Удалить</a></td>
                         </tr>
                     </tbody>
                     <?php }} ?>
