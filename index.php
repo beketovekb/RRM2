@@ -64,7 +64,7 @@ $partners = get_partners($link);
 </head>
 
 <body>
-    <!-- <div class="preloader">
+    <div class="preloader">
         <div class="stars_window">
             <div id="stars"></div>
             <div id="stars2"></div>
@@ -74,7 +74,7 @@ $partners = get_partners($link);
             <img class="preloader_logo_img" src="img/preloader_logo.png" alt="">
             <h2>Regulus Robotics Machine</h2>
         </div>
-    </div> -->
+    </div>
     <header>
         <div class="bg0"></div>
         <div class="bg_gray" style="background-image: url(<?php print($img_url['general']); ?>) !important;">
