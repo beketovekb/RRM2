@@ -621,7 +621,7 @@ function new_project($link)
 
     $title=str_replace("'","\'",$_POST['title_ru']);
     $type=str_replace("'","\'",$_POST['btn_ru']);
-    $type_proj =str_replace("'","\'",$_POST['type_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
     $srok=str_replace("'","\'",$_POST['srok_ru']);
     $prioritet = $_POST['prioritet_ru'];
@@ -635,7 +635,7 @@ function new_project($link)
 
     $title=str_replace("'","\'",$_POST['title_en']);
     $type=str_replace("'","\'",$_POST['btn_en']);
-    $type_proj =str_replace("'","\'",$_POST['type_en']);
+    $type_proj =str_replace("'","\'",$_POST['btn_en']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
     $srok=str_replace("'","\'",$_POST['srok_en']);
     $prioritet = $_POST['prioritet_en'];
@@ -649,7 +649,7 @@ function new_project($link)
 
     $title=str_replace("'","\'",$_POST['title_kz']);
     $type=str_replace("'","\'",$_POST['btn_kz']);
-    $type_proj =str_replace("'","\'",$_POST['type_kz']);
+    $type_proj =str_replace("'","\'",$_POST['btn_kz']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
     $srok=str_replace("'","\'",$_POST['srok_kz']);
     $prioritet = $_POST['prioritet_kz'];

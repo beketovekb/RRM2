@@ -50,11 +50,6 @@ foreach ($napravlenia as $napravlen) {
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип проекта</td>
-                                    <td><input type="text" name="type_ru" style="width: 100%;" value=""></td>
-                                    <td>RU</td>
-                                </tr>
-                                <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_ru" style="width: 100%;" value=""></td>
                                     <td>RU</td>
@@ -96,11 +91,6 @@ foreach ($napravlenia as $napravlen) {
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип проекта</td>
-                                    <td><input type="text" name="type_en" style="width: 100%;" value=""></td>
-                                    <td>ENG</td>
-                                </tr>
-                                <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_en" style="width: 100%;" value=""></td>
                                     <td>ENG</td>
@@ -138,11 +128,6 @@ foreach ($napravlenia as $napravlen) {
                                 <tr>
                                     <td>Приоритет</td>
                                     <td><input type="text" name="prioritet_kz" style="width: 100%;" value=""></td>
-                                    <td>KZ</td>
-                                </tr>
-                                <tr>
-                                    <td>Тип проекта</td>
-                                    <td><input type="text" name="type_kz" style="width: 100%;" value=""></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
