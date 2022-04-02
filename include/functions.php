@@ -241,6 +241,8 @@ function can_upload($file)
 
 function make_upload($file)
 {
-    copy($file['tmp_name'], '../img/' . $file['name']);
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $id=generate_string($permitted_chars, 5);
+    copy($file['tmp_name'], '../img/' . $file['name'].$id);
     return '../img/' . $file['name'];
 }
