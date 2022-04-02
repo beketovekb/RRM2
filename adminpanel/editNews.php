@@ -3,6 +3,7 @@ require_once '../include/functions.php';
 require_once '../include/database.php';
 
 $news = get_curent_news($link,$_GET['pos']);
+$imgs = get_img_news($link, $_GET['pos']);
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -115,6 +116,31 @@ $news = get_curent_news($link,$_GET['pos']);
                 </table>
             </div>
         </form>
+        <div class="recentCustomers">
+            <div class="cardHeader">
+                <h2>Дополнительные изображения</h2>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <h4>Добавить изображение</h4>
+                    </td>
+                    <td width="60px">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="addimgnews">
+                            <input type="submit" value="Загрузить файл!">
+                            <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($_GET['pos']); ?>">
+                        </form>
+                    </td>
+                </tr>
+                <?php foreach ($imgs as $img) { ?>
+                    <tr>
+                        <td><div style="background: url(<?php print($img['img_more_news']); ?>) 100% 100% no-repeat; background-size: cover; width: 100px; height: 100px;"></div></td>
+                        <td><a href="../include/delete.php?type=imgproj&pos=<?php print($img['uk_news']);?>&ig=<?php print($img['uk_news']);?>" class="btn">Удалить</a></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
 
     </div>
 </div>

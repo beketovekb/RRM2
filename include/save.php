@@ -334,7 +334,28 @@ if (isset($_FILES['newpart'])) {
         echo "<strong>$check</strong>";
     }
 }
+if (isset($_FILES['addimgnews'])) {
+    $pos = $_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editNews&pos=".$pos;
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['addimgnews']);
 
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['addimgnews']);
+        $sql = "INSERT INTO `img_news` (`id_img_news`, `uk_news`, `img_more_news`) VALUES (NULL, '".$pos."', '".$name."')";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo($pos);
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
 
 
 function set_general($link){
@@ -583,7 +604,7 @@ function new_project($link)
     $pos=$_POST['pos'];
     $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $id=generate_string($permitted_chars, 16);
-    $redirect_url = "/admin/admin.php?str=setImgNewProject&pos=".$id."&new=1";
+    $redirect_url = "/admin/admin.php?str=editProject&pos=".$id."&new=1";
     $ru=false;
     $en=false;
     $kz=false;

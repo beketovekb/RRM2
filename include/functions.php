@@ -203,6 +203,17 @@ function get_curent_news($link, $uk)
     return $projects;
 }
 
+function get_img_news($link, $uk)
+{
+    $sql = "SELECT * FROM img_news WHERE  uk_news = '".$uk."'";
+    
+    $result = mysqli_query($link, $sql);
+
+    $urls = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $urls;
+}
+
 function can_upload($file)
 {
     // если имя пустое, значит файл не выбран
