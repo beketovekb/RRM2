@@ -67,11 +67,6 @@ $imgs = get_img_project($link, $pos);
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип проекта</td>
-                                    <td><input type="text" name="type_ru" style="width: 100%;" value="<?php print($project['Type_project_site']); ?>"></td>
-                                    <td>RU</td>
-                                </tr>
-                                <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_ru" style="width: 100%;" value="<?php print($project['Title_project_site']); ?>"></td>
                                     <td>RU</td>
@@ -116,11 +111,6 @@ $imgs = get_img_project($link, $pos);
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип проекта</td>
-                                    <td><input type="text" name="type_en" style="width: 100%;" value="<?php print($project['Type_project_site']); ?>"></td>
-                                    <td>ENG</td>
-                                </tr>
-                                <tr>
                                     <td>Заголовок</td>
                                     <td><input type="text" name="title_en" style="width: 100%;" value="<?php print($project['Title_project_site']); ?>"></td>
                                     <td>ENG</td>
@@ -161,11 +151,6 @@ $imgs = get_img_project($link, $pos);
                                 <tr>
                                     <td>Приоритет</td>
                                     <td><input type="text" name="prioritet_kz" style="width: 100%;" value="<?php print($project['Prioritet_project_site']); ?>"></td>
-                                    <td>KZ</td>
-                                </tr>
-                                <tr>
-                                    <td>Тип проекта</td>
-                                    <td><input type="text" name="type_kz" style="width: 100%;" value="<?php print($project['Type_project_site']); ?>"></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>

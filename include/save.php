@@ -742,11 +742,11 @@ function edit_projects($link)
 
     $title=str_replace("'","\'",$_POST['title_ru']);
     $type=str_replace("'","\'",$_POST['btn_ru']);
-    $type_proj =str_replace("'","\'",$_POST['type_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
     $srok=str_replace("'","\'",$_POST['srok_ru']);
     $prioritet = $_POST['prioritet_ru'];
-    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'ru'";
+    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."', id_uslugi_site = '".$type."'  and `Lng_project_site` = 'ru'";
     if (mysqli_query($link, $sql)) {
         $ru=true;
     } else {
@@ -756,11 +756,11 @@ function edit_projects($link)
 
     $title=str_replace("'","\'",$_POST['title_en']);
     $type=str_replace("'","\'",$_POST['btn_en']);
-    $type_proj =str_replace("'","\'",$_POST['type_en']);
+    $type_proj =str_replace("'","\'",$_POST['btn_en']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
     $srok=str_replace("'","\'",$_POST['srok_en']);
     $prioritet = $_POST['prioritet_en'];
-    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'en'";
+    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."', id_uslugi_site = '".$type."' and `Lng_project_site` = 'en'";
     if (mysqli_query($link, $sql)) {
         $en=true;
     } else {
@@ -770,11 +770,11 @@ function edit_projects($link)
 
     $title=str_replace("'","\'",$_POST['title_kz']);
     $type=str_replace("'","\'",$_POST['btn_kz']);
-    $type_proj =str_replace("'","\'",$_POST['type_kz']);
+    $type_proj =str_replace("'","\'",$_POST['btn_kz']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
     $srok=str_replace("'","\'",$_POST['srok_kz']);
     $prioritet = $_POST['prioritet_kz'];
-    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'kz'";
+    $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."' WHERE uk_project_site = '".$pos."', id_uslugi_site = '".$type."' and `Lng_project_site` = 'kz'";
     if (mysqli_query($link, $sql)) {
         $kz=true;
     } else {
