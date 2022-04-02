@@ -519,8 +519,8 @@ header {
     }
         
         @media (max-width:1200px) {
-            position: absolute;
-            top: 0 !important;
+            // position: absolute;
+            // top: 0 !important;
         }
     }
     .fback_conent {
@@ -2003,6 +2003,11 @@ footer{
     position: fixed;
     z-index: 100;
     background-color: #1D2124;
+    h2{
+        @media (max-width:680px) {
+            display: none;
+        }
+    }
 }
     .imgslider {
         width: 150px;
@@ -2055,6 +2060,10 @@ footer{
         margin-top: -80px;
         opacity: 0;
         animation: 2s opa forwards;
+        @media (max-width:680px) {
+            margin-top: -20px;
+            width: 170px;
+        }
     }
 
     @keyframes opa {
@@ -2079,6 +2088,9 @@ footer{
       width: 100%;
       max-width: $Loader-size;
       margin: 0 auto;
+      @media (max-width:680px) {
+          max-width: 16rem;
+      }
       &:before,
       &:after {
         content: "";
