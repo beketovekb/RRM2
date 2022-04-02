@@ -16,7 +16,20 @@ $news = get_curent_news($link,$_GET['pos']);
                     <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($_GET['pos']);?>">
                 </div>
                 <table>
-                    
+                <thead>
+                        <tr>
+                            <td>Название</td>
+                            <td>Файл</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($news as $new) { if($new['Lng_news']==='ru') { ?>
+                        <tr>
+                            <td>Дата публикации</td>
+                            <td><input type="datetime-local"  id="localdate" name="date" value="<?php echo str_replace(' ','T',$new['date_reliz_news']); ?>" /> </td>
+                        </tr>
+                        <?php }}?>
+                    </tbody>
                     <thead>
                         <tr>
                             <td>Название</td>

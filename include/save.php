@@ -836,7 +836,7 @@ function new_news($link)
     $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
     $napravlenia = str_replace("'", "\'", $_POST['napravlenia_ru']);
 
-    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'ru')";
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`, `uk_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'ru', '".$id."')";
     if (mysqli_query($link, $sql)) {
         $ru = true;
     } else {
@@ -849,7 +849,7 @@ function new_news($link)
     $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
     $napravlenia = str_replace("'", "\'", $_POST['napravlenia_en']);
 
-    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'en')";
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`, `uk_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'en', '".$id."')";
     if (mysqli_query($link, $sql)) {
         $en = true;
     } else {
@@ -862,7 +862,7 @@ function new_news($link)
     $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
     $napravlenia = str_replace("'", "\'", $_POST['napravlenia_kz']);
 
-    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'kz')";
+    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`, `uk_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'kz', '".$id."')";
     if (mysqli_query($link, $sql)) {
         $kz = true;
     } else {
@@ -877,19 +877,18 @@ function new_news($link)
 
 function edit_news($link)
 {
-    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $id = generate_string($permitted_chars, 16);
     $redirect_url = "/admin/admin.php?str=listNews";
     $ru = false;
     $en = false;
     $kz = false;
     $date = $_POST['date'];
+    $pos = $_POST['pos'];
 
     $title = str_replace("'", "\'", $_POST['title_ru']);
     $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
     $napravlenia = str_replace("'", "\'", $_POST['napravlenia_ru']);
 
-    /*$sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'ru')";
+    $sql = "UPDATE `news` SET `title_news` = '".$title."', `opisanie_news` = '".$opisanie."', `napravlenia_news` = '".$napravlenia."', `date_reliz_news` = '".$date."' WHERE uk_news = '".$pos."' AND Lng_news = 'ru')";
     if (mysqli_query($link, $sql)) {
         $ru = true;
     } else {
@@ -902,7 +901,7 @@ function edit_news($link)
     $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
     $napravlenia = str_replace("'", "\'", $_POST['napravlenia_en']);
 
-    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'en')";
+    $sql = "UPDATE `news` SET `title_news` = '".$title."', `opisanie_news` = '".$opisanie."', `napravlenia_news` = '".$napravlenia."', `date_reliz_news` = '".$date."' WHERE uk_news = '".$pos."' AND Lng_news = 'ru')";
     if (mysqli_query($link, $sql)) {
         $en = true;
     } else {
@@ -915,7 +914,7 @@ function edit_news($link)
     $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
     $napravlenia = str_replace("'", "\'", $_POST['napravlenia_kz']);
 
-    $sql = "INSERT INTO `news` (`id_news`, `title_news`, `opisanie_news`, `img_news`, `napravlenia_news`, `date_reliz_news`, `Lng_news`) VALUES (NULL, '".$title."', '".$opisanie."', '".$name."', '".$napravlenia."', '".$date."', 'kz')";
+    $sql = "UPDATE `news` SET `title_news` = '".$title."', `opisanie_news` = '".$opisanie."', `napravlenia_news` = '".$napravlenia."', `date_reliz_news` = '".$date."' WHERE uk_news = '".$pos."' AND Lng_news = 'ru')";
     if (mysqli_query($link, $sql)) {
         $kz = true;
     } else {
@@ -925,6 +924,6 @@ function edit_news($link)
 
     if ($ru && $en && $kz) {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
-    }*/
+    }
 }
 ?>
