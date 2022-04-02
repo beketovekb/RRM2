@@ -1421,24 +1421,8 @@ header .burger .burger_menu .burger_line {
           transform: scale(1.02);
 }
 
-.s7_1 .news .news_item .news_img1 {
+.s7_1 .news .news_item .news_img {
   background-image: url(../img/pi5.jpg);
-  background-size: cover;
-  height: 200px;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.s7_1 .news .news_item .news_img2 {
-  background-image: url(../img/di2.jpg);
-  background-size: cover;
-  height: 200px;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.s7_1 .news .news_item .news_img3 {
-  background-image: url(../img/pi6.jpg);
   background-size: cover;
   height: 200px;
   width: 100%;

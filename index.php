@@ -318,8 +318,8 @@ $partners = get_partners($link);
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
-                <a href="news_more.php" class="news_item n_item1" data-aos="zoom-in">
-                    <div class="news_img1">
+                <a href="news_more.php" class="news_item " data-aos="zoom-in">
+                    <div class="news_img">
                         <div class="news_day">
                             20 янв
                         </div>
@@ -333,7 +333,7 @@ $partners = get_partners($link);
                     </span>
                 </a>
                 <a href="news_more.php" class="news_item n_item2" data-aos="zoom-in">
-                    <div class="news_img2">
+                    <div class="news_img">
                         <div class="news_day">
                             25 фев
                         </div>
@@ -347,7 +347,7 @@ $partners = get_partners($link);
                     </span>
                 </a>
                 <a href="news_more.php" class="news_item n_item3" data-aos="zoom-in">
-                    <div class="news_img3">
+                    <div class="news_img">
                         <div class="news_day">
                             03 мар
                         </div>
