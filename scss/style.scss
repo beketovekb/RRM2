@@ -8,6 +8,7 @@
 body {
     background-color: #1D2124;
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -830,6 +831,8 @@ header {
                 align-items: center;
                 justify-content: center;
                 opacity: 0;
+                padding: 15px;
+                text-align: center;
                 .project_title{
                     color:#fff;
                     font-weight: 700;
