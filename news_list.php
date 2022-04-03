@@ -1,3 +1,37 @@
+<?php
+require_once 'include/database.php';
+require_once 'include/functions.php';
+$lng;
+if (isset($_GET['lng'])) $lng = $_GET['lng'];
+else $lng = 'ru';
+$lng = strtoupper($lng);
+$titles = get_titles($link, $lng);
+$ftitle;
+foreach ($titles as $title) {
+    $ftitle[$title["Number"]] = $title["Text"];
+}
+$pos = $_GET['pos'];
+$text;
+$img;
+$news = get_curent_news($link, $pos);
+foreach ($news as $new) {
+    if ($new['Lng_news'] == strtolower($lng)) {
+        $text[0] = $new['title_news'];
+        $text[1] = $new['opisanie_news'];
+        $text[2] = $new['napravlenia_news'];
+        $text[3] = date("d-m-Y H:i", strtotime($new['date_reliz_news']));
+        $img[0] = $new['img_news'];
+    }
+}
+$imgs = get_img_news($link, $pos);
+$i = 1;
+foreach ($imgs as $im) {
+    $img[$i] = $im['img_more_news'];
+    $i++;
+}
+
+$news = get_index_news($link, $lng, 4);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,26 +78,26 @@
                             </a>
                             <ul>
                             <a href="index.php?iac=1">
-                                    <li>О компании</li>
-                                </a>
-                                <a href="index.php?iac=3">
-                                    <li>Навправления</li>
-                                </a>
-                                <a href="index.php?iac=4">
-                                    <li>Проекты</li>
-                                </a>
-                                <a href="index.php?iac=5">
-                                    <li>Партнеры</li>
-                                </a>
-                                <a href="index.php?iac=7">
-                                    <li>Новости</li>
-                                </a>
-                                <a href="">
-                                    <li>Магазин</li>
-                                </a>
-                                <a href="index.php?iac=9">
-                                    <li>Контакты</li>
-                                </a>
+                                        <li><?php print($ftitle["16"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=3">
+                                        <li><?php print($ftitle["17"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=4">
+                                        <li><?php print($ftitle["18"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=5">
+                                        <li><?php print($ftitle["19"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=7">
+                                        <li><?php print($ftitle["20"]); ?></li>
+                                    </a>
+                                    <a href="">
+                                        <li><?php print($ftitle["21"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=9">
+                                        <li><?php print($ftitle["22"]); ?></li>
+                                    </a>
                             </ul>
                             <div class="soc">
                                 <a href="https://www.instagram.com/robotprostore/" class="soc">
@@ -87,18 +121,18 @@
                                         </svg>
                                 </a>
                                 <div id="lang_selector" class="language-dropdown">
-                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
+                                    <label for="toggle" class="lang-flag lang-<?php print(strtolower($lng)); ?>" title="Click to select the language">
                                         <span class="flag"></span>
                                     </label>
                                     <ul class="lang-list">
-                                        <li class="lang lang-ru selected" title="RU">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-ru <?php if ($lng == 'RU') print('selected'); ?>" title="RU">
+                                            <a href="/news_list.php?lng=ru"><span class="flag"></span></a>
                                         </li>
-                                        <li class="lang lang-en " title="EN">
-                                        <span class="flag"></span>  
+                                        <li class="lang lang-en <?php if ($lng == 'EN') print('selected'); ?>" title="EN">
+                                            <a href="/news_list.php?lng=en"><span class="flag"></span> </a>
                                         </li>
-                                        <li class="lang lang-kz" title="KZ">
-                                        <span class="flag"></span>
+                                        <li class="lang lang-kz <?php if ($lng == 'KZ') print('selected'); ?>" title="KZ">
+                                            <a href="/news_list.php?lng=kz"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -113,26 +147,26 @@
                                 </div>
                                 <ul class="none">
                                 <a href="index.php?iac=1">
-                                    <li>О компании</li>
-                                </a>
-                                <a href="index.php?iac=3">
-                                    <li>Навправления</li>
-                                </a>
-                                <a href="index.php?iac=4">
-                                    <li>Проекты</li>
-                                </a>
-                                <a href="index.php?iac=5">
-                                    <li>Партнеры</li>
-                                </a>
-                                <a href="index.php?iac=7">
-                                    <li>Новости</li>
-                                </a>
-                                <a href="">
-                                    <li>Магазин</li>
-                                </a>
-                                <a href="index.php?iac=9">
-                                    <li>Контакты</li>
-                                </a>
+                                        <li><?php print($ftitle["16"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=3">
+                                        <li><?php print($ftitle["17"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=4">
+                                        <li><?php print($ftitle["18"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=5">
+                                        <li><?php print($ftitle["19"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=7">
+                                        <li><?php print($ftitle["20"]); ?></li>
+                                    </a>
+                                    <a href="">
+                                        <li><?php print($ftitle["21"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=9">
+                                        <li><?php print($ftitle["22"]); ?></li>
+                                    </a>
                                 </ul>
                             </div>
                         </nav>
@@ -305,13 +339,13 @@
                                     <div class="pagination_element">˂</div>
                                 </a>
                                 <a href="#">
-                                    <div class="pagination_element">1</div>
+                                    <div class="pagination_element active">1</div>
                                 </a>
                                 <a href="#">
                                     <div class="pagination_element">2</div>
                                 </a>
                                 <a href="#">
-                                    <div class="pagination_element active">3</div>
+                                    <div class="pagination_element ">3</div>
                                 </a>
                                 <a href="#">
                                     <div class="pagination_element">˃</div>
@@ -353,27 +387,27 @@
         </div>
         <span class="right">© SKIMAKSSS | All Rights Reserved. | 2022</span>
         <ul>
-            <a href="#s1_1">
-                <li>О компании</li>
-            </a>
-            <a href="#s3_1">
-                <li>Навправления</li>
-            </a>
-            <a href="#s4_1">
-                <li>Проекты</li>
-            </a>
-            <a href="#s5_1">
-                <li>Партнеры</li>
-            </a>
-            <a href="#s7_1">
-                <li>Новости</li>
-            </a>
-            <a href="">
-                <li>Магазин</li>
-            </a>
-            <a href="#s9_1">
-                <li>Контакты</li>
-            </a>
+        <a href="index.php?iac=1">
+                                        <li><?php print($ftitle["16"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=3">
+                                        <li><?php print($ftitle["17"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=4">
+                                        <li><?php print($ftitle["18"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=5">
+                                        <li><?php print($ftitle["19"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=7">
+                                        <li><?php print($ftitle["20"]); ?></li>
+                                    </a>
+                                    <a href="">
+                                        <li><?php print($ftitle["21"]); ?></li>
+                                    </a>
+                                    <a href="index.php?iac=9">
+                                        <li><?php print($ftitle["22"]); ?></li>
+                                    </a>
         </ul>
         </div>
     </footer>

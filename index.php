@@ -47,7 +47,7 @@ foreach ($img_urls as $img_ur) {
     $img_url[$img_ur['Name_img_site']] = $img_ur['Url_img_site'];
 }
 $partners = get_partners($link);
-$news = get_index_news($link, $lng);
+$news = get_index_news($link, $lng, 3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +60,7 @@ $news = get_index_news($link, $lng);
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/sweetalert.min.css">
     <title>Regulus Robotics Machine</title>
 </head>
 
@@ -247,17 +248,17 @@ $news = get_index_news($link, $lng);
                 <div class="fback_form" data-aos="flip-right">
                     <h2><?php print($ftitle["24"]); ?></h2>
                     <span><?php print($ftitle["25"]); ?></span>
-                    <form action="">
+                    <form action="post" class="feedback-form">
                         <div class="from_input-name">
                             <label for=""><?php print($ftitle["26"]); ?></label>
-                            <input type="text" placeholder="Арман">
+                            <input type="text" placeholder="Арман" name="name">
                         </div>
 
                         <div class="from_input-number">
                             <label for=""><?php print($ftitle["27"]); ?></label>
-                            <input type="text" placeholder="87778001234">
+                            <input type="tel" placeholder="87778001234" name="phone">
                         </div>
-                        <button><?php print($ftitle["28"]); ?></button>
+                        <button class="btn feedback-form__button"><?php print($ftitle["28"]); ?></button>
 
                         <div class="from_input-acept">
                             <input type="checkbox" name="" id="form_acept">
@@ -321,7 +322,7 @@ $news = get_index_news($link, $lng);
             <div class="news">
                 <!-- Отсюда -->
                 <?php foreach ($news as $new) {?>
-                <a href="news_more.php" class="news_item " data-aos="zoom-in">
+                <a href="news_more.php?pos=<?php print($new['uk_news']); ?>&lng=<?php print($lng); ?>" class="news_item " data-aos="zoom-in">
                     <div class="news_img" style="background-image: url(<?php print($new['img_news']); ?>);">
                         <div class="news_day">
                         <?php print(date_index($new['date_reliz_news'],$lng)); ?>
@@ -402,5 +403,7 @@ $news = get_index_news($link, $lng);
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
 <script type="text/javascript" src="js/preloader.js"></script>
+<script src="js/sweetalert.min.js"></script>
+    <script src="js/form.js"></script>
 
 </html>

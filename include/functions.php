@@ -193,9 +193,9 @@ function get_news($link)
     return $projects;
 }
 
-function get_index_news($link, $lng)
+function get_index_news($link, $lng, $col)
 {
-    $sql = "SELECT * FROM `news` WHERE Lng_news = '".$lng."' ORDER BY `date_reliz_news` DESC LIMIT 3";
+    $sql = "SELECT * FROM `news` WHERE Lng_news = '".$lng."' ORDER BY `date_reliz_news` DESC LIMIT ".$col;
     $result = mysqli_query($link, $sql);
 
     $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);

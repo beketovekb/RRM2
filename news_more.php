@@ -1,3 +1,37 @@
+<?php
+require_once 'include/database.php';
+require_once 'include/functions.php';
+$lng;
+if (isset($_GET['lng'])) $lng = $_GET['lng'];
+else $lng = 'ru';
+$lng = strtoupper($lng);
+$titles = get_titles($link, $lng);
+$ftitle;
+foreach ($titles as $title) {
+    $ftitle[$title["Number"]] = $title["Text"];
+}
+$pos = $_GET['pos'];
+$text;
+$img;
+$news = get_curent_news($link, $pos);
+foreach ($news as $new) {
+    if ($new['Lng_news'] == strtolower($lng)) {
+        $text[0] = $new['title_news'];
+        $text[1] = $new['opisanie_news'];
+        $text[2] = $new['napravlenia_news'];
+        $text[3] = date("d-m-Y H:i", strtotime($new['date_reliz_news']));
+        $img[0] = $new['img_news'];
+    }
+}
+$imgs = get_img_news($link, $pos);
+$i = 1;
+foreach ($imgs as $im) {
+    $img[$i] = $im['img_more_news'];
+    $i++;
+}
+
+$news = get_index_news($link, $lng, 4);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,25 +79,25 @@
                             </a>
                             <ul>
                                 <a href="index.php?iac=1">
-                                    <li>О компании</li>
+                                    <li><?php print($ftitle["16"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=3">
-                                    <li>Навправления</li>
+                                    <li><?php print($ftitle["17"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=4">
-                                    <li>Проекты</li>
+                                    <li><?php print($ftitle["18"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=5">
-                                    <li>Партнеры</li>
+                                    <li><?php print($ftitle["19"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=7">
-                                    <li>Новости</li>
+                                    <li><?php print($ftitle["20"]); ?></li>
                                 </a>
                                 <a href="">
-                                    <li>Магазин</li>
+                                    <li><?php print($ftitle["21"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=9">
-                                    <li>Контакты</li>
+                                    <li><?php print($ftitle["22"]); ?></li>
                                 </a>
                             </ul>
                             <div class="soc">
@@ -94,18 +128,18 @@
                                     </svg>
                                 </a>
                                 <div id="lang_selector" class="language-dropdown">
-                                    <label for="toggle" class="lang-flag lang-ru" title="Click to select the language">
+                                    <label for="toggle" class="lang-flag lang-<?php print(strtolower($lng)); ?>" title="Click to select the language">
                                         <span class="flag"></span>
                                     </label>
                                     <ul class="lang-list">
-                                        <li class="lang lang-ru selected" title="RU">
-                                            <span class="flag"></span>
+                                        <li class="lang lang-ru <?php if ($lng == 'RU') print('selected'); ?>" title="RU">
+                                            <a href="/news_more.php?lng=ru&pos=<?php print($pos); ?>"><span class="flag"></span></a>
                                         </li>
-                                        <li class="lang lang-en " title="EN">
-                                            <span class="flag"></span>
+                                        <li class="lang lang-en <?php if ($lng == 'EN') print('selected'); ?>" title="EN">
+                                            <a href="/news_more.php?lng=en&pos=<?php print($pos); ?>"><span class="flag"></span> </a>
                                         </li>
-                                        <li class="lang lang-kz" title="KZ">
-                                            <span class="flag"></span>
+                                        <li class="lang lang-kz <?php if ($lng == 'KZ') print('selected'); ?>" title="KZ">
+                                            <a href="/news_more.php?lng=kz&pos=<?php print($pos); ?>"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -120,25 +154,25 @@
                                 </div>
                                 <ul class="none">
                                     <a href="index.php?iac=1">
-                                        <li>О компании</li>
+                                        <li><?php print($ftitle["16"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=3">
-                                        <li>Навправления</li>
+                                        <li><?php print($ftitle["17"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=4">
-                                        <li>Проекты</li>
+                                        <li><?php print($ftitle["18"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=5">
-                                        <li>Партнеры</li>
+                                        <li><?php print($ftitle["19"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=7">
-                                        <li>Новости</li>
+                                        <li><?php print($ftitle["20"]); ?></li>
                                     </a>
                                     <a href="">
-                                        <li>Магазин</li>
+                                        <li><?php print($ftitle["21"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=9">
-                                        <li>Контакты</li>
+                                        <li><?php print($ftitle["22"]); ?></li>
                                     </a>
                                 </ul>
                             </div>
@@ -161,7 +195,7 @@
                     </div>
                     <div class="news_column">
                         <div class="news_more_page">
-                            <h3>Сайт компании "GROUP 2"</h3>
+                            <h3><?php print($text[0]); ?></h3>
                             <hr>
                             <!-- Главная картинка которая появляется в мобильной версии -->
                             <div class="news_more_img"></div>
@@ -169,49 +203,27 @@
                             <div class="slider-pro sp-vertical" id="my-slider">
                                 <div class="sp-slides sp-slides-container">
                                     <!-- Slide 1 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di1.jpg" />
-                                    </div>
-
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di2.jpg" />
-                                    </div>
-
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di3.jpg" />
-                                    </div>
-
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di4.jpg" />
-                                    </div>
-
-                                    <!-- Slide 2 -->
-                                    <div class="sp-slide">
-                                        <img class="sp-image" src="img/di5.jpg" />
-                                    </div>
+                                    <?php for ($t = 0; $t < $i; $t++) { ?>
+                                        <div class="sp-slide">
+                                            <img class="sp-image" src="<?php print($img[$t]); ?>" />
+                                        </div>
+                                    <?php } ?>
                                 </div>
                                 <div class="sp-thumbnails sp-thumbnails-container sp-right-thumbnails sp-has-pointer sp-swiping">
-                                    <img class="sp-thumbnail" src="img/di1.jpg" data-src="img/di1.jpg" />
-                                    <img class="sp-thumbnail" src="img/di2.jpg" data-src="img/di2.jpg" />
-                                    <img class="sp-thumbnail" src="img/di3.jpg" data-src="img/di3.jpg" />
-                                    <img class="sp-thumbnail" src="img/di4.jpg" data-src="img/di4.jpg" />
-                                    <img class="sp-thumbnail" src="img/di5.jpg" data-src="img/di5.jpg" />
+                                    <?php for ($t = 0; $t < $i; $t++) { ?>
+                                        <img class="sp-thumbnail" src="<?php print($img[$t]); ?>" data-src="<?php print($img[$t]); ?>" />
+                                    <?php } ?>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sit magni assumenda excepturi distinctio eaque, ullam numquam. Dolore, sunt labore at autem magnam non alias quam iste sequi veniam molestiae ab incidunt ratione necessitatibus perspiciatis mollitia quis facilis aspernatur et, sit nobis saepe ex sint. Fuga laborum ratione quaerat quidem voluptates ex commodi, corrupti, vel consequuntur molestias reprehenderit.
-                                <br><br>Autem mollitia sunt repudiandae deleniti quibusdam minima dolores beatae soluta magni asperiores ipsum quae et quam perferendis ut porro, tempore praesentium reprehenderit! Molestias porro nulla voluptates consequuntur in odit esse ab eos architecto mollitia vitae illo officiis facere, enim recusandae quasi fugit consectetur voluptate perspiciatis dolor sed ipsam animi reiciendis quis. Quibusdam cupiditate modi sit similique nemo sunt architecto quae illum corrupti?
-                                <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, explicabo enim dolores neque inventore esse consequuntur laudantium accusamus maxime iusto rerum corrupti quisquam quidem eligendi nisi non excepturi veniam aspernatur magnam! Quam illum accusantium accusamus?
-                                <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ad exercitationem non maiores iusto illum facere, vero facilis id nihil asperiores omnis odio minima tempore reiciendis maxime provident unde a. Unde pariatur voluptate, fugit atque ducimus at fugiat. Magnam neque voluptas natus iste itaque eius, maxime numquam ipsa quibusdam corrupti voluptates. Reprehenderit sint ipsam ut, non officiis architecto iure voluptatum eum saepe magni error! Quia esse velit fugit accusamus autem magnam iste nulla optio, dolorum vero architecto iusto, reprehenderit doloribus!
+                            <p>
+                                <?php print($text[1]); ?>
                             </p>
                             <div class="news_options">
                                 <a href=""><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="17" cy="8" r="4" fill="#888" />
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15 8C15 6.89543 15.8954 6 17 6C18.1046 6 19 6.89543 19 8H15ZM11 8C11 7.29873 11.1203 6.62556 11.3414 6H5C4.44772 6 4 6.44772 4 7C4 7.55228 4.44772 8 5 8H11ZM11.8027 11C12.2671 11.8028 12.9121 12.488 13.6822 13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11.8027ZM5 16C4.44772 16 4 16.4477 4 17C4 17.5523 4.44772 18 5 18H19C19.5523 18 20 17.5523 20 17C20 16.4477 19.5523 16 19 16H5Z" fill="#888" />
                                     </svg>
-                                    Название направления</a>
+                                    <?php print($text[2]); ?></a>
                                 <hr>
                                 <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="3" y="6" width="18" height="15" rx="2" stroke="#888888" stroke-width="2" />
@@ -220,52 +232,24 @@
                                         <path d="M8 3L8 7" stroke="#888888" stroke-width="2" stroke-linecap="round" />
                                         <path d="M16 3L16 7" stroke="#888888" stroke-width="2" stroke-linecap="round" />
                                     </svg>
-                                    14 июля 2022 21:00</span>
+                                    <?php print($text[3]); ?></span>
                             </div>
                             <hr>
                             <div class="news_slide">
                                 <h3>Последние новости</h3>
                                 <div class="last_news">
-                                    <a href="news_more.php" class="last_news_item">
-                                        <div class="last_news_img"></div>
-                                        <div class="last_news_title">Сайт компании "GROUP 2"</div>
-                                        <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <span href="#" class="learn_more">Читать подробнее
-                                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="news_more.php" class="last_news_item">
-                                        <div class="last_news_img"></div>
-                                        <div class="last_news_title">Сайт компании "GROUP 2"</div>
-                                        <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <span href="#" class="learn_more">Читать подробнее
-                                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="news_more.php" class="last_news_item">
-                                        <div class="last_news_img"></div>
-                                        <div class="last_news_title">Сайт компании "GROUP 2"</div>
-                                        <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <span href="#" class="learn_more">Читать подробнее
-                                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <a href="news_more.php" class="last_news_item">
-                                        <div class="last_news_img"></div>
-                                        <div class="last_news_title">Сайт компании "GROUP 2"</div>
-                                        <div class="last_news_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dicta ducimus quae temporibus excepturi corporis odit incidunt quasi eius deserunt.</div>
-                                        <span href="#" class="learn_more">Читать подробнее
-                                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
-                                            </svg>
-                                        </span>
-                                    </a>
+                                    <?php foreach ($news as $new) { ?>
+                                        <a href="news_more.php?pos=<?php print($new['uk_news']); ?>&lng=<?php print($lng); ?>" class="last_news_item">
+                                            <div class="last_news_img" style="background-image: url(<?php print($new['img_news']); ?>);"></div>
+                                            <div class="last_news_title"><?php print($new['title_news']); ?></div>
+                                            <div class="last_news_caption"><?php print($new['opisanie_news']); ?></div>
+                                            <span href="#" class="learn_more">Читать подробнее
+                                                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#D69600"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -279,52 +263,49 @@
         <div class="container">
             <div class="f3" data-aos="zoom-in-up">
                 <div class="f1_about">
-                    <h3>О Компании</h3>
-                    <span>Компания Regulus Robotics Machine (RRM) создана в 2016-м году в качестве платформы для интернет-магазина роботехнической продукции. Наша продуктовая линейка — это образовательные и сервисные роботы, интерактивное оборудование, цифровые лаборатории, 3D принтеры и программные решения. Мы всегда в погоне за лучшим продуктом и лучшим сервисом.
-                        Мы осуществили поставку первых в Казахстане роботов THESPIAN, PEPPER, NAO-V6, ROBOTIS MINI, BIOLOID, CRUZR UPTECH. </span>
+                    <h3><?php print($ftitle["32"]); ?></h3>
+                    <span><?php print($ftitle["33"]); ?></span>
                 </div>
                 <div class="f2_info">
-                    <h3>О Компании</h3>
-                    <span><img src="img/place.png" alt=""> г. Алматы, Казахстан,
-                        проспект Гагарина 309, офис 23 <br>
-                        г. Нур-Султан, Казахстан, ул.​Тарас
-                        Шевченко, 4/1, оф.414c</span>
-                    <span><img src="img/phone.png" alt=""> +7 701 800 2178</span>
-                    <span><img src="img/email.png" alt=""> info@robotprostore.kz</span>
-                    <span><img src="img/insta.png" alt=""> @robotprostore</span>
+                    <h3><?php print($ftitle["34"]); ?></h3>
+                    <span><img src="img/place.png" alt=""> <?php print($ftitle["35"]); ?></span>
+                    <span><img src="img/phone.png" alt=""> <?php print($ftitle["36"]); ?></span>
+                    <span><img src="img/email.png" alt=""> <?php print($ftitle["37"]); ?></span>
+                    <span><img src="img/insta.png" alt=""> <?php print($ftitle["38"]); ?></span>
                 </div>
                 <div class="f3_feed">
-                    <h3>Оставьте заявку</h3>
-                    <span>Отправьте нам заявку и<br> наши менеджеры с вами свяжутся.</span>
+                    <h3><?php print($ftitle["40"]); ?></h3>
+                    <span><?php print($ftitle["39"]); ?></span>
                     <form action="">
                         <input type="text" placeholder="Введите Ваше имя">
                         <input type="text" placeholder="Введите Ваш номер">
-                        <button class="shop_btn">Перейти в магазин</button>
+                        <button class="shop_btn"><?php print($ftitle["23"]); ?></button>
                     </form>
                 </div>
             </div>
             <span class="right">© SKIMAKSSS | All Rights Reserved. | 2022</span>
             <ul>
-                <a href="#s1_1">
-                    <li>О компании</li>
+
+                <a href="index.php?iac=1">
+                    <li><?php print($ftitle["16"]); ?></li>
                 </a>
-                <a href="#s3_1">
-                    <li>Навправления</li>
+                <a href="index.php?iac=3">
+                    <li><?php print($ftitle["17"]); ?></li>
                 </a>
-                <a href="#s4_1">
-                    <li>Проекты</li>
+                <a href="index.php?iac=4">
+                    <li><?php print($ftitle["18"]); ?></li>
                 </a>
-                <a href="#s5_1">
-                    <li>Партнеры</li>
+                <a href="index.php?iac=5">
+                    <li><?php print($ftitle["19"]); ?></li>
                 </a>
-                <a href="#s7_1">
-                    <li>Новости</li>
+                <a href="index.php?iac=7">
+                    <li><?php print($ftitle["20"]); ?></li>
                 </a>
                 <a href="">
-                    <li>Магазин</li>
+                    <li><?php print($ftitle["21"]); ?></li>
                 </a>
-                <a href="#s9_1">
-                    <li>Контакты</li>
+                <a href="index.php?iac=9">
+                    <li><?php print($ftitle["22"]); ?></li>
                 </a>
             </ul>
         </div>
