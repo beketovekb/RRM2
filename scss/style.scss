@@ -98,6 +98,18 @@ header {
             }
         }
     }
+    .scroll-auto{
+        overflow: auto !important;
+    }
+    .scroll-auto::-webkit-scrollbar {
+        width: 0px;               /* ширина scrollbar */
+      }
+      .scroll-auto::-webkit-scrollbar-track {
+        background: transparent;        /* цвет дорожки */
+      }
+      .scroll-auto::-webkit-scrollbar-thumb {
+        border-radius: 20px;       /* закругления плашки */
+      }
     .header_bg {
         height: 100%;
         position: relative;
@@ -1296,7 +1308,7 @@ footer{
     height: 60vh;
     grid-gap: 20px;
     padding: 80px 0 40px;
-    @media (max-width:850px) {
+    @media (max-width:1200px) {
         flex-direction: column;
         height: auto;
         margin-top: 80px;
@@ -1333,11 +1345,11 @@ footer{
             font-weight: 900;
             letter-spacing: 5px;
             line-height: 42px;
-            @media (max-width:850px) {
+            @media (max-width:1200px) {
                 text-align: center;
                 width: 100%;
             }
-            @media (max-height:850px) {
+            @media (max-height:1200px) {
                 font-size: 24px;
                 line-height: 30px;
             }
@@ -1348,10 +1360,10 @@ footer{
             text-transform: uppercase;
             line-height: 22px;
             margin-top: 25px;
-            @media (max-width:850px) {
+            @media (max-width:1200px) {
                 text-align: center;
             }
-            @media (max-height:850px) {
+            @media (max-height:1200px) {
                 font-size: 14px;
                 margin-top: 10px;
             }
@@ -1362,7 +1374,7 @@ footer{
             margin-top: 25px;
             text-transform: uppercase;
             font-weight: 600;
-            @media (max-width:850px) {
+            @media (max-width:1200px) {
                 text-align: center;
                 margin: auto;
                 margin-top: 25px;
@@ -1536,6 +1548,9 @@ footer{
     grid-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 200px);
+    @media (max-width:850px) {
+        grid-template-columns: auto;
+    }
     .voz_item{
         // background-color: #fff;
         position: relative;

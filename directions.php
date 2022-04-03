@@ -48,7 +48,7 @@ $projects = get_more_project($link, $lng, $id);
         <div id='stars3'></div>
     </div>
     <header>
-        <div class="header_bg">
+        <div class="header_bg scroll-auto">
             <img class="spectr" src="img/bg_spectr.png" alt="">
             <div class="container">
                 <div class="header_nav">
