@@ -283,7 +283,7 @@ body {
 .details .recentOrders {
     position: relative;
     display: grid;
-    min-height: 500px;
+    min-height: 200px;
     background: var(--white);
     padding: 20px;
     box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
@@ -723,6 +723,7 @@ body::-webkit-scrollbar {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    padding: 5px;
   }
   .select_style:focus {
     border-radius: 8px 8px 0 0;
@@ -731,4 +732,9 @@ body::-webkit-scrollbar {
 
   .necessarily{
       color: red;
+  }
+
+  .listTable table tr td:nth-child(1) {
+    width: 30% !important;
+
   }

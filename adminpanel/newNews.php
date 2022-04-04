@@ -12,7 +12,7 @@ foreach ($napravlenia as $napravlen) {
     <?php include "menu.php"; ?>
     <div class="details">
         <form action="../include/save.php" method="POST" enctype="multipart/form-data">
-            <div class="recentOrders aboutOrders">
+            <div class="recentOrders aboutOrders listTable">
                 <div class="cardHeader">
                     <h2>Добавить новость</h2>
                     <input type="submit" value="Сохранить" class="btn" />
@@ -28,14 +28,14 @@ foreach ($napravlenia as $napravlen) {
                     <tbody>
                         <tr>
                             <td>
-                                <h4>Изображения на главной странице</h4>
+                                <h4>Изображения на главной странице<span class="necessarily"> *</span></h4>
                             </td>
                             <td width="60px">
                                 <input type="file" name="newnews" id="img">
                             </td>
                         </tr>
                         <tr>
-                            <td>Дата публикации</td>
+                            <td>Дата публикации<span class="necessarily"> *</span></td>
                             <td><input type="datetime-local" id="localdate" name="date" /> </td>
                         </tr>
                     </tbody>
@@ -49,17 +49,17 @@ foreach ($napravlenia as $napravlen) {
                     <tbody>
                         <!--Russian-->
                         <tr>
-                            <td>Заголовок</td>
+                            <td>Заголовок<span class="necessarily"> *</span></td>
                             <td><input type="text" name="title_ru" style="width: 100%;" value=""></td>
                             <td>RU</td>
                         </tr>
                         <tr>
-                            <td>Описание</td>
+                            <td>Описание<span class="necessarily"> *</span></td>
                             <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                             <td>RU</td>
                         </tr>
                         <tr>
-                            <td>Направления</td>
+                            <td>Направление<span class="necessarily"> *</span></td>
                             <td><input type="text" name="napravlenia_ru" style="width: 100%;" value=""></td>
                             <td>RU</td>
                         </tr>
@@ -75,17 +75,17 @@ foreach ($napravlenia as $napravlen) {
 
                         <!--English-->
                         <tr>
-                            <td>Заголовок</td>
+                            <td>Заголовок<span class="necessarily"> *</span></td>
                             <td><input type="text" name="title_en" style="width: 100%;" value=""></td>
                             <td>ENG</td>
                         </tr>
                         <tr>
-                            <td>Описание</td>
+                            <td>Описание<span class="necessarily"> *</span></td>
                             <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                             <td>ENG</td>
                         </tr>
                         <tr>
-                            <td>Направления</td>
+                            <td>Направление<span class="necessarily"> *</span></td>
                             <td><input type="text" name="napravlenia_en" style="width: 100%;" value=""></td>
                             <td>ENG</td>
                         </tr>
@@ -100,17 +100,17 @@ foreach ($napravlenia as $napravlen) {
                     <tbody>
                         <!--Kazakh-->
                         <tr>
-                            <td>Заголовок</td>
+                            <td>Заголовок<span class="necessarily"> *</span></td>
                             <td><input type="text" name="title_kz" style="width: 100%;" value=""></td>
                             <td>KZ</td>
                         </tr>
                         <tr>
-                            <td>Описание</td>
+                            <td>Описание<span class="necessarily"> *</span></td>
                             <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                             <td>KZ</td>
                         </tr>
                         <tr>
-                            <td>Направления</td>
+                            <td>Направление<span class="necessarily"> *</span></td>
                             <td><input type="text" name="napravlenia_kz" style="width: 100%;" value=""></td>
                             <td>KZ</td>
                         </tr>
