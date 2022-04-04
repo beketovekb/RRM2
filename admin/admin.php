@@ -98,6 +98,22 @@ if (isset($_GET['str'])) {
                     </a>
                 </li>
                 <li>
+                    <a href="/admin/admin.php?str=new_product">
+                        <span class="icon">
+                        <ion-icon name="logo-reddit"></ion-icon>
+                        </span>
+                        <span class="title">Добавить новый продукт</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/admin.php?str=spisokProject">
+                        <span class="icon">
+                        <ion-icon name="logo-stackoverflow"></ion-icon>
+                        </span>
+                        <span class="title">Список продуктов</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/admin/admin.php?str=listpartner">
                         <span class="icon">
                             <ion-icon name="earth-outline"></ion-icon>

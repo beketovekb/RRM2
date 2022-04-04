@@ -85,9 +85,9 @@ $imgs = get_img_project($link, $pos);
                                     <td>Тип направления</td>
                                     <td><select name="btn_ru">
                                             <option disabled>Выберите тип</option>
-                                            <?php foreach ($napravlenia as $napravlen) { ?>
+                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){  ?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]); ?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
-                                            <?php } ?>
+                                            <?php }} ?>
                                         </select></td>
                                     <td>RU</td>
                                 </tr>
@@ -129,9 +129,9 @@ $imgs = get_img_project($link, $pos);
                                     <td>Тип направления</td>
                                     <td><select name="btn_en">
                                             <option disabled>Выберите тип</option>
-                                            <?php foreach ($napravlenia as $napravlen) { ?>
+                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]); ?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
-                                            <?php } ?>
+                                            <?php }} ?>
                                         </select></td>
                                     <td>ENG</td>
                                 </tr>
@@ -172,9 +172,9 @@ $imgs = get_img_project($link, $pos);
                                     <td>Тип направления</td>
                                     <td><select name="btn_kz">
                                             <option disabled>Выберите тип</option>
-                                            <?php foreach ($napravlenia as $napravlen) { ?>
+                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){  ?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]); ?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
-                                            <?php } ?>
+                                            <?php }} ?>
                                         </select></td>
                                     <td>KZ</td>
                                 </tr>

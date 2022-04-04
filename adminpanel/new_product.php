@@ -14,7 +14,7 @@ foreach ($napravlenia as $napravlen) {
         <form action="../include/save.php" method="POST" enctype="multipart/form-data">
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
-                    <h2>Новый проект</h2>
+                    <h2>Новый продукт</h2>
                     <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="newProject">
                 </div>
@@ -45,17 +45,17 @@ foreach ($napravlenia as $napravlen) {
                     <tbody>
                                 <!--Russian-->
                                 <tr>
-                                    <td>Приоритет</td>
+                                    <td>Приоритет*</td>
                                     <td><input type="text" name="prioritet_ru" style="width: 100%;" value=""></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Заголовок</td>
+                                    <td>Заголовок*</td>
                                     <td><input type="text" name="title_ru" style="width: 100%;" value=""></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Описание</td>
+                                    <td>Описание*</td>
                                     <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                                     <td>RU</td>
                                 </tr>
@@ -65,10 +65,21 @@ foreach ($napravlenia as $napravlen) {
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип направления</td>
+                                    <td>Цена</td>
+                                    <td><input type="text" name="cena_ru" style="width: 100%;" value=""></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Ссылка<*/td>
+                                    <td><input type="text" name="url_ru" style="width: 100%;" value=""></td>
+                                    <td>RU</td>
+                                </tr>
+                                <tr>
+                                    <td>Тип направления*</td>
                                     <td><select name="btn_ru">
                                             <option disabled>Выберите тип</option>
-                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
+                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='1'){ ?>
+                                                
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
                                             <?php }}?>
                                         </select></td>
@@ -109,9 +120,9 @@ foreach ($napravlenia as $napravlen) {
                                     <td>Тип направления</td>
                                     <td><select name="btn_en">
                                             <option disabled>Выберите тип</option>
-                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
-                                            <?php  }}?>
+                                            <?php }?>
                                         </select></td>
                                     <td>ENG</td>
                                 </tr>
@@ -149,9 +160,9 @@ foreach ($napravlenia as $napravlen) {
                                     <td>Тип направления</td>
                                     <td><select name="btn_kz">
                                             <option disabled>Выберите тип</option>
-                                            <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
+                                            <?php foreach ($napravlenia as $napravlen) {?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
-                                            <?php }}?>
+                                            <?php }?>
                                         </select></td>
                                     <td>KZ</td>
                                 </tr>
