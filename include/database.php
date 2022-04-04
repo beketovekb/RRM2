@@ -2,7 +2,7 @@
 $host = 'localhost';
 $login='p-18653_beka';
 $password = '341833beka';
-$name_bd= 'p-18653_rrm';
+$name_bd= 'p-328768_rrm';
 $link = mysqli_connect($host,$login,$password,$name_bd);
 
 if(mysqli_connect_errno())
