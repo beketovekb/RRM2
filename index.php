@@ -256,7 +256,7 @@ $news = get_index_news($link, $lng, 3);
 
                         <div class="from_input-number">
                             <label for=""><?php print($ftitle["27"]); ?></label>
-                            <input type="tel" placeholder="87778001234" name="phone">
+                            <input type="tel" placeholder="8(___) ___-____" name="phone" id="phone1">
                         </div>
                         <button class="btn feedback-form__button"><?php print($ftitle["28"]); ?></button>
 
@@ -405,5 +405,10 @@ $news = get_index_news($link, $lng, 3);
 <script type="text/javascript" src="js/preloader.js"></script>
 <script src="js/sweetalert.min.js"></script>
     <script src="js/form.js"></script>
-
+    <script src="js/jquery.maskedinput.js"></script>
+<script>
+    $(function(){
+    $("#phone1").mask("8(999) 999-9999");
+    });
+</script>
 </html>
