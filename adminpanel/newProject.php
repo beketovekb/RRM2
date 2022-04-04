@@ -33,7 +33,7 @@ foreach ($napravlenia as $napravlen) {
                 <tbody>
                 <tr>
                     <td>
-                        <h4>Основное изображение проекта на главной странице</h4>
+                        <h4>Основное изображение проекта на главной странице<span class="necessarily"> *</span></h4>
                     </td>
                     <td width="60px">
                         <input type="file" name="newproj" id="img">
@@ -53,17 +53,17 @@ foreach ($napravlenia as $napravlen) {
                     <tbody>
                                 <!--Russian-->
                                 <tr>
-                                    <td>Приоритет</td>
+                                    <td>Приоритет<span class="necessarily"> *</span></td>
                                     <td><input type="text" name="prioritet_ru" style="width: 100%;" value=""></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Заголовок</td>
+                                    <td>Заголовок<span class="necessarily"> *</span></td>
                                     <td><input type="text" name="title_ru" style="width: 100%;" value=""></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Описание</td>
+                                    <td>Описание<span class="necessarily"> *</span></td>
                                     <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                                     <td>RU</td>
                                 </tr>
@@ -73,7 +73,7 @@ foreach ($napravlenia as $napravlen) {
                                     <td>RU</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип направления</td>
+                                    <td>Тип направления<span class="necessarily"> *</span></td>
                                     <td><select name="btn_ru" class="select_style">
                                             <option disabled>Выберите тип</option>
                                             <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
@@ -97,17 +97,17 @@ foreach ($napravlenia as $napravlen) {
 
                                 <!--English-->
                                 <tr>
-                                    <td>Приоритет</td>
+                                    <td>Приоритет<span class="necessarily"> *</span></td>
                                     <td><input type="text" name="prioritet_en" style="width: 100%;" value=""></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
-                                    <td>Заголовок</td>
+                                    <td>Заголовок<span class="necessarily"> *</span></td>
                                     <td><input type="text" name="title_en" style="width: 100%;" value=""></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
-                                    <td>Описание</td>
+                                    <td>Описание<span class="necessarily"> *</span></td>
                                     <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                                     <td>ENG</td>
                                 </tr>
@@ -117,7 +117,7 @@ foreach ($napravlenia as $napravlen) {
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип направления</td>
+                                    <td>Тип направления<span class="necessarily"> *</span></td>
                                     <td><select name="btn_en"  class="select_style">
                                             <option disabled>Выберите тип</option>
                                             <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
@@ -140,17 +140,17 @@ foreach ($napravlenia as $napravlen) {
                     <tbody>
                                 <!--Kazakh-->
                                 <tr>
-                                    <td>Приоритет</td>
+                                    <td>Приоритет<span class="necessarily"> *</span></td>
                                     <td><input type="text" name="prioritet_kz" style="width: 100%;" value=""></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
-                                    <td>Заголовок</td>
+                                    <td>Заголовок<span class="necessarily"> *</span></td>
                                     <td><input type="text" name="title_kz" style="width: 100%;" value=""></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
-                                    <td>Описание</td>
+                                    <td>Описание<span class="necessarily"> *</span></td>
                                     <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"></textarea></td>
                                     <td>KZ</td>
                                 </tr>
@@ -160,7 +160,7 @@ foreach ($napravlenia as $napravlen) {
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
-                                    <td>Тип направления</td>
+                                    <td>Тип направления<span class="necessarily"> *</span></td>
                                     <td><select name="btn_kz"  class="select_style">
                                             <option disabled>Выберите тип</option>
                                             <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
