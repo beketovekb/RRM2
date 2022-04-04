@@ -1158,6 +1158,7 @@ header .burger .burger_menu .burger_line {
   opacity: 0;
   padding: 15px;
   text-align: center;
+  position: relative;
 }
 
 .s4_1 .projects .projects_item .p_shadow .project_title {
@@ -2123,6 +2124,7 @@ footer .f3 .f3_feed .shop_btn {
   .voz {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
+    padding-bottom: 60px;
   }
 }
 
@@ -2893,6 +2895,14 @@ label .flag::before {
 
 .overflow_unset {
   overflow: unset;
+}
+
+.overflow_hidden {
+  overflow: hidden;
+}
+
+.h_auto {
+  height: auto;
 }
 
 @media (max-height: 800px) {

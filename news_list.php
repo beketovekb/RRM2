@@ -65,7 +65,7 @@ $news = get_index_news($link, $lng, 4);
         <div id='stars3'></div>
     </div>
     <header class="news_header">
-        <div class="header_bg">
+        <div class="header_bg overflow_hidden">
             <img class="spectr" src="img/bg_spectr.png" alt="">
             <div class="container">
                 <div class="header_nav news_nav">

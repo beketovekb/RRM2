@@ -845,6 +845,7 @@ header {
                 opacity: 0;
                 padding: 15px;
                 text-align: center;
+                position: relative;
                 .project_title{
                     color:#fff;
                     font-weight: 700;
@@ -1550,6 +1551,7 @@ footer{
     grid-template-rows: repeat(1, 200px);
     @media (max-width:850px) {
         grid-template-columns: auto;
+        padding-bottom: 60px;
     }
     .voz_item{
         // background-color: #fff;
@@ -2163,7 +2165,12 @@ footer{
     .overflow_unset{
         overflow: unset;
     }
-
+    .overflow_hidden{
+        overflow: hidden;
+    }
+    .h_auto {
+        height: auto;
+    }
 
     .sp-bottom-thumbnails{
         @media (max-height: 800px) {

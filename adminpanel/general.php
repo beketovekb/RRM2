@@ -34,6 +34,9 @@ foreach ($titles as $title) {
                 </div>
                 <table>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -69,6 +72,9 @@ foreach ($titles as $title) {
                         </tr>
                     </tbody>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА АНГЛИЙСКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -104,6 +110,9 @@ foreach ($titles as $title) {
                         </tr>
                     </tbody>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА КАЗАХСКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -156,13 +165,12 @@ foreach ($titles as $title) {
             <table>
                 <tr>
                     <td>
-
                         <h4>Главное изображение</h4>
                     </td>
                     <td>
-                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data" style="display: flex; align-items:center;">
                             <input type="file" name="gene">
-                            <input type="submit" value="Загрузить файл!">
+                            <input type="submit" value="Загрузить файл!" style="margin-top:0;">
                         </form>
 
                     </td>
@@ -172,9 +180,9 @@ foreach ($titles as $title) {
                         <h4>Левое изорбражение</h4>
                     </td>
                     <td>
-                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data" style="display: flex; align-items:center;">
                             <input type="file" name="geneleft">
-                            <input type="submit" value="Загрузить файл!">
+                            <input type="submit" value="Загрузить файл!" style="margin-top:0;">
                         </form>
 
                     </td>
@@ -184,9 +192,9 @@ foreach ($titles as $title) {
                         <h4>Правое изорбражение</h4>
                     </td>
                     <td>
-                        <form action="../include/save.php" method="post" enctype="multipart/form-data">
+                        <form action="../include/save.php" method="post" enctype="multipart/form-data" style="display: flex; align-items:center;">
                             <input type="file" name="generight">
-                            <input type="submit" value="Загрузить файл!">
+                            <input type="submit" value="Загрузить файл!" style="margin-top:0;">
                         </form>
 
                     </td>

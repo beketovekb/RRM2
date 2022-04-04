@@ -24,7 +24,7 @@ foreach ($titles as $title) {
 <?php include "menu.php";?>
 <div class="details">
     <form action="../include/save.php" method="POST">
-    <div class="recentOrders  toggle_accordion1">
+    <div class="recentOrders  toggle_accordion1 accordion">
         <div class="cardHeader">
         <h2 class="edit_accordion1">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,6 +37,9 @@ foreach ($titles as $title) {
         </div>
         <table>
             <thead>
+                <tr style="border-bottom: none;">
+                    <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
+                </tr>
                 <tr>
                     <td>Позиция</td>
                     <td>Текст</td>
@@ -83,6 +86,9 @@ foreach ($titles as $title) {
             </tbody>
             <!--Englis-->
             <thead>
+                <tr style="border-bottom: none;">
+                    <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА АНГЛИЙСКОМ ЯЗЫКЕ</td>
+                </tr>
                 <tr>
                     <td>Позиция</td>
                     <td>Текст</td>
@@ -128,6 +134,9 @@ foreach ($titles as $title) {
             </tbody>
             <!--KZ-->
             <thead>
+                <tr style="border-bottom: none;">
+                    <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА КАЗАХСКОМ ЯЗЫКЕ</td>
+                </tr>
                 <tr>
                     <td>Позиция</td>
                     <td>Текст</td>
@@ -141,32 +150,32 @@ foreach ($titles as $title) {
                     <td>KZ</td>
                 </tr>
                 <tr>
-                    <td>2</td>
+                    <td >2</td>
                     <td><input type="text" name="k17" style="width: 100%;" value="<?php print($ftitlek['17']);?>"></td>
                     <td>KZ</td>
                 </tr>
                 <tr>
-                    <td>3</td>
+                    <td >3</td>
                     <td><input type="text" name="k18" style="width: 100%;" value="<?php print($ftitlek['18']);?>"></td>
                     <td>KZ</td>
                 </tr>
                 <tr>
-                    <td>4</td>
+                    <td >4</td>
                     <td><input type="text" name="k19" style="width: 100%;" value="<?php print($ftitlek['19']);?>"></td>
                     <td>KZ</td>
                 </tr>
                 <tr>
-                    <td>5</td>
+                    <td >5</td>
                     <td><input type="text" name="k20" style="width: 100%;" value="<?php print($ftitlek['20']);?>"></td>
                     <td>KZ</td>
                 </tr>
                 <tr>
-                    <td>6</td>
+                    <td >6</td>
                     <td><input type="text" name="k21" style="width: 100%;" value="<?php print($ftitlek['21']);?>"></td>
                     <td>KZ</td>
                 </tr>
                 <tr>
-                    <td>7</td>
+                    <td >7</td>
                     <td><input type="text" name="k22" style="width: 100%;" value="<?php print($ftitlek['22']);?>"></td>
                     <td>KZ</td>
                 </tr>
