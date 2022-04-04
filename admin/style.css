@@ -708,6 +708,12 @@ body::-webkit-scrollbar {
   .projectTable table tr td:nth-child(1){
       width: 30% !important;
   }
+  .listTable table tr td:nth-child(1) {
+    width: 30% !important;
+  }
+  .contactTable table tr td:nth-child(1) {
+    width: 30% !important;
+  }
 
   .select_style {
     width: 100%;
@@ -734,7 +740,3 @@ body::-webkit-scrollbar {
       color: red;
   }
 
-  .listTable table tr td:nth-child(1) {
-    width: 30% !important;
-
-  }

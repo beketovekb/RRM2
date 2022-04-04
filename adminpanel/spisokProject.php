@@ -23,7 +23,7 @@ foreach ($titles as $title) {
     <?php include "menu.php"; ?>
     <div class="details">
     <form action="../include/save.php" method="POST">
-            <div class="recentOrders aboutOrders toggle_accordion1 accordion">
+            <div class="recentOrders aboutOrders  toggle_accordion1 accordion">
                 <div class="cardHeader">
                 <h2 class="edit_accordion1">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
