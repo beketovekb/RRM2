@@ -34,6 +34,9 @@ foreach ($titles as $title) {
                 </div>
                 <table>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -54,6 +57,9 @@ foreach ($titles as $title) {
                         </tr>
                     </tbody>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА АНГЛИЙСКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -74,6 +80,9 @@ foreach ($titles as $title) {
                         </tr>
                     </tbody>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА КАЗАХСКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -112,7 +121,7 @@ foreach ($titles as $title) {
                     <td>
                         <h4>Фоновое изображение</h4>
                     </td>
-                    <td width="60px">
+                    <td>
                         <form action="../include/save.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="abo">
                             <input type="submit" value="Загрузить файл!">
