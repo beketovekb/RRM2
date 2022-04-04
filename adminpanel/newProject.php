@@ -118,7 +118,7 @@ foreach ($napravlenia as $napravlen) {
                                 </tr>
                                 <tr>
                                     <td>Тип направления</td>
-                                    <td><select name="btn_en">
+                                    <td><select name="btn_en"  class="select_style">
                                             <option disabled>Выберите тип</option>
                                             <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
@@ -161,7 +161,7 @@ foreach ($napravlenia as $napravlen) {
                                 </tr>
                                 <tr>
                                     <td>Тип направления</td>
-                                    <td><select name="btn_kz">
+                                    <td><select name="btn_kz"  class="select_style">
                                             <option disabled>Выберите тип</option>
                                             <?php foreach ($napravlenia as $napravlen) { if($napravlen["type_proj_or_prod"]==='2'){ ?>
                                                 <option value="<?php print($napravlen["Position_uslugi_site"]);?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
