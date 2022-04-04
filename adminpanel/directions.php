@@ -31,7 +31,6 @@ $direcrtions = get_directions($link);
                         </svg>
                         Основной текст блока "Направления"
                     </h2>
-                    <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="directionsInfo">
                 </div>
                 <table>
@@ -96,6 +95,7 @@ $direcrtions = get_directions($link);
                         </tr>
                     </tbody>
                 </table>
+                    <input type="submit" value="Сохранить" class="btn" />
             </div>
         </form>
             <div class="recentOrders aboutOrders toggle_accordion2 ">

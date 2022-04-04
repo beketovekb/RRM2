@@ -108,7 +108,7 @@ $news = get_index_news($link, $lng, 3);
                                 <a href="#s7_1">
                                     <li><?php print($ftitle["20"]); ?></li>
                                 </a>
-                                <a href="">
+                                <a href="https://robotprostore.kz/">
                                     <li><?php print($ftitle["21"]); ?></li>
                                 </a>
                                 <a href="#s9_1">
@@ -183,7 +183,7 @@ $news = get_index_news($link, $lng, 3);
                                     <a href="#s7_1">
                                         <li><?php print($ftitle["20"]); ?></li>
                                     </a>
-                                    <a href="">
+                                    <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
                                     <a href="#s9_1">
@@ -362,10 +362,10 @@ $news = get_index_news($link, $lng, 3);
                 <div class="f3_feed">
                     <h3><?php print($ftitle["40"]); ?></h3>
                     <span><?php print($ftitle["39"]); ?></span>
-                    <form action="">
-                        <input type="text" placeholder="Введите Ваше имя">
-                        <input type="text" placeholder="Введите Ваш номер">
-                        <button class="shop_btn"><?php print($ftitle["23"]); ?></button>
+                    <form action="post" class="feedback-form">
+                        <input type="text" placeholder="Введите Ваше имя" name="name">
+                        <input type="text" placeholder="Введите Ваш номер" name="phone">
+                        <button class="shop_btn feedback-form__button"><?php print($ftitle["23"]); ?></button>
                     </form>
                 </div>
             </div>

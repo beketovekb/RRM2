@@ -32,7 +32,6 @@ foreach ($titles as $title) {
                         </svg>
                         Основной текст блока "Новости"
                     </h2>
-                    <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="textnews">
                 </div>
                 <table>
@@ -97,6 +96,7 @@ foreach ($titles as $title) {
                         </tr>
                     </tbody>
                 </table>
+                    <input type="submit" value="Сохранить" class="btn" />
             </div>
         </form>
             <div class="recentOrders aboutOrders  toggle_accordion2 listTable">
