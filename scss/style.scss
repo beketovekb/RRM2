@@ -2164,3 +2164,9 @@ footer{
         overflow: unset;
     }
 
+
+    .sp-bottom-thumbnails{
+        @media (max-height: 800px) {
+            display: none;
+        }
+    }

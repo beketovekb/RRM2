@@ -2894,4 +2894,10 @@ label .flag::before {
 .overflow_unset {
   overflow: unset;
 }
+
+@media (max-height: 800px) {
+  .sp-bottom-thumbnails {
+    display: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */
