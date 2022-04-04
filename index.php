@@ -314,13 +314,12 @@ $news = get_index_news($link, $lng, 3);
             </div>
         </div>
     </section>
-    <section class="s7_1" id="s7_1">
+    <!-- <section class="s7_1" id="s7_1">
         <div class="container">
             <h2 data-aos="fade-down"><?php print($ftitle["14"]); ?></h2>
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
-                <!-- Отсюда -->
                 <?php foreach ($news as $new) {?>
                 <a href="news_more.php?pos=<?php print($new['uk_news']); ?>&lng=<?php print($lng); ?>" class="news_item " data-aos="zoom-in">
                     <div class="news_img" style="background-image: url(<?php print($new['img_news']); ?>);">
@@ -337,11 +336,10 @@ $news = get_index_news($link, $lng, 3);
                     </span>
                 </a>
                 <?php }?>
-                <!-- Досюдя -->
             </div>
             <a href="news_list.php" class="news_more">Больше новостей</a>
         </div>
-    </section>
+    </section> -->
     <!-- <section class="s8_1" id="s8_1">
         <div id="map" style="width:100%; height:60vh; filter: grayscale(1);"></div>
     </section> -->
