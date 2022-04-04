@@ -728,3 +728,7 @@ body::-webkit-scrollbar {
     border-radius: 8px 8px 0 0;
 
   }
+
+  .necessarily{
+      color: red;
+  }
