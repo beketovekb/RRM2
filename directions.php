@@ -11,7 +11,7 @@ $pos = $_GET['num'];
 $napravlenia2 = get_more_napravlenia($link, $lng, $pos);
 $id;
 foreach ($napravlenia2 as $nap) {
-    $id = $nap["id_uslugi_site"];
+    $id = $nap["Position_uslugi_site"];
 }
 $projects = get_more_project($link, $lng, $id);
 ?>
