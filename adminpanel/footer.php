@@ -16,6 +16,8 @@ foreach ($titles as $title) {
             break;
     }
 }
+$order   = "\n";
+$replace = '<br>';
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -52,7 +54,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="r33" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitler['33']); ?></textarea></td>
+                            <td><textarea name="r33" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitler['33'])); ?></textarea></td>
                             <td>RU</td>
                         </tr>
                         <tr>
@@ -105,7 +107,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="e33" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitlee['33']); ?></textarea></td>
+                            <td><textarea name="e33" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitlee['33'])); ?></textarea></td>
                             <td>ENG</td>
                         </tr>
                         <tr>
@@ -158,7 +160,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="k33" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitlek['33']); ?></textarea></td>
+                            <td><textarea name="k33" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitlek['33'])); ?></textarea></td>
                             <td>KZ</td>
                         </tr>
                         <tr>

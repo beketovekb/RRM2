@@ -500,16 +500,13 @@ function set_bd($i1, $i2,$link)
     $$checkr = 1;
     $$checke = 1;
     $checkk = 1;
-    for ($i = $i1; $i <= $i2; $i++) {
-        $r[$i] = $_POST['r' . $i];
-        $e[$i] = $_POST['e' . $i];
-        $k[$i] = $_POST['k' . $i];
-    }
     $order   = "\n";
     $replace = '<br>';
-    $r[5]=str_replace($order, $replace, $r[5]);
-    $e[5]=str_replace($order, $replace, $e[5]);
-    $k[5]=str_replace($order, $replace, $k[5]);
+    for ($i = $i1; $i <= $i2; $i++) {
+        $r[$i] = str_replace($order, $replace, $_POST['r' . $i]);
+        $e[$i] = str_replace($order, $replace, $_POST['e' . $i]);
+        $k[$i] = str_replace($order, $replace, $_POST['k' . $i]);
+    }
     for ($i = $i1; $i <= $i2; $i++) {
         $sql = "UPDATE `title_site` SET `Text` = '" . $r[$i] . "' WHERE Number = '" . $i . "' AND Lng_title = 'ru';";
         if (mysqli_query($link, $sql)) {
@@ -630,7 +627,7 @@ function new_project($link)
     $title=str_replace("'","\'",$_POST['title_ru']);
     $type=str_replace("'","\'",$_POST['btn_ru']);
     $type_proj =str_replace("'","\'",$_POST['btn_ru']);
-    $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_ru']));
     $srok=str_replace("'","\'",$_POST['srok_ru']);
     $prioritet = $_POST['prioritet_ru'];
     $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'ru', '".$type."', '".$opisanie."', '".$srok."')";
@@ -644,7 +641,7 @@ function new_project($link)
     $title=str_replace("'","\'",$_POST['title_en']);
     $type=str_replace("'","\'",$_POST['btn_en']);
     $type_proj =str_replace("'","\'",$_POST['btn_en']);
-    $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_en']));
     $srok=str_replace("'","\'",$_POST['srok_en']);
     $prioritet = $_POST['prioritet_en'];
     $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'en', '".$type."', '".$opisanie."', '".$srok."')";
@@ -658,7 +655,7 @@ function new_project($link)
     $title=str_replace("'","\'",$_POST['title_kz']);
     $type=str_replace("'","\'",$_POST['btn_kz']);
     $type_proj =str_replace("'","\'",$_POST['btn_kz']);
-    $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_kz']));
     $srok=str_replace("'","\'",$_POST['srok_kz']);
     $prioritet = $_POST['prioritet_kz'];
     $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'kz', '".$type."', '".$opisanie."', '".$srok."')";
@@ -698,7 +695,7 @@ function new_edit($link)
         }
 
         $title = str_replace("'", "\'", $_POST['title_ru']);
-        $opisanie = str_replace("'", "\'", $_POST['opisanie_ru']);
+        $opisanie = str_replace("\n","<br>",str_replace("'", "\'", $_POST['opisanie_ru']));
 
         $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'ru', '".$id."')";
         if (mysqli_query($link, $sql)) {
@@ -709,7 +706,7 @@ function new_edit($link)
         }
 
         $title = str_replace("'", "\'", $_POST['title_en']);
-        $opisanie = str_replace("'", "\'", $_POST['opisanie_en']);
+        $opisanie = str_replace("\n","<br>",str_replace("'", "\'", $_POST['opisanie_en']));
         $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'en', '".$id."')";
         if (mysqli_query($link, $sql)) {
             $en = true;
@@ -719,7 +716,7 @@ function new_edit($link)
         }
 
         $title = str_replace("'", "\'", $_POST['title_kz']);
-        $opisanie = str_replace("'", "\'", $_POST['opisanie_kz']);
+        $opisanie = str_replace("\n","<br>",str_replace("'", "\'", $_POST['opisanie_kz']));
         $sql = "INSERT INTO `more_project_site` (id_more_project_site, Title_project_site, Title_more_project_site, Img_more_project_site, Opisanie_more_project_site, Lng_more_project_site, uk_more_project_site) VALUES (NULL, '" . $pos . "', '" . $title . "', '" . $name . "', '" . $opisanie . "', 'kz', '".$id."')";
         if (mysqli_query($link, $sql)) {
             $kz = true;

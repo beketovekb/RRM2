@@ -8,6 +8,8 @@ foreach ($directions as $direction) {
     if($direction['Lng_uslugi_site']==='ru')
     $name = $direction['Title_uslugi_site'];
 }
+$order   = "\n";
+$replace = '<br>';
 ?>
 
 <div class="main">
@@ -73,7 +75,7 @@ foreach ($directions as $direction) {
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print($direction['Opisanie_uslugi_site']); ?></textarea></td>
+                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $direction['Opisanie_uslugi_site'])); ?></textarea></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
@@ -111,7 +113,7 @@ foreach ($directions as $direction) {
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print($direction['Opisanie_uslugi_site']); ?></textarea></td>
+                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $direction['Opisanie_uslugi_site'])); ?></textarea></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
@@ -149,7 +151,7 @@ foreach ($directions as $direction) {
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print($direction['Opisanie_uslugi_site']); ?></textarea></td>
+                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $direction['Opisanie_uslugi_site'])); ?></textarea></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
