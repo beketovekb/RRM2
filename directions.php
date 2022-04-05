@@ -48,7 +48,6 @@ $projects = get_more_project($link, $lng, $id);
     </div>
     <header>
         <div class="header_bg scroll-auto">
-            <img class="spectr" src="img/bg_spectr.png" alt="">
             <div class="container">
                 <div class="header_nav">
                     <div class="shadow_up"></div>
@@ -189,6 +188,7 @@ $projects = get_more_project($link, $lng, $id);
                             <div class="variable-width">
                                 <?php foreach ($projects as $project) { ?>
                                     <div class="slide_dir">
+                                        <a class="project_href" href="projects.php?id=<?php print($project["uk_project_site"]); ?>">
                                         <div class="slide_img dir_slide_img1" style="background-image: url(<?php print($project["Img_project_site"]); ?>);"></div>
                                         <h3><?php print($project["Title_project_site"]); ?></h3>
                                         <p><?php print(substr($project["Opisanie_project_site"], 0, 66)."..."); ?></p>
@@ -196,6 +196,7 @@ $projects = get_more_project($link, $lng, $id);
                                             <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
                                             </svg>
+                                        </a>
                                         </a>
                                     </div>
                                 <?php } ?>

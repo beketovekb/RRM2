@@ -251,7 +251,7 @@ $news = get_index_news($link, $lng, 3);
                     <form action="post" class="feedback-form">
                         <div class="from_input-name">
                             <label for=""><?php print($ftitle["26"]); ?></label>
-                            <input type="text" placeholder="Арман" name="name">
+                            <input type="text" placeholder="Имя" name="name">
                         </div>
 
                         <div class="from_input-number">
@@ -367,7 +367,7 @@ $news = get_index_news($link, $lng, 3);
                     </form>
                 </div>
             </div>
-            <span class="right">© SKIMAKSSS | All Rights Reserved. | 2022</span>
+            <span class="right">© Copyright | All Rights Reserved. | 2022</span>
             <ul>
       
                 <a href="#s1_1">

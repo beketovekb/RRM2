@@ -397,7 +397,7 @@ $news = get_index_news($link, $lng, 4);
             </form>
         </div>
         </div>
-        <span class="right">© SKIMAKSSS | All Rights Reserved. | 2022</span>
+        <span class="right">© Copyright | All Rights Reserved. | 2022</span>
         <ul>
         <a href="index.php?iac=1">
                                         <li><?php print($ftitle["16"]); ?></li>
