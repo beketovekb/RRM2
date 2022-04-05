@@ -505,6 +505,11 @@ function set_bd($i1, $i2,$link)
         $e[$i] = $_POST['e' . $i];
         $k[$i] = $_POST['k' . $i];
     }
+    $order   = "\n";
+    $replace = '<br>';
+    $r[5]=str_replace($order, $replace, $r[5]);
+    $e[5]=str_replace($order, $replace, $e[5]);
+    $k[5]=str_replace($order, $replace, $k[5]);
     for ($i = $i1; $i <= $i2; $i++) {
         $sql = "UPDATE `title_site` SET `Text` = '" . $r[$i] . "' WHERE Number = '" . $i . "' AND Lng_title = 'ru';";
         if (mysqli_query($link, $sql)) {
