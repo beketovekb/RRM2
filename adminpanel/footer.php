@@ -34,6 +34,9 @@ foreach ($titles as $title) {
                 </div>
                 <table>
                     <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
+                        </tr>
                         <tr>
                             <td>Название</td>
                             <td>Текст</td>
@@ -52,19 +55,6 @@ foreach ($titles as $title) {
                             <td><textarea name="r33" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitler['33']); ?></textarea></td>
                             <td>RU</td>
                         </tr>
-                    </tbody>
-                    
-                    <thead>
-                        <tr style="border-bottom: none;">
-                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
-                        </tr>
-                        <tr>
-                            <td>Название</td>
-                            <td>Текст</td>
-                            <td>Язык</td>
-                        </tr>
-                    </thead>
-                    <tbody>
                         <tr>
                             <td>Заголовок</td>
                             <td><input type="text" name="r34" style="width: 100%;" value="<?php print($ftitler['34']); ?>"></td>

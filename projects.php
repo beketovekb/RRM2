@@ -82,10 +82,10 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                                 <a href="index.php?iac=5">
                                     <li>Партнеры</li>
                                 </a>
-                                <a href="index.php?iac=7">
+                                <!-- <a href="index.php?iac=7">
                                     <li>Новости</li>
-                                </a>
-                                <a href="">
+                                </a> -->
+                                <a href="https://robotprostore.kz/">
                                     <li>Магазин</li>
                                 </a>
                                 <a href="index.php?iac=9">
@@ -156,15 +156,27 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
                                     <a href="index.php?iac=5">
                                         <li>Партнеры</li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li>Новости</li>
-                                    </a>
-                                    <a href="">
+                                    </a> -->
+                                    <a href="https://robotprostore.kz/">
                                         <li>Магазин</li>
                                     </a>
                                     <a href="index.php?iac=9">
                                         <li>Контакты</li>
                                     </a>
+                                    <div class="language_mobile">
+
+                                        <a href="/projects.php?lng=en&id=<?php print($_GET['id']);?>">
+                                            EN
+                                        </a>
+                                        <a href="/projects.php?lng=ru&id=<?php print($_GET['id']);?>">
+                                            RU
+                                        </a>
+                                        <a href="/projects.php?lng=kz&id=<?php print($_GET['id']);?>">
+                                            KZ
+                                        </a>
+                                    </div>
                                 </ul>
                             </div>
                         </nav>

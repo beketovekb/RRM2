@@ -89,10 +89,10 @@ $news = get_index_news($link, $lng, 4);
                                     <a href="index.php?iac=5">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
-                                    <a href="">
+                                    </a> -->
+                                    <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=9">
@@ -158,15 +158,27 @@ $news = get_index_news($link, $lng, 4);
                                     <a href="index.php?iac=5">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
-                                    <a href="">
+                                    </a> -->
+                                    <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=9">
                                         <li><?php print($ftitle["22"]); ?></li>
                                     </a>
+                                    <div class="language_mobile">
+
+                                        <a href="/news_list.php?lng=en">
+                                            EN
+                                        </a>
+                                        <a href="/news_list.php?lng=ru">
+                                            RU
+                                        </a>
+                                        <a href="/news_list.php?lng=kz">
+                                            KZ
+                                        </a>
+                                    </div>
                                 </ul>
                             </div>
                         </nav>
@@ -399,9 +411,9 @@ $news = get_index_news($link, $lng, 4);
                                     <a href="index.php?iac=5">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
+                                    </a> -->
                                     <a href="">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>

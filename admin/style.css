@@ -85,6 +85,9 @@ body {
     height: 60px;
     line-height: 75px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navigation ul li a .icon ion-icon {

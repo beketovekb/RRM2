@@ -68,12 +68,12 @@ $imgs = get_img_project($link, $pos);
                                 </tr>
                                 <tr>
                                     <td>Заголовок</td>
-                                    <td><input type="text" name="title_ru" style="width: 100%;" value="<?php print($project['Title_project_site']); ?>"></td>
+                                    <td><input type="text" name="title_ru" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['Title_project_site'])); ?>"></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print($project['Opisanie_project_site']); ?></textarea></td>
+                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('"', "'",$project['Opisanie_project_site'])); ?></textarea></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
@@ -112,12 +112,12 @@ $imgs = get_img_project($link, $pos);
                                 </tr>
                                 <tr>
                                     <td>Заголовок</td>
-                                    <td><input type="text" name="title_en" style="width: 100%;" value="<?php print($project['Title_project_site']); ?>"></td>
+                                    <td><input type="text" name="title_en" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['Title_project_site'])); ?>"></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print($project['Opisanie_project_site']); ?></textarea></td>
+                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('"', "'",$project['Opisanie_project_site'])); ?></textarea></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
@@ -155,12 +155,12 @@ $imgs = get_img_project($link, $pos);
                                 </tr>
                                 <tr>
                                     <td>Заголовок</td>
-                                    <td><input type="text" name="title_kz" style="width: 100%;" value="<?php print($project['Title_project_site']); ?>"></td>
+                                    <td><input type="text" name="title_kz" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['Title_project_site'])); ?>"></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print($project['Opisanie_project_site']); ?></textarea></td>
+                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('"', "'",$project['Opisanie_project_site'])); ?></textarea></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>

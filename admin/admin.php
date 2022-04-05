@@ -28,7 +28,7 @@ if (isset($_GET['str'])) {
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="desktop-outline"></ion-icon>
+                            <img src="img/logo_icon.png" alt="">
                         </span>
                         <span class="title">Панель администратора</span>
                     </a>

@@ -71,10 +71,10 @@ $projects = get_more_project($link, $lng, $id);
                                 <a href="index.php?iac=5">
                                     <li>Партнеры</li>
                                 </a>
-                                <a href="index.php?iac=7">
+                                <!-- <a href="index.php?iac=7">
                                     <li>Новости</li>
-                                </a>
-                                <a href="">
+                                </a> -->
+                                <a href="https://robotprostore.kz/">
                                     <li>Магазин</li>
                                 </a>
                                 <a href="index.php?iac=9">
@@ -145,15 +145,27 @@ $projects = get_more_project($link, $lng, $id);
                                     <a href="index.php?iac=5">
                                         <li>Партнеры</li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li>Новости</li>
-                                    </a>
-                                    <a href="">
+                                    </a> -->
+                                    <a href="https://robotprostore.kz/">
                                         <li>Магазин</li>
                                     </a>
                                     <a href="index.php?iac=9">
                                         <li>Контакты</li>
                                     </a>
+                                    <div class="language_mobile">
+
+                                        <a href="directions.php?num=<?php print($_GET['num']);?>&lng=EN">
+                                            EN
+                                        </a>
+                                        <a href="directions.php?num=<?php print($_GET['num']);?>&lng=RU">
+                                            RU
+                                        </a>
+                                        <a href="directions.php?num=<?php print($_GET['num']);?>&lng=KZ">
+                                            KZ
+                                        </a>
+                                    </div>
                                 </ul>
                             </div>
                         </nav>

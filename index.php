@@ -105,10 +105,10 @@ $news = get_index_news($link, $lng, 3);
                                 <a href="#s5_1">
                                     <li><?php print($ftitle["19"]); ?></li>
                                 </a>
-                                <a href="#s7_1">
+                                <!-- <a href="#s7_1">
                                     <li><?php print($ftitle["20"]); ?></li>
-                                </a>
-                                <a href="">
+                                </a> -->
+                                <a href="https://robotprostore.kz/">
                                     <li><?php print($ftitle["21"]); ?></li>
                                 </a>
                                 <a href="#s9_1">
@@ -180,10 +180,10 @@ $news = get_index_news($link, $lng, 3);
                                     <a href="#s5_1">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="#s7_1">
+                                    <!-- <a href="#s7_1">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
-                                    <a href="">
+                                    </a> -->
+                                    <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
                                     <a href="#s9_1">
@@ -256,7 +256,7 @@ $news = get_index_news($link, $lng, 3);
 
                         <div class="from_input-number">
                             <label for=""><?php print($ftitle["27"]); ?></label>
-                            <input type="tel" placeholder="87778001234" name="phone">
+                            <input type="tel" placeholder="8(___) ___-____" name="phone" id="phone1">
                         </div>
                         <button class="btn feedback-form__button"><?php print($ftitle["28"]); ?></button>
 
@@ -314,13 +314,12 @@ $news = get_index_news($link, $lng, 3);
             </div>
         </div>
     </section>
-    <section class="s7_1" id="s7_1">
+    <!-- <section class="s7_1" id="s7_1">
         <div class="container">
             <h2 data-aos="fade-down"><?php print($ftitle["14"]); ?></h2>
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
-                <!-- Отсюда -->
                 <?php foreach ($news as $new) {?>
                 <a href="news_more.php?pos=<?php print($new['uk_news']); ?>&lng=<?php print($lng); ?>" class="news_item " data-aos="zoom-in">
                     <div class="news_img" style="background-image: url(<?php print($new['img_news']); ?>);">
@@ -337,11 +336,10 @@ $news = get_index_news($link, $lng, 3);
                     </span>
                 </a>
                 <?php }?>
-                <!-- Досюдя -->
             </div>
             <a href="news_list.php" class="news_more">Больше новостей</a>
         </div>
-    </section>
+    </section> -->
     <!-- <section class="s8_1" id="s8_1">
         <div id="map" style="width:100%; height:60vh; filter: grayscale(1);"></div>
     </section> -->
@@ -362,10 +360,10 @@ $news = get_index_news($link, $lng, 3);
                 <div class="f3_feed">
                     <h3><?php print($ftitle["40"]); ?></h3>
                     <span><?php print($ftitle["39"]); ?></span>
-                    <form action="">
-                        <input type="text" placeholder="Введите Ваше имя">
-                        <input type="text" placeholder="Введите Ваш номер">
-                        <button class="shop_btn"><?php print($ftitle["23"]); ?></button>
+                    <form action="post" class="feedback-form">
+                        <input type="text" placeholder="Введите Ваше имя" name="name">
+                        <input type="text" placeholder="Введите Ваш номер" name="phone">
+                        <button class="shop_btn feedback-form__button"><?php print($ftitle["23"]); ?></button>
                     </form>
                 </div>
             </div>
@@ -384,9 +382,9 @@ $news = get_index_news($link, $lng, 3);
                 <a href="#s5_1">
                     <li><?php print($ftitle["19"]); ?></li>
                 </a>
-                <a href="#s7_1">
+                <!-- <a href="#s7_1">
                     <li><?php print($ftitle["20"]); ?></li>
-                </a>
+                </a> -->
                 <a href="">
                     <li><?php print($ftitle["21"]); ?></li>
                 </a>
@@ -405,5 +403,10 @@ $news = get_index_news($link, $lng, 3);
 <script type="text/javascript" src="js/preloader.js"></script>
 <script src="js/sweetalert.min.js"></script>
     <script src="js/form.js"></script>
-
+    <script src="js/jquery.maskedinput.js"></script>
+<script>
+    $(function(){
+    $("#phone1").mask("8(999) 999-9999");
+    });
+</script>
 </html>
