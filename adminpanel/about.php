@@ -15,6 +15,8 @@ foreach ($titles as $title) {
             $ftitlek[$title["Number"]] = $title["Text"];
             break;
     }
+    $order   = array("\r\n", "\n", "\r");
+    $replace = '<br />';
 }
 ?>
 <div class="main">
@@ -52,7 +54,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="r5" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitler['5']); ?></textarea></td>
+                            <td><textarea name="r5" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitler['5'])); ?></textarea></td>
                             <td>RU</td>
                         </tr>
                     </tbody>

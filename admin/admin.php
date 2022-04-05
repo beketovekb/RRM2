@@ -97,7 +97,7 @@ if (isset($_GET['str'])) {
                         <span class="title">Список проектов</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="/admin/admin.php?str=new_product">
                         <span class="icon">
                         <ion-icon name="logo-reddit"></ion-icon>
@@ -112,7 +112,7 @@ if (isset($_GET['str'])) {
                         </span>
                         <span class="title">Список продуктов</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/admin/admin.php?str=listpartner">
                         <span class="icon">
