@@ -59,7 +59,6 @@ $projects_opisanie = get_more_func_info_project($link, $lng, $id);
     </div>
     <header class="h_auto">
         <div class="header_bg scroll-auto">
-            <img class="spectr" src="img/bg_spectr.png" alt="">
             <div class="container">
                 <div class="header_nav">
                     <div class="shadow_up"></div>

@@ -1766,7 +1766,6 @@ footer .f3 .f3_feed .shop_btn {
 }
 
 .flex_center {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1777,6 +1776,7 @@ footer .f3 .f3_feed .shop_btn {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 850px) {
@@ -1804,7 +1804,6 @@ footer .f3 .f3_feed .shop_btn {
         -ms-flex-direction: column;
             flex-direction: column;
     height: auto;
-    margin-top: 80px;
     margin-bottom: 25px;
   }
 }
@@ -2116,8 +2115,8 @@ footer .f3 .f3_feed .shop_btn {
   grid-gap: 20px;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (200px)[1];
-      grid-template-rows: repeat(1, 200px);
+  -ms-grid-rows: (220px)[1];
+      grid-template-rows: repeat(1, 220px);
 }
 
 @media (max-width: 850px) {
@@ -2909,5 +2908,9 @@ label .flag::before {
   .sp-bottom-thumbnails {
     display: none;
   }
+}
+
+.project_href {
+  display: block !important;
 }
 /*# sourceMappingURL=style.css.map */
