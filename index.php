@@ -105,9 +105,9 @@ $news = get_index_news($link, $lng, 3);
                                 <a href="#s5_1">
                                     <li><?php print($ftitle["19"]); ?></li>
                                 </a>
-                                <a href="#s7_1">
+                                <!-- <a href="#s7_1">
                                     <li><?php print($ftitle["20"]); ?></li>
-                                </a>
+                                </a> -->
                                 <a href="https://robotprostore.kz/">
                                     <li><?php print($ftitle["21"]); ?></li>
                                 </a>
@@ -180,9 +180,9 @@ $news = get_index_news($link, $lng, 3);
                                     <a href="#s5_1">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="#s7_1">
+                                    <!-- <a href="#s7_1">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
+                                    </a> -->
                                     <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
@@ -382,9 +382,9 @@ $news = get_index_news($link, $lng, 3);
                 <a href="#s5_1">
                     <li><?php print($ftitle["19"]); ?></li>
                 </a>
-                <a href="#s7_1">
+                <!-- <a href="#s7_1">
                     <li><?php print($ftitle["20"]); ?></li>
-                </a>
+                </a> -->
                 <a href="">
                     <li><?php print($ftitle["21"]); ?></li>
                 </a>

@@ -89,9 +89,9 @@ $news = get_index_news($link, $lng, 4);
                                     <a href="index.php?iac=5">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
+                                    </a> -->
                                     <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
@@ -158,9 +158,9 @@ $news = get_index_news($link, $lng, 4);
                                     <a href="index.php?iac=5">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
+                                    </a> -->
                                     <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
@@ -411,9 +411,9 @@ $news = get_index_news($link, $lng, 4);
                                     <a href="index.php?iac=5">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li><?php print($ftitle["20"]); ?></li>
-                                    </a>
+                                    </a> -->
                                     <a href="">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>

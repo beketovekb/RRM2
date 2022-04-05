@@ -71,9 +71,9 @@ $projects = get_more_project($link, $lng, $id);
                                 <a href="index.php?iac=5">
                                     <li>Партнеры</li>
                                 </a>
-                                <a href="index.php?iac=7">
+                                <!-- <a href="index.php?iac=7">
                                     <li>Новости</li>
-                                </a>
+                                </a> -->
                                 <a href="https://robotprostore.kz/">
                                     <li>Магазин</li>
                                 </a>
@@ -145,9 +145,9 @@ $projects = get_more_project($link, $lng, $id);
                                     <a href="index.php?iac=5">
                                         <li>Партнеры</li>
                                     </a>
-                                    <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7">
                                         <li>Новости</li>
-                                    </a>
+                                    </a> -->
                                     <a href="https://robotprostore.kz/">
                                         <li>Магазин</li>
                                     </a>
