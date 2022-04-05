@@ -121,7 +121,7 @@ if (isset($_GET['str'])) {
                         <span class="title">Партнеры</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="/admin/admin.php?str=newNews">
                         <span class="icon"><ion-icon name="duplicate-outline"></ion-icon></span>
                         <span class="title">Добавить новости</span>
@@ -134,7 +134,7 @@ if (isset($_GET['str'])) {
                         </span>
                         <span class="title">Список новостей</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/admin/admin.php?str=footer">
                         <span class="icon">
