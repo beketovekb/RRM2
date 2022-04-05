@@ -639,11 +639,11 @@ function new_project($link)
     }
 
     $title=str_replace("'","\'",$_POST['title_en']);
-    $type=str_replace("'","\'",$_POST['btn_en']);
-    $type_proj =str_replace("'","\'",$_POST['btn_en']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_en']));
     $srok=str_replace("'","\'",$_POST['srok_en']);
-    $prioritet = $_POST['prioritet_en'];
+    $prioritet = $_POST['prioritet_ru'];
     $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'en', '".$type."', '".$opisanie."', '".$srok."')";
     if (mysqli_query($link, $sql)) {
         $en=true;
@@ -653,11 +653,11 @@ function new_project($link)
     }
 
     $title=str_replace("'","\'",$_POST['title_kz']);
-    $type=str_replace("'","\'",$_POST['btn_kz']);
-    $type_proj =str_replace("'","\'",$_POST['btn_kz']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_kz']));
     $srok=str_replace("'","\'",$_POST['srok_kz']);
-    $prioritet = $_POST['prioritet_kz'];
+    $prioritet = $_POST['prioritet_ru'];
     $sql = "INSERT INTO `project_site` (id_project_site, uk_project_site, Prioritet_project_site, Title_project_site, Img_project_site, Type_project_site, Lng_project_site, id_uslugi_site, Opisanie_project_site, Srok_project_site) VALUES (NULL, '".$id."', '".$prioritet."', '".$title."', '".$name."', '".$type_proj."', 'kz', '".$type."', '".$opisanie."', '".$srok."')";
     if (mysqli_query($link, $sql)) {
         $kz=true;
@@ -760,11 +760,11 @@ function edit_projects($link)
     }
 
     $title=str_replace("'",'"',$_POST['title_en']);
-    $type=str_replace("'","\'",$_POST['btn_en']);
-    $type_proj =str_replace("'","\'",$_POST['btn_en']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("'",'"',$_POST['opisanie_en']);
     $srok=str_replace("'","\'",$_POST['srok_en']);
-    $prioritet = $_POST['prioritet_en'];
+    $prioritet = $_POST['prioritet_ru'];
     $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."', id_uslugi_site = '".$type."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'en'";
     if (mysqli_query($link, $sql)) {
         $en=true;
@@ -774,11 +774,11 @@ function edit_projects($link)
     }
 
     $title=str_replace("'",'"',$_POST['title_kz']);
-    $type=str_replace("'","\'",$_POST['btn_kz']);
-    $type_proj =str_replace("'","\'",$_POST['btn_kz']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("'",'"',$_POST['opisanie_kz']);
     $srok=str_replace("'","\'",$_POST['srok_kz']);
-    $prioritet = $_POST['prioritet_kz'];
+    $prioritet = $_POST['prioritet_ru'];
     $sql = "UPDATE `project_site` SET `Prioritet_project_site` = '".$prioritet."', `Title_project_site` = '".$title."', `Type_project_site` = '".$type_proj."', `Opisanie_project_site` = '".$opisanie."', `Srok_project_site` = '".$srok."', id_uslugi_site = '".$type."' WHERE uk_project_site = '".$pos."' and `Lng_project_site` = 'kz'";
     if (mysqli_query($link, $sql)) {
         $kz=true;
