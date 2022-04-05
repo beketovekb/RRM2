@@ -18,6 +18,8 @@ foreach ($titles as $title) {
             break;
     }
 }
+$order   = "\n";
+$replace = '<br>';
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -54,7 +56,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="r11" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitler['11']); ?></textarea></td>
+                            <td><textarea name="r11" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitler['11'])); ?></textarea></td>
                             <td>RU</td>
                         </tr>
                     </tbody>
@@ -77,7 +79,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="e11" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitlee['11']); ?></textarea></td>
+                            <td><textarea name="e11" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitlee['11'])); ?></textarea></td>
                             <td>ENG</td>
                         </tr>
                     </tbody>
@@ -100,7 +102,7 @@ foreach ($titles as $title) {
                         </tr>
                         <tr>
                             <td>Описание</td>
-                            <td><textarea name="k11" id="" style="width: 100%;" cols="40" rows="10"><?php print($ftitlek['11']); ?></textarea></td>
+                            <td><textarea name="k11" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace($replace, $order, $ftitlek['11'])); ?></textarea></td>
                             <td>KZ</td>
                         </tr>
                     </tbody>
@@ -132,7 +134,7 @@ foreach ($titles as $title) {
                         <!--Russian-->
                         <tr>
                             <td><?php print($direcrtion['Title_project_site']);?></td>
-                            <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(substr($direcrtion['Opisanie_project_site'], 0, 60)."...");} else {print($direcrtion['Opisanie_project_site']);}?></td>
+                            <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(substr($direcrtion['Opisanie_project_site'], 0, 59)."...");} else {print($direcrtion['Opisanie_project_site']);}?></td>
                             <td><a href="/admin/admin.php?str=editProject&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Редактировать</a></td>
                             <td><a href="../include/delete.php?type=proj&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Удалить</a></td>
                         </tr>
