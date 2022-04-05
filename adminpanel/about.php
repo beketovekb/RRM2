@@ -15,8 +15,8 @@ foreach ($titles as $title) {
             $ftitlek[$title["Number"]] = $title["Text"];
             break;
     }
-    $order   = array("\r\n", "\n", "\r");
-    $replace = '<br />';
+    $order   = array("\n");
+    $replace = '<br>';
 }
 ?>
 <div class="main">
