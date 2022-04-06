@@ -55,7 +55,7 @@ $('.responsive').slick({
     dots: false,
     infinite: true,
     speed: 800,
-    arrows: false,
+    arrows: true,
     speed: 300,
     slidesToShow: 5,
     autoplay: true,
