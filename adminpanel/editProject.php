@@ -196,7 +196,7 @@ $imgs = get_img_project($link, $pos);
                             <tr>
                                 <td><?php print($edition['Title_more_project_site']); ?></td>
                                 <td><?php if (strlen($edition['Opisanie_more_project_site']) >= 60) {
-                                        print(substr($edition['Opisanie_more_project_site'], 0, 60) . "...");
+                                        print(mb_strimwidth($edition['Opisanie_more_project_site'], 0, 60,"..."));
                                     } else {
                                         print($edition['Opisanie_more_project_site']);
                                     } ?></td>
