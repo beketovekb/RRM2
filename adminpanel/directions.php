@@ -19,6 +19,7 @@ foreach ($titles as $title) {
 $direcrtions = get_directions($link);
 $order   = "\n";
     $replace = '<br>';
+    mb_internal_encoding('UTF-8');
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -125,7 +126,7 @@ $order   = "\n";
                         <!--Russian-->
                         <tr>
                             <td><?php print($direcrtion['Title_uslugi_site']);?></td>
-                            <td><?php if(strlen($direcrtion['Opisanie_uslugi_site'])>=60){print(mb_strimwidth($direcrtion['Opisanie_uslugi_site'], 0, 59,"..."));} else {print($direcrtion['Opisanie_uslugi_site']);}?></td>
+                            <td><?php if(strlen($direcrtion['Opisanie_uslugi_site'])>=60){print(mb_strimwidth($direcrtion['Opisanie_uslugi_site'], 0, 60,"..."));} else {print($direcrtion['Opisanie_uslugi_site']);}?></td>
                             <td><?php print($direcrtion['Position_uslugi_site']);?></td>
                             <td><a href="/admin/admin.php?str=editDirection&pos=<?php print($direcrtion['Position_uslugi_site']);?>" class="btn">Редактировать</a></td>
                         </tr>
