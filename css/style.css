@@ -147,7 +147,7 @@ header .scroll-auto::-webkit-scrollbar-thumb {
 header .header_bg {
   height: 100%;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 header .header_bg .header_nav {
