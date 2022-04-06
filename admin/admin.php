@@ -27,22 +27,22 @@ if (isset($_GET['str'])) {
     <div class="container">
         <div class="navigation">
             <ul>
-                <!-- <li>
+                <li>
                     <a href="#">
                         <span class="icon">
                             <img src="img/logo_icon.png" alt="">
                         </span>
                         <span class="title">Панель администратора</span>
                     </a>
-                </li> -->
-                <li>
+                </li>
+                <!-- <li>
                     <a href="/admin/admin.php?str=main">
                         <span class="icon">
                             <ion-icon name="stats-chart-outline"></ion-icon>
                         </span>
                         <span class="title">Dashboard</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/admin/admin.php?str=general">
                         <span class="icon">
