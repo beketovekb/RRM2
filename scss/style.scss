@@ -670,9 +670,9 @@ header {
         @media (max-width:850px) {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 240px);
-            grid-template-areas: "di1 di2"
-                                    "di3 di4 "
-                                    "di5 di5";
+            grid-template-areas: "di1 di3"
+                                    "di2 di2 "
+                                    "di4 di5";
             
         }
         @media (max-width:550px) {
