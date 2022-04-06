@@ -338,7 +338,7 @@ $news = get_index_news($link, $lng, 3);
                         <span class="project_title"><?php print($product["title_production"]); ?></span>
                         <span class="project_direction"><?php print($napravlenia_title[$product["napravlenia_production"]]); ?></span>
                         <!--Здесь-->
-                        <a class="shop_btn project_learn_more" href="<?php print($product["url_redirect"]); ?>">Перейдти</a>
+                        <a class="shop_btn project_learn_more" href="<?php print($product["url_redirect"]); ?>">Перейти</a>
                     </div>
                 </div>
             <?php $i++;
