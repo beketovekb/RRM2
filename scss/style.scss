@@ -656,15 +656,15 @@ header {
         grid-gap: 20px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 240px);
-        grid-template-areas: "di2 di3 di3 di4"
-                                "di5 di5 di6 di6";
+        grid-template-areas: "di1 di2 di2 di3"
+                                "di4 di4 di5 di5";
         margin-top: 60px;
         position: relative;
         @media (max-width:1200px) {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 240px);
-            grid-template-areas: "di1 di2 di3"
-                                    "di4 di5 di6";
+            grid-template-areas: "di1 di2 di2 di3"
+                                    "di4 di4 di5 di5";
             
         }
         @media (max-width:850px) {
@@ -672,18 +672,17 @@ header {
             grid-template-rows: repeat(3, 240px);
             grid-template-areas: "di1 di2"
                                     "di3 di4 "
-                                    "di5 di6";
+                                    "di5 di5";
             
         }
         @media (max-width:550px) {
             grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(6, 240px);
+            grid-template-rows: repeat(5, 240px);
             grid-template-areas: "di1"
                                 "di2"
                                 "di3"
                                 "di4"
                                 "di5"
-                                "di6";
             
         }
         .d_shadow {
