@@ -577,6 +577,7 @@ function edit_directions($link)
 
     if(str_replace("'","\'",$_POST['btn_ru'])==='ПЕРЕЙТИ К ПРОДУКТАМ') $ti='1'; else $ti='2';
 
+
     $title=str_replace("'","\'",$_POST['title_ru']);
     $type=str_replace("'","\'",$_POST['btn_ru']);
     $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
