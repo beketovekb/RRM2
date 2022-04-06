@@ -255,7 +255,7 @@ $news = get_index_news($link, $lng, 3);
                         </div>
 
                         <div class="from_input-name">
-                            <label for=""><?php print($ftitle[""]); ?>Вкратце опишите Ваши компетенции</label>
+                            <label for=""><?php print($ftitle["41"]); ?></label>
                             <input type="text" placeholder="Ваши компетенции" name="competence">
                         </div>
 
