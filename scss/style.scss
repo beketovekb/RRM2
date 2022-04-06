@@ -656,8 +656,8 @@ header {
         grid-gap: 20px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 240px);
-        grid-template-areas: "di1 di2 di2 di3"
-                                "di4 di4 di5 di6";
+        grid-template-areas: "di2 di3 di3 di4"
+                                "di5 di5 di6 di6";
         margin-top: 60px;
         position: relative;
         @media (max-width:1200px) {
@@ -763,6 +763,7 @@ header {
         .d_item6 {
             grid-area: di6 ;
             background-image: url(../img/di6.jpg);
+            display: none;
         }
     }
     .shop_btn{
