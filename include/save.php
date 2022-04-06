@@ -203,6 +203,26 @@ if (isset($_FILES['editProj'])) {
         echo "<strong>$check</strong>";
     }
 }
+if (isset($_FILES['editProd'])) {
+    $redirect_url = "/admin/admin.php?str=edit_product&pos=".$_POST['pos'];
+    // проверяем, можно ли загружать изображение
+    $check = can_upload($_FILES['editProd']);
+
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['editProd']);
+        $sql = "UPDATE `productions` SET `img_general_production` = '".$name."' WHERE uk_production = '".$_POST['pos']."';";
+        if ($result = mysqli_query($link, $sql)) {
+            header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+        } else {
+            echo ($sql);
+            echo "Ошибка: " . mysqli_error($link);
+        }
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+}
 if (isset($_FILES['dir'])) {
     $pos = $_POST['pos'];
     $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
