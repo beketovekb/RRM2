@@ -134,7 +134,7 @@ $replace = '<br>';
                         <!--Russian-->
                         <tr>
                             <td><?php print($direcrtion['Title_project_site']);?></td>
-                            <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(substr($direcrtion['Opisanie_project_site'], 0, 59)."...");} else {print($direcrtion['Opisanie_project_site']);}?></td>
+                            <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(mb_strimwidth($direcrtion['Opisanie_project_site'], 0, 59,"..."));} else {print($direcrtion['Opisanie_project_site']);}?></td>
                             <td><a href="/admin/admin.php?str=editProject&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Редактировать</a></td>
                             <td><a href="../include/delete.php?type=proj&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Удалить</a></td>
                         </tr>
