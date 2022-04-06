@@ -75,6 +75,9 @@ switch ($_POST['fun']) {
     case 'editNews':
         edit_news($link);
         break;
+    case 'newProduct':
+        new_product($link);
+        break;
 }
 
 if (isset($_FILES['gene'])) {
@@ -952,5 +955,76 @@ function edit_news($link)
     if ($ru && $en && $kz) {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     }
+}
+
+function new_product($link)
+{
+    $pos=$_POST['pos'];
+    $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $id=generate_string($permitted_chars, 16);
+    $redirect_url = "/admin/admin.php?str=editProject&pos=".$id."&new=1";
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+    $check = can_upload($_FILES['newproj']);
+    $name='';
+    if ($check === true) {
+        // загружаем изображение на сервер
+        $name = make_upload($_FILES['newproj']);
+    } else {
+        // выводим сообщение об ошибке
+        echo "<strong>$check</strong>";
+    }
+
+    $cena = $_POST['cena_ru'];
+    $url = $_POST['url_ru'];
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_ru']));
+    $srok=str_replace("'","\'",$_POST['srok_ru']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$url."', '".$cena."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'ru')";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_en']));
+    $srok=str_replace("'","\'",$_POST['srok_en']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$url."', '".$cena."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'en')";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_kz']));
+    $srok=str_replace("'","\'",$_POST['srok_kz']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$url."', '".$cena."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'kz')";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+    
 }
 ?>

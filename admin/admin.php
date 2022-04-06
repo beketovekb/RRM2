@@ -19,22 +19,22 @@ if (isset($_GET['str'])) {
     <title>Admin RRM</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
-    <script src="lib/sweet-alert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
+    <script src="../js/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../js/sweetalert.css">
 </head>
 
 <body>
     <div class="container">
         <div class="navigation">
             <ul>
-                <li>
+                <!-- <li>
                     <a href="#">
                         <span class="icon">
                             <img src="img/logo_icon.png" alt="">
                         </span>
                         <span class="title">Панель администратора</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/admin/admin.php?str=main">
                         <span class="icon">
@@ -99,7 +99,7 @@ if (isset($_GET['str'])) {
                         <span class="title">Список проектов</span>
                     </a>
                 </li>
-                <!-- <li>
+                <li>
                     <a href="/admin/admin.php?str=new_product">
                         <span class="icon">
                         <ion-icon name="logo-reddit"></ion-icon>
@@ -108,13 +108,13 @@ if (isset($_GET['str'])) {
                     </a>
                 </li>
                 <li>
-                    <a href="/admin/admin.php?str=spisokProject">
+                    <a href="/admin/admin.php?str=list_product">
                         <span class="icon">
                         <ion-icon name="logo-stackoverflow"></ion-icon>
                         </span>
                         <span class="title">Список продуктов</span>
                     </a>
-                </li> -->
+                </li>
                 <li>
                     <a href="/admin/admin.php?str=listpartner">
                         <span class="icon">

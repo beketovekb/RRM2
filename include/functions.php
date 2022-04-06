@@ -76,7 +76,16 @@ function get_all_projects($link)
 
     return $projects;
 }
+function get_all_product($link)
+{
+    $sql = "SELECT * FROM productions WHERE lng_product = 'ru'";
 
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
 
 function get_more_info_project($link, $lng, $id)
 {
@@ -312,4 +321,14 @@ function date_index($dt, $lng)
     }
 
     return $day." ".$month;
+}
+
+function edit_product($link, $uk)
+{
+    $sql = "SELECT * FROM productions WHERE uk_production = '".$uk."'";
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
 }

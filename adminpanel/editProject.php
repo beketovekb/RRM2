@@ -61,20 +61,25 @@ $imgs = get_img_project($link, $pos);
                                 <tr>
                                     <td>Приоритет</td>
                                     <td><select name="prioritet_ru" class="select_style">
-                                    <?php 
-                                    $sel1='';
-                                    $sel2='';
-                                    $sel3='';
-                                    switch($project['Prioritet_project_site'])
-                                    {
-                                        case '1':$sel1='selected'; break;
-                                        case '2':$sel2='selected'; break;
-                                        case '3':$sel3='selected'; break;
-                                    } ?>
+                                            <?php
+                                            $sel1 = '';
+                                            $sel2 = '';
+                                            $sel3 = '';
+                                            switch ($project['Prioritet_project_site']) {
+                                                case '1':
+                                                    $sel1 = 'selected';
+                                                    break;
+                                                case '2':
+                                                    $sel2 = 'selected';
+                                                    break;
+                                                case '3':
+                                                    $sel3 = 'selected';
+                                                    break;
+                                            } ?>
                                             <option disabled>Выберите Приоритет</option>
-                                            <option value="1" <?php print($sel1);?>>Высокий</option>
-                                            <option value="2" <?php print($sel2);?>>Средний</option>
-                                            <option value="3" <?php print($sel3);?>>Низкий</option>
+                                            <option value="1" <?php print($sel1); ?>>Высокий</option>
+                                            <option value="2" <?php print($sel2); ?>>Средний</option>
+                                            <option value="3" <?php print($sel3); ?>>Низкий</option>
                                         </select></td>
                                 </tr>
                                 <tr>
@@ -196,12 +201,12 @@ $imgs = get_img_project($link, $pos);
                             <tr>
                                 <td><?php print($edition['Title_more_project_site']); ?></td>
                                 <td><?php if (strlen($edition['Opisanie_more_project_site']) >= 60) {
-                                        print(mb_strimwidth($edition['Opisanie_more_project_site'], 0, 60,"..."));
+                                        print(mb_strimwidth($edition['Opisanie_more_project_site'], 0, 60, "..."));
                                     } else {
                                         print($edition['Opisanie_more_project_site']);
                                     } ?></td>
                                 <td><a href="/admin/admin.php?str=editEditions&pos=<?php print($edition['Title_project_site']); ?>&dop=<?php print($edition['uk_more_project_site']); ?>" class="btn">Редактировать</a></td>
-                                <td><a href="../include/delete.php?type=opis&pos=<?php print($edition['Title_project_site']); ?>&uk=<?php print($edition['uk_more_project_site']); ?>" class="btn">Удалить</a></td>
+                                <td><a href="#" onclick="deldop()"  class="btn">Удалить</a></td>
                             </tr>
 
                         <?php } ?>
@@ -232,7 +237,7 @@ $imgs = get_img_project($link, $pos);
                         <td>
                             <div style="background: url(<?php print($img['Url_img_project']); ?>) 100% 100% no-repeat; background-size: cover; width: 100px; height: 100px;"></div>
                         </td>
-                        <td><a href="../include/delete.php?type=imgproj&pos=<?php print($img['uk_project_site']); ?>&ig=<?php print($img['Url_img_project']); ?>" class="btn">Удалить</a></td>
+                        <td><a href="../include/delete.php?type=imgproj&pos=<?php print($img['uk_project_site']); ?>&ig=<?php print($img['Url_img_project']); ?>"  class="btn">Удалить</a></td>
                     </tr>
                 <?php } ?>
             </table>
@@ -240,3 +245,21 @@ $imgs = get_img_project($link, $pos);
 
     </div>
 </div>
+
+<script>
+    function deldop() {
+        console.log("Ok");
+        swal({
+                title: "Вы уверены?",
+                text: "Удаление файла!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Да, удалить!"
+            },
+            function() {
+                document.location.href ="../include/delete.php?type=opis&pos=<?php print($edition['Title_project_site']); ?>&uk=<?php print($edition['uk_more_project_site']); ?>";
+                alert("Удалён!");
+            });
+    }
+</script>
