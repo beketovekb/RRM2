@@ -646,7 +646,7 @@ header .burger .burger_menu .burger_line {
   height: auto;
   width: 100%;
   background-color: #fff;
-  padding: 90px 0 90px 0;
+  padding: 90px 0 130px 0;
 }
 
 .s1_1 h2 {
@@ -778,7 +778,6 @@ header .burger .burger_menu .burger_line {
 .fback_form {
   background-color: #D69600;
   width: 425px;
-  height: 400px;
   padding: 20px 40px;
   -webkit-box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
           box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
@@ -854,7 +853,7 @@ header .burger .burger_menu .burger_line {
 .s3_1 {
   height: auto;
   background-color: #fff;
-  padding: 90px 0 90px 0;
+  padding: 130px 0 90px 0;
 }
 
 .s3_1 h2 {
@@ -1562,6 +1561,7 @@ footer ul {
 }
 
 footer ul a {
+  margin: 0 10px;
   margin-top: 10px;
   color: #888;
   font-size: 12px;

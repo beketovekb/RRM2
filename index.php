@@ -254,6 +254,11 @@ $news = get_index_news($link, $lng, 3);
                             <input type="text" placeholder="Имя" name="name">
                         </div>
 
+                        <div class="from_input-name">
+                            <label for=""><?php print($ftitle[""]); ?>Вкратце опишите Ваши компетенции</label>
+                            <input type="text" placeholder="Ваши компетенции" name="competence">
+                        </div>
+
                         <div class="from_input-number">
                             <label for=""><?php print($ftitle["27"]); ?></label>
                             <input type="tel" placeholder="8(___) ___-____" name="phone" id="phone1">
