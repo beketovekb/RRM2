@@ -899,8 +899,8 @@ header .burger .burger_menu .burger_line {
 
 @media (max-width: 1200px) {
   .s3_1 .directions {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     -ms-grid-rows: (240px)[2];
         grid-template-rows: repeat(2, 240px);
         grid-template-areas: "di1 di2 di2 di3" "di4 di4 di5 di5";
@@ -986,7 +986,7 @@ header .burger .burger_menu .burger_line {
   font-size: 16px;
   font-weight: 700;
   position: absolute;
-  bottom: 16px;
+  bottom: 14px;
   z-index: 1;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;

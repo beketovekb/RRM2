@@ -661,7 +661,7 @@ header {
         margin-top: 60px;
         position: relative;
         @media (max-width:1200px) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 240px);
             grid-template-areas: "di1 di2 di2 di3"
                                     "di4 di4 di5 di5";
@@ -733,7 +733,7 @@ header {
                 font-size: 16px;
                 font-weight: 700;
                 position: absolute;
-                bottom: 16px;
+                bottom: 14px;
                 z-index: 1;
                 transition: 0.5s all ease;
                 
