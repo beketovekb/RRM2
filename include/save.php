@@ -504,7 +504,7 @@ function set_bd($i1, $i2,$link)
     $replace = '<br>';
     for ($i = $i1; $i <= $i2; $i++) {
         $r[$i] = str_replace($order, $replace, $_POST['r' . $i]);
-        $e[$i] = str_replace($order, $replace, $_POST['e' . $i]);
+        $e[$i] = str_replace("'","\'",str_replace($order, $replace, $_POST['e' . $i]));
         $k[$i] = str_replace($order, $replace, $_POST['k' . $i]);
     }
     for ($i = $i1; $i <= $i2; $i++) {
