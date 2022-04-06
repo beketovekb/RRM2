@@ -78,6 +78,9 @@ switch ($_POST['fun']) {
     case 'newProduct':
         new_product($link);
         break;
+    case 'editProduct':
+        edit_product($link);
+        break;
 }
 
 if (isset($_FILES['gene'])) {
@@ -962,7 +965,7 @@ function new_product($link)
     $pos=$_POST['pos'];
     $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $id=generate_string($permitted_chars, 16);
-    $redirect_url = "/admin/admin.php?str=editProject&pos=".$id."&new=1";
+    $redirect_url = "/admin/admin.php?str=edit_product&pos=".$id."";
     $ru=false;
     $en=false;
     $kz=false;
@@ -986,7 +989,7 @@ function new_product($link)
     $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_ru']));
     $srok=str_replace("'","\'",$_POST['srok_ru']);
     $prioritet = $_POST['prioritet_ru'];
-    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$url."', '".$cena."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'ru')";
+    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$cena."', '".$url."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'ru')";
     if (mysqli_query($link, $sql)) {
         $ru=true;
     } else {
@@ -1000,7 +1003,7 @@ function new_product($link)
     $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_en']));
     $srok=str_replace("'","\'",$_POST['srok_en']);
     $prioritet = $_POST['prioritet_ru'];
-    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$url."', '".$cena."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'en')";
+    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$cena."', '".$url."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'en')";
     if (mysqli_query($link, $sql)) {
         $en=true;
     } else {
@@ -1014,7 +1017,67 @@ function new_product($link)
     $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_kz']));
     $srok=str_replace("'","\'",$_POST['srok_kz']);
     $prioritet = $_POST['prioritet_ru'];
-    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$url."', '".$cena."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'kz')";
+    $sql = "INSERT INTO `productions` (`id_production`, `title_production`, `opisanie_production`, `cena_production`, `url_redirect`, `uk_production`, `img_general_production`, `dop_info_production`, `Prioritet_product`, `napravlenia_production`, `lng_product`) VALUES (NULL, '".$title."', '".$opisanie."', '".$cena."', '".$url."', '".$id."', '".$name."', '".$srok."', '".$prioritet."', '".$type."', 'kz')";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+    
+}
+function edit_product($link)
+{
+    $pos=$_POST['pos'];
+
+    $redirect_url = "/admin/admin.php?str=edit_product&pos=".$pos."";
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+
+    $cena = $_POST['cena_ru'];
+    $url = $_POST['url_ru'];
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_ru']));
+    $srok=str_replace("'","\'",$_POST['srok_ru']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "UPDATE `productions` SET `title_production` = '".$title."', `opisanie_production` = '".$opisanie."', `cena_production` = '".$cena."', `url_redirect` = '".$url."', `dop_info_production` = '".$srok."', `Prioritet_product` = '".$prioritet."', `napravlenia_production` = '".$type."' WHERE uk_production= '".$pos."' AND lng_product = 'ru'";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_en']));
+    $srok=str_replace("'","\'",$_POST['srok_en']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "UPDATE `productions` SET `title_production` = '".$title."', `opisanie_production` = '".$opisanie."', `cena_production` = '".$cena."', `url_redirect` = '".$url."', `dop_info_production` = '".$srok."', `Prioritet_product` = '".$prioritet."', `napravlenia_production` = '".$type."' WHERE uk_production= '".$pos."' AND lng_product = 'en'";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type_proj =str_replace("'","\'",$_POST['btn_ru']);
+    $opisanie=str_replace("\n","<br>",str_replace("'","\'",$_POST['opisanie_kz']));
+    $srok=str_replace("'","\'",$_POST['srok_kz']);
+    $prioritet = $_POST['prioritet_ru'];
+    $sql = "UPDATE `productions` SET `title_production` = '".$title."', `opisanie_production` = '".$opisanie."', `cena_production` = '".$cena."', `url_redirect` = '".$url."', `dop_info_production` = '".$srok."', `Prioritet_product` = '".$prioritet."', `napravlenia_production` = '".$type."' WHERE uk_production= '".$pos."' AND lng_product = 'kz'";
     if (mysqli_query($link, $sql)) {
         $kz=true;
     } else {

@@ -40,7 +40,7 @@ $imgs = get_img_project($link, $pos);
                 <div class="cardHeader">
                     <h2><?php print($name); ?></h2>
                     <input type="submit" value="Сохранить" class="btn" />
-                    <input type="text" name="fun" style="width: 100%; display: none; " value="editProject">
+                    <input type="text" name="fun" style="width: 100%; display: none; " value="editProduct">
                     <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
                 </div>
 
@@ -89,6 +89,14 @@ $imgs = get_img_project($link, $pos);
                                             } ?>
                                         </select></td>
                                 </tr>
+                                <tr>
+                                    <td>Цена</td>
+                                    <td><input type="text" name="cena_ru" style="width: 100%;" value="<?php print($project['cena_production']); ?>"></td>
+                                </tr>
+                                <tr>
+                                    <td>Ссылка для перенаправления<span class="necessarily"> *</span></td>
+                                    <td><input type="text" name="url_ru" style="width: 100%;" value="<?php print($project['url_redirect']); ?>"></td>
+                                </tr>
                             </tbody>
                             <thead>
                                 <tr>
@@ -103,17 +111,17 @@ $imgs = get_img_project($link, $pos);
 
                                 <tr>
                                     <td>Заголовок</td>
-                                    <td><input type="text" name="title_ru" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['Title_project_site'])); ?>"></td>
+                                    <td><input type="text" name="title_ru" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['title_production'])); ?>"></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('<br>', "\n", str_replace('"', "'", $project['Opisanie_project_site']))); ?></textarea></td>
+                                    <td><textarea name="opisanie_ru" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('<br>', "\n", str_replace('"', "'", $project['opisanie_production']))); ?></textarea></td>
                                     <td>RU</td>
                                 </tr>
                                 <tr>
                                     <td>Под описанием</td>
-                                    <td><input type="text" name="srok_ru" style="width: 100%;" value="<?php print($project['Srok_project_site']); ?>"></td>
+                                    <td><input type="text" name="srok_ru" style="width: 100%;" value="<?php print($project['dop_info_production']); ?>"></td>
                                     <td>RU</td>
                                 </tr>
 
@@ -133,17 +141,17 @@ $imgs = get_img_project($link, $pos);
                                 <!--English-->
                                 <tr>
                                     <td>Заголовок</td>
-                                    <td><input type="text" name="title_en" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['Title_project_site'])); ?>"></td>
+                                    <td><input type="text" name="title_en" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['title_production'])); ?>"></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('<br>', "\n", str_replace('"', "'", $project['Opisanie_project_site']))); ?></textarea></td>
+                                    <td><textarea name="opisanie_en" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('<br>', "\n", str_replace('"', "'", $project['opisanie_production']))); ?></textarea></td>
                                     <td>ENG</td>
                                 </tr>
                                 <tr>
                                     <td>Под описанием</td>
-                                    <td><input type="text" name="srok_en" style="width: 100%;" value="<?php print($project['Srok_project_site']); ?>"></td>
+                                    <td><input type="text" name="srok_en" style="width: 100%;" value="<?php print($project['dop_info_production']); ?>"></td>
                                     <td>ENG</td>
                                 </tr>
 
@@ -161,17 +169,17 @@ $imgs = get_img_project($link, $pos);
                                 <!--Kazakh-->
                                 <tr>
                                     <td>Заголовок</td>
-                                    <td><input type="text" name="title_kz" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['Title_project_site'])); ?>"></td>
+                                    <td><input type="text" name="title_kz" style="width: 100%;" value="<?php print(str_replace('"', "'", $project['title_production'])); ?>"></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
                                     <td>Описание</td>
-                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('<br>', "\n", str_replace('"', "'", $project['Opisanie_project_site']))); ?></textarea></td>
+                                    <td><textarea name="opisanie_kz" id="" style="width: 100%;" cols="40" rows="10"><?php print(str_replace('<br>', "\n", str_replace('"', "'", $project['opisanie_production']))); ?></textarea></td>
                                     <td>KZ</td>
                                 </tr>
                                 <tr>
                                     <td>Под описанием</td>
-                                    <td><input type="text" name="srok_kz" style="width: 100%;" value="<?php print($project['Srok_project_site']); ?>"></td>
+                                    <td><input type="text" name="srok_kz" style="width: 100%;" value="<?php print($project['dop_info_production']); ?>"></td>
                                     <td>KZ</td>
                                 </tr>
                             </tbody>
@@ -203,7 +211,7 @@ $imgs = get_img_project($link, $pos);
                         <td>
                             <div style="background: url(<?php print($img['Url_img_project']); ?>) 100% 100% no-repeat; background-size: cover; width: 100px; height: 100px;"></div>
                         </td>
-                        <td><a href="../include/delete.php?type=imgproj&pos=<?php print($img['uk_project_site']); ?>&ig=<?php print($img['Url_img_project']); ?>"  class="btn">Удалить</a></td>
+                        <td><a href="../include/delete.php?type=imgproj&pos=<?php print($img['uk_project_site']); ?>&ig=<?php print($img['Url_img_project']); ?>" class="btn">Удалить</a></td>
                     </tr>
                 <?php } ?>
             </table>
@@ -224,7 +232,7 @@ $imgs = get_img_project($link, $pos);
                 confirmButtonText: "Да, удалить!"
             },
             function() {
-                document.location.href ="../include/delete.php?type=opis&pos=<?php print($edition['Title_project_site']); ?>&uk=<?php print($edition['uk_more_project_site']); ?>";
+                document.location.href = "../include/delete.php?type=opis&pos=<?php print($edition['Title_project_site']); ?>&uk=<?php print($edition['uk_more_project_site']); ?>";
                 alert("Удалён!");
             });
     }
