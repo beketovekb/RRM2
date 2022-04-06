@@ -604,6 +604,7 @@ header {
             border: none;
             margin-top: 16px;
             font-weight: 600;
+            cursor: pointer;
         }
         .from_input-acept {
             display: flex;
@@ -1330,6 +1331,9 @@ footer{
         }
         img{
             height:100%;
+            @media (max-width:1200px) {
+                height: 300px;
+            }
         }
     }
     .content_directions {
@@ -2182,4 +2186,8 @@ footer{
 
     .project_href{
         display: block !important;
+    }
+
+    .slick-slider{
+        margin-bottom: 50px;
     }

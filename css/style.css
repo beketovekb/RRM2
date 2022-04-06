@@ -826,6 +826,7 @@ header .burger .burger_menu .burger_line {
   border: none;
   margin-top: 16px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .fback_form .from_input-acept {
@@ -1827,6 +1828,12 @@ footer .f3 .f3_feed .shop_btn {
 
 .flex .img_directions img {
   height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .flex .img_directions img {
+    height: 300px;
+  }
 }
 
 .flex .content_directions {
@@ -2912,5 +2919,9 @@ label .flag::before {
 
 .project_href {
   display: block !important;
+}
+
+.slick-slider {
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=style.css.map */
