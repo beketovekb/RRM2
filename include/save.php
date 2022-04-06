@@ -79,7 +79,7 @@ switch ($_POST['fun']) {
         new_product($link);
         break;
     case 'editProduct':
-        edit_product($link);
+        edit_products($link);
         break;
 }
 
@@ -1030,7 +1030,7 @@ function new_product($link)
     }
     
 }
-function edit_product($link)
+function edit_products($link)
 {
     $pos=$_POST['pos'];
 
