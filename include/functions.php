@@ -332,3 +332,25 @@ function edit_product($link, $uk)
 
     return $projects;
 }
+
+function get_product($link, $lng)
+{
+    $sql = "SELECT * FROM productions WHERE lng_product = '".$lng."' and Prioritet_product = '1'";
+
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}
+
+function get_more_product($link, $lng, $id)
+{
+    $sql = "SELECT * FROM productions WHERE lng_product = '".$lng."' and napravlenia_production = '".$id."'";
+
+    $result = mysqli_query($link, $sql);
+
+    $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $projects;
+}

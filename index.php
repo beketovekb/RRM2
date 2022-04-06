@@ -1,19 +1,29 @@
 <?php
 require_once 'include/database.php';
 require_once 'include/functions.php';
-if(isset($_GET['iac']))
-{
+if (isset($_GET['iac'])) {
     $loc;
-    switch($_GET['iac'])
-    {
-        case '1': $loc='#s1_1';break;
-        case '3': $loc='#s3_1';break;
-        case '4': $loc='#s4_1';break;
-        case '5': $loc='#s5_1';break;
-        case '7': $loc='#s7_1';break;
-        case '9': $loc='#s9_1';break;
+    switch ($_GET['iac']) {
+        case '1':
+            $loc = '#s1_1';
+            break;
+        case '3':
+            $loc = '#s3_1';
+            break;
+        case '4':
+            $loc = '#s4_1';
+            break;
+        case '5':
+            $loc = '#s5_1';
+            break;
+        case '7':
+            $loc = '#s7_1';
+            break;
+        case '9':
+            $loc = '#s9_1';
+            break;
     }
-    header('Location: index.php'. $loc);
+    header('Location: index.php' . $loc);
 }
 
 $lng;
@@ -40,6 +50,7 @@ foreach ($napravlenia as $napravlen) {
     $napravlenia_type[$napravlen["Position_uslugi_site"]] = $napravlen["Type_uslugi_site"];
 }
 $projects = get_project($link, $lng);
+$products = get_product($link, $lng);
 
 $img_url;
 $img_urls = get_img($link);
@@ -53,14 +64,17 @@ $news = get_index_news($link, $lng, 3);
 <html lang="en">
 
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){window.dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
+        function gtag() {
+            window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -309,12 +323,27 @@ $news = get_index_news($link, $lng, 3);
                 <div class="projects_item p_item<?php print($i); ?>" style="background-image: url(<?php print($project["Img_project_site"]); ?>);">
                     <div class="p_shadow">
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
-                        <span class="project_direction"><?php print($napravlenia_title[$project["Type_project_site"]]); ?></span> <!--Здесь-->
+                        <span class="project_direction"><?php print($napravlenia_title[$project["Type_project_site"]]); ?></span>
+                        <!--Здесь-->
                         <a class="shop_btn project_learn_more" href="/projects.php?id=<?php print($project["uk_project_site"]); ?>&lng=<?php print($lng); ?>">Подробнее</a>
                     </div>
                 </div>
             <?php $i++;
             } ?>
+
+            <?php
+            foreach ($products as $product) { ?>
+                <div class="projects_item p_item<?php print($i); ?>" style="background-image: url(<?php print($product["img_general_production"]); ?>);">
+                    <div class="p_shadow">
+                        <span class="project_title"><?php print($product["title_production"]); ?></span>
+                        <span class="project_direction"><?php print($napravlenia_title[$product["napravlenia_production"]]); ?></span>
+                        <!--Здесь-->
+                        <a class="shop_btn project_learn_more" href="<?php print($product["url_redirect"]); ?>">Перейдти</a>
+                    </div>
+                </div>
+            <?php $i++;
+            } ?>
+
         </div>
     </section>
     <section class="s5_1" id="s5_1">
@@ -323,7 +352,7 @@ $news = get_index_news($link, $lng, 3);
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["13"]); ?></span>
             <div class="responsive" data-aos="zoom-in">
-                <?php foreach($partners as $partner) { ?><img src="<?php print($partner['img_partners']);?>" alt=""> <?php } ?>
+                <?php foreach ($partners as $partner) { ?><img src="<?php print($partner['img_partners']); ?>" alt=""> <?php } ?>
             </div>
         </div>
     </section>
@@ -333,11 +362,11 @@ $news = get_index_news($link, $lng, 3);
             <hr data-aos="flip-left">
             <span class="title_caption" data-aos="fade-up"><?php print($ftitle["15"]); ?></span>
             <div class="news">
-                <?php foreach ($news as $new) {?>
+                <?php foreach ($news as $new) { ?>
                 <a href="news_more.php?pos=<?php print($new['uk_news']); ?>&lng=<?php print($lng); ?>" class="news_item " data-aos="zoom-in">
                     <div class="news_img" style="background-image: url(<?php print($new['img_news']); ?>);">
                         <div class="news_day">
-                        <?php print(date_index($new['date_reliz_news'],$lng)); ?>
+                        <?php print(date_index($new['date_reliz_news'], $lng)); ?>
                         </div>
                     </div>
                     <h4><?php print($new['title_news']); ?></h4>
@@ -348,7 +377,7 @@ $news = get_index_news($link, $lng, 3);
                         </svg>
                     </span>
                 </a>
-                <?php }?>
+                <?php } ?>
             </div>
             <a href="news_list.php" class="news_more">Больше новостей</a>
         </div>
@@ -382,7 +411,7 @@ $news = get_index_news($link, $lng, 3);
             </div>
             <span class="right">© Copyright | All Rights Reserved. | 2022</span>
             <ul>
-      
+
                 <a href="#s1_1">
                     <li><?php print($ftitle["16"]); ?></li>
                 </a>
@@ -415,11 +444,12 @@ $news = get_index_news($link, $lng, 3);
 <script type="text/javascript" src="js/slick.js"></script>
 <script type="text/javascript" src="js/preloader.js"></script>
 <script src="js/sweetalert.min.js"></script>
-    <script src="js/form.js"></script>
-    <script src="js/jquery.maskedinput.js"></script>
+<script src="js/form.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
 <script>
-    $(function(){
-    $("#phone1").mask("8(999) 999-9999");
+    $(function() {
+        $("#phone1").mask("8(999) 999-9999");
     });
 </script>
+
 </html>

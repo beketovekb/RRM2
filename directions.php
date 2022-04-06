@@ -10,10 +10,18 @@ $lng = strtoupper($lng);
 $pos = $_GET['num'];
 $napravlenia2 = get_more_napravlenia($link, $lng, $pos);
 $id;
+$tp;
 foreach ($napravlenia2 as $nap) {
     $id = $nap["Position_uslugi_site"];
+    $tp = $nap['type_proj_or_prod'];
 }
-$projects = get_more_project($link, $lng, $id);
+if($tp==='2'){
+    $projects = get_more_project($link, $lng, $id);
+}
+else
+{
+    $products = get_more_product($link, $lng, $id);
+}
 
 mb_internal_encoding('UTF-8');
 
@@ -194,7 +202,7 @@ foreach ($titles as $title) {
                                 <?php } ?>
                             </div>
                             <div class="variable-width">
-                                <?php foreach ($projects as $project) { ?>
+                                <?php if($tp==='2'){ foreach ($projects as $project) { ?>
                                     <div class="slide_dir">
                                         <a class="project_href" href="projects.php?id=<?php print($project["uk_project_site"]); ?>">
                                         <div class="slide_img dir_slide_img1" style="background-image: url(<?php print($project["Img_project_site"]); ?>);"></div>
@@ -207,7 +215,21 @@ foreach ($titles as $title) {
                                         </a>
                                         </a>
                                     </div>
-                                <?php } ?>
+                                <?php }}
+                                else {foreach ($products as $product) { ?>
+                                    <div class="slide_dir">
+                                        <a class="project_href" href="<?php print($product["url_redirect"]);?>">
+                                        <div class="slide_img dir_slide_img1" style="background-image: url(<?php print($product["img_general_production"]); ?>);"></div>
+                                        <h3><?php print($product["title_production"]); ?></h3>
+                                        <p><?php print(mb_strimwidth($product["opisanie_production"], 0, 66, "...")); ?></p>
+                                        <a href="<?php print($product["url_redirect"]); ?>" class="learn_more">Перейдти
+                                            <svg width="6" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7 7L7.70711 6.29289L8.41421 7L7.70711 7.70711L7 7ZM1.70711 0.292893L7.70711 6.29289L6.29289 7.70711L0.292893 1.70711L1.70711 0.292893ZM7.70711 7.70711L1.70711 13.7071L0.292893 12.2929L6.29289 6.29289L7.70711 7.70711Z" fill="#cdcdcd"></path>
+                                            </svg>
+                                        </a>
+                                        </a>
+                                    </div>
+                                <?php }}?>
 
                             </div>
                         </div>
