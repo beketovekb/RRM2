@@ -16,6 +16,12 @@ foreach ($napravlenia2 as $nap) {
 $projects = get_more_project($link, $lng, $id);
 
 mb_internal_encoding('UTF-8');
+
+$titles = get_titles($link, $lng);
+$ftitle;
+foreach ($titles as $title) {
+    $ftitle[$title["Number"]] = $title["Text"];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,25 +67,25 @@ mb_internal_encoding('UTF-8');
                             </a>
                             <ul>
                                 <a href="index.php?iac=1">
-                                    <li>О компании</li>
+                                    <li><?php print($ftitle["16"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=3">
-                                    <li>Навправления</li>
+                                    <li><?php print($ftitle["17"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=4">
-                                    <li>Проекты</li>
+                                    <li><?php print($ftitle["18"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=5">
-                                    <li>Партнеры</li>
+                                    <li><?php print($ftitle["19"]); ?></li>
                                 </a>
                                 <!-- <a href="index.php?iac=7">
-                                    <li>Новости</li>
+                                    <li><?php print($ftitle["20"]); ?></li>
                                 </a> -->
                                 <a href="https://robotprostore.kz/">
-                                    <li>Магазин</li>
+                                    <li><?php print($ftitle["21"]); ?></li>
                                 </a>
                                 <a href="index.php?iac=9">
-                                    <li>Контакты</li>
+                                    <li><?php print($ftitle["22"]); ?></li>
                                 </a>
                             </ul>
                             <div class="soc">
@@ -135,25 +141,25 @@ mb_internal_encoding('UTF-8');
                                 </div>
                                 <ul class="none">
                                     <a href="index.php?iac=1">
-                                        <li>О компании</li>
+                                        <li><?php print($ftitle["16"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=3">
-                                        <li>Навправления</li>
+                                        <li><?php print($ftitle["17"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=4">
-                                        <li>Проекты</li>
+                                        <li><?php print($ftitle["18"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=5">
-                                        <li>Партнеры</li>
+                                        <li><?php print($ftitle["19"]); ?></li>
                                     </a>
                                     <!-- <a href="index.php?iac=7">
-                                        <li>Новости</li>
+                                        <li><?php print($ftitle["20"]); ?></li>
                                     </a> -->
                                     <a href="https://robotprostore.kz/">
-                                        <li>Магазин</li>
+                                        <li><?php print($ftitle["21"]); ?></li>
                                     </a>
                                     <a href="index.php?iac=9">
-                                        <li>Контакты</li>
+                                        <li><?php print($ftitle["22"]); ?></li>
                                     </a>
                                     <div class="language_mobile">
 

@@ -34,7 +34,8 @@ function drop_project($link)
 function drop_opisanie($link)
 {
     $pos = $_GET['pos'];
-    $sql = "DELETE FROM `more_project_site` WHERE  	Title_project_site= '".$pos."'";
+    $uk = $_GET['uk_more_project_site'];
+    $sql = "DELETE FROM `more_project_site` WHERE  	Title_project_site= '".$pos."' AND uk_more_project_site = '".$uk."'";
     if (mysqli_query($link, $sql)) {
         $redirect_url = "/admin/admin.php?str=editProject&pos=".$pos;
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);

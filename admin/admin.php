@@ -19,6 +19,8 @@ if (isset($_GET['str'])) {
     <title>Admin RRM</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
+    <script src="lib/sweet-alert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
 </head>
 
 <body>
