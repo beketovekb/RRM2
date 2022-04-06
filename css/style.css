@@ -1777,7 +1777,7 @@ footer .f3 .f3_feed .shop_btn {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 850px) {
