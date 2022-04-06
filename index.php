@@ -264,7 +264,7 @@ $news = get_index_news($link, $lng, 3);
 
                         <div class="from_input-name">
                             <label for=""><?php print($ftitle["41"]); ?></label>
-                            <input type="text" placeholder="Ваши компетенции" name="competence">
+                            <input type="text" placeholder="Коментарий" name="competence">
                         </div>
 
                         <div class="from_input-number">
@@ -310,7 +310,7 @@ $news = get_index_news($link, $lng, 3);
                     <div class="p_shadow">
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
                         <span class="project_direction"><?php print($napravlenia_title[$project["Type_project_site"]]); ?></span> <!--Здесь-->
-                        <a class="shop_btn project_learn_more" href="/projects.php?id=<?php print($project["uk_project_site"]); ?>&lng=<?php print($lng); ?>">Подорбнее</a>
+                        <a class="shop_btn project_learn_more" href="/projects.php?id=<?php print($project["uk_project_site"]); ?>&lng=<?php print($lng); ?>">Подробнее</a>
                     </div>
                 </div>
             <?php $i++;
