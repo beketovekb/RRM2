@@ -325,7 +325,7 @@ $news = get_index_news($link, $lng, 3);
                         <span class="project_title"><?php print($project["Title_project_site"]); ?></span>
                         <span class="project_direction"><?php print($napravlenia_title[$project["Type_project_site"]]); ?></span>
                         <!--Здесь-->
-                        <a class="shop_btn project_learn_more" href="/projects.php?id=<?php print($project["uk_project_site"]); ?>&lng=<?php print($lng); ?>">Подробнее</a>
+                        <a class="shop_btn project_learn_more" href="/projects.php?id=<?php print($project["uk_project_site"]); ?>&lng=<?php print($lng); ?>"><?php print($ftitle["42"]); ?></a>
                     </div>
                 </div>
             <?php $i++;
@@ -338,7 +338,7 @@ $news = get_index_news($link, $lng, 3);
                         <span class="project_title"><?php print($product["title_production"]); ?></span>
                         <span class="project_direction"><?php print($napravlenia_title[$product["napravlenia_production"]]); ?></span>
                         <!--Здесь-->
-                        <a class="shop_btn project_learn_more" href="<?php print($product["url_redirect"]); ?>">Перейти</a>
+                        <a class="shop_btn project_learn_more" href="<?php print($product["url_redirect"]); ?>"><?php print($ftitle["43"]); ?></a>
                     </div>
                 </div>
             <?php $i++;
