@@ -206,7 +206,7 @@ $imgs = get_img_project($link, $pos);
                                         print($edition['Opisanie_more_project_site']);
                                     } ?></td>
                                 <td><a href="/admin/admin.php?str=editEditions&pos=<?php print($edition['Title_project_site']); ?>&dop=<?php print($edition['uk_more_project_site']); ?>" class="btn">Редактировать</a></td>
-                                <td><a href="#" onclick="deldop()"  class="btn">Удалить</a></td>
+                                <td><a href="../include/delete.php?type=opis&pos=<?php print($edition['Title_project_site']); ?>&uk=<?php print($edition['uk_more_project_site']); ?>"  class="btn">Удалить</a></td>
                             </tr>
 
                         <?php } ?>
