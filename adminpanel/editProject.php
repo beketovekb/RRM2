@@ -180,6 +180,7 @@ $imgs = get_img_project($link, $pos);
                             </tbody>
                         <?php } ?>
                     <?php } ?>
+                    <input type="submit" value="Сохранить" class="btn" />
                     <thead>
                         <tr>
                             <td>Название</td>
@@ -211,7 +212,6 @@ $imgs = get_img_project($link, $pos);
                         <?php } ?>
                     </tbody>
                 </table>
-                    <input type="submit" value="Сохранить" class="btn" />
 
             </div>
         </form>
