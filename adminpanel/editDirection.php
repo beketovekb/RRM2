@@ -57,7 +57,6 @@ $replace = '<br>';
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
                     <h2><?php print($name); ?></h2>
-                    <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="editDirection">
                     <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
                 </div>
@@ -167,6 +166,7 @@ $replace = '<br>';
                         } ?>
                     </tbody>
                 </table>
+                    <input type="submit" value="Сохранить" class="btn" />
             </div>
         </form>
 
