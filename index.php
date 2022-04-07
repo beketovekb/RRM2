@@ -273,22 +273,22 @@ $news = get_index_news($link, $lng, 3);
                     <form action="post" class="feedback-form">
                         <div class="from_input-name">
                             <label for=""><?php print($ftitle["26"]); ?></label>
-                            <input type="text" placeholder="Имя" name="name">
+                            <input type="text" placeholder="<?php print($ftitle["45"]); ?>" name="name" id = "name">
                         </div>
 
                         <div class="from_input-name">
                             <label for=""><?php print($ftitle["41"]); ?></label>
-                            <input type="text" placeholder="Коментарий" name="competence">
+                            <input type="text" placeholder="<?php print($ftitle["46"]); ?>" name="competence" id="coment">
                         </div>
 
                         <div class="from_input-number">
                             <label for=""><?php print($ftitle["27"]); ?></label>
                             <input type="tel" placeholder="8(___) ___-____" name="phone" id="phone1">
                         </div>
-                        <button class="btn feedback-form__button"><?php print($ftitle["28"]); ?></button>
+                        <button class="btn feedback-form__button" disabled id="btnsend"><?php print($ftitle["28"]); ?></button>
 
                         <div class="from_input-acept">
-                            <input type="checkbox" name="" id="form_acept">
+                            <input type="checkbox" name="" id="form_acept" onclick="act_btn()">
                             <label for="form_acept"><?php print($ftitle["29"]); ?></label>
                         </div>
                     </form>
@@ -403,8 +403,8 @@ $news = get_index_news($link, $lng, 3);
                     <h3><?php print($ftitle["40"]); ?></h3>
                     <span><?php print($ftitle["39"]); ?></span>
                     <form action="post" class="feedback-form">
-                        <input type="text" placeholder="Введите Ваше имя" name="name">
-                        <input type="text" placeholder="Введите Ваш номер" name="phone">
+                        <input type="text" placeholder="<?php print($ftitle["47"]); ?>" name="name">
+                        <input type="text" placeholder="<?php print($ftitle["48"]); ?>" name="phone">
                         <button class="shop_btn feedback-form__button"><?php print($ftitle["23"]); ?></button>
                     </form>
                 </div>
@@ -450,6 +450,35 @@ $news = get_index_news($link, $lng, 3);
     $(function() {
         $("#phone1").mask("8(999) 999-9999");
     });
+
+    function act_btn() {
+        if (form_acept.checked)
+        {
+            txt1 = document.getElementById('phone1');
+            txt2 = document.getElementById('name');
+            txt3 = document.getElementById('coment');
+
+            phone = txt1.value;
+            name = txt2.value;
+            coment = txt3.value;
+
+            if(phone.length>1 && name.length>1 && coment.length>1)
+            {
+                btn = document.getElementById('btnsend');
+                btn.disabled = false;
+            }
+            else
+            {
+                swal({
+                title: "Заполните все поля",
+                type: "error",
+                showConfirmButton: false,
+                timer: 2000
+            })
+            form_acept.checked = false;
+            }
+        }
+    }
 </script>
 
 </html>
