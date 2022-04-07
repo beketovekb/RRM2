@@ -17,6 +17,7 @@ foreach ($editions as $edition) {
 }
 $imgs = get_img_project($link, $pos);
 ?>
+<title>ТЕСТ</title>
 <div class="main">
     <?php include "menu.php"; ?>
     <div class="details">
