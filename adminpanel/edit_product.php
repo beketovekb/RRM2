@@ -77,6 +77,7 @@ $imgs = get_img_project($link, $pos);
                                             <option value="2" <?php print($sel2); ?>>Средний</option>
                                             <option value="3" <?php print($sel3); ?>>Низкий</option>
                                         </select></td>
+                                        <td></td>
                                 </tr>
                                 <tr>
                                     <td>Тип направления</td>
@@ -88,6 +89,7 @@ $imgs = get_img_project($link, $pos);
                                             <?php }
                                             } ?>
                                         </select></td>
+                                        <td></td>
                                 </tr>
                                 <tr>
                                     <td>Цена</td>
