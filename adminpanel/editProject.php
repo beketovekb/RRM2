@@ -43,6 +43,7 @@ $imgs = get_img_project($link, $pos);
             <div class="recentOrders aboutOrders">
                 <div class="cardHeader">
                     <h2><?php print($name); ?></h2>
+                    <input type="submit" value="Сохранить" class="btn" />
                     <input type="text" name="fun" style="width: 100%; display: none; " value="editProject">
                     <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
                 </div>
@@ -94,6 +95,9 @@ $imgs = get_img_project($link, $pos);
                                 </tr>
                             </tbody>
                             <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
+                        </tr>
                                 <tr>
                                     <td>Название</td>
                                     <td>Текст</td>
@@ -125,6 +129,9 @@ $imgs = get_img_project($link, $pos);
                         <?php } ?>
                         <?php if ($project['Lng_project_site'] === 'en') { ?>
                             <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА АНГЛИЙСКОМ ЯЗЫКЕ</td>
+                        </tr>
                                 <tr>
                                     <td>Название</td>
                                     <td>Текст</td>
@@ -154,6 +161,9 @@ $imgs = get_img_project($link, $pos);
                         <?php } ?>
                         <?php if ($project['Lng_project_site'] === 'kz') { ?>
                             <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА КАЗАХСКОМ ЯЗЫКЕ</td>
+                        </tr>
                                 <tr>
                                     <td>Название</td>
                                     <td>Текст</td>
@@ -180,7 +190,6 @@ $imgs = get_img_project($link, $pos);
                             </tbody>
                         <?php } ?>
                     <?php } ?>
-                    <input type="submit" value="Сохранить" class="btn" />
                     <thead>
                         <tr>
                             <td>Название</td>
