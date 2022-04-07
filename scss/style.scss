@@ -2196,4 +2196,11 @@ footer{
 
     .slick-next:before{
         content: '❯' !important;
+        font-size: 26px !important;
+        font-weight: 900 !important;
+    }
+    .slick-prev:before{
+        content: '❮' !important;
+        font-size: 26px !important;
+        font-weight: 900 !important;
     }
