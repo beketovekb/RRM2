@@ -88,7 +88,7 @@ $imgs = get_img_project($link, $pos);
                                             <option disabled>Выберите тип</option>
                                             <?php foreach ($napravlenia as $napravlen) {
                                                 if ($napravlen["type_proj_or_prod"] === '2') {  ?>
-                                                    <option value="<?php print($napravlen["Position_uslugi_site"]); ?>"><?php print($napravlen["Title_uslugi_site"]); ?></option>
+                                                    <option value="<?php print($napravlen["Position_uslugi_site"]); ?>"<?php if($napravlen["Position_uslugi_site"]=== $project['Type_project_site']) print('selected');; ?>><?php print($napravlen["Title_uslugi_site"]); ?></option>
                                             <?php }
                                             } ?>
                                         </select></td>
