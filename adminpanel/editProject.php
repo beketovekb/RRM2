@@ -178,9 +178,9 @@ $imgs = get_img_project($link, $pos);
                                     <td>KZ</td>
                                 </tr>
                             </tbody>
+                    <input type="submit" value="Сохранить" class="btn" />
                         <?php } ?>
                     <?php } ?>
-                    <input type="submit" value="Сохранить" class="btn" />
                     <thead>
                         <tr>
                             <td>Название</td>
