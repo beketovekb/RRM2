@@ -574,7 +574,7 @@ function edit_directions($link)
     $en=false;
     $kz=false;
     $ti='';
-    $type=str_replace("'","\'",$_POST['btn_ru']);
+    $type=$_POST['btn_ru'];
 
     if(str_replace("'","\'",$_POST['btn_ru'])==='ПЕРЕЙТИ К ПРОДУКТАМ') $ti='1'; else $ti='2';
 
@@ -597,8 +597,10 @@ function edit_directions($link)
         echo ($sql);
         echo "Ошибка: " . mysqli_error($link);
     }
+    
 
     $title=str_replace("'","\'",$_POST['title_en']);
+    $type=$_POST['btn_ru'];
     switch ($type) {
         case '1':
             $type = "GO TO SERVICES";
@@ -618,6 +620,7 @@ function edit_directions($link)
     }
 
     $title=str_replace("'","\'",$_POST['title_kz']);
+    $type=$_POST['btn_ru'];
     switch ($type) {
         case '1':
             $type = "ҚЫЗМЕТТЕРГЕ ӨТУ";
