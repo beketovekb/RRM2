@@ -6,8 +6,13 @@ $directions = get_direction($link, $pos);
 $name;
 foreach ($directions as $direction) {
     if($direction['Lng_uslugi_site']==='ru')
-    $name = $direction['Title_uslugi_site'];
+    {
+        $name = $direction['Title_uslugi_site'];
+        $tp = $direction['Type_uslugi_site'];
+    }
 }
+
+if($tp === 'ПЕРЕЙТИ К УСЛУГАМ')$tp='1'; else $tp='2';
 $order   = "\n";
 $replace = '<br>';
 ?>
@@ -57,6 +62,22 @@ $replace = '<br>';
                     <input type="text" name="pos" style="width: 100%; display: none; " value="<?php print($pos); ?>">
                 </div>
                 <table>
+                <thead>
+                        <tr>
+                            <td>Название</td>
+                            <td>Текст</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                                    <td>Тип направления</td>
+                                    <td><select name="btn_ru" class="select_style">
+                                            <option disabled>Выберите тип</option>
+                                            <option value="1" <?php if($tp==='1') print('selected');?>>Услуги</option>
+                                            <option value="2" <?php if($tp==='2') print('selected');?>>Продукты</option>
+                                        </select></td>
+                                </tr>
+                    </tbody>
                     <thead>
                         <tr>
                             <td>Название</td>
@@ -83,15 +104,7 @@ $replace = '<br>';
                                     <td><input type="text" name="srok_ru" style="width: 100%;" value="<?php print($direction['Srok_uslugi_site']); ?>"></td>
                                     <td>RU</td>
                                 </tr>
-                                <tr>
-                                    <td>Тип направления</td>
-                                    <td><select name="btn_ru">
-                                            <option disabled>Выберите тип</option>
-                                            <option value="ПЕРЕЙТИ К УСЛУГАМ">Услуги</option>
-                                            <option value="ПЕРЕЙТИ К ПРОДУКТАМ">Продукты</option>
-                                        </select></td>
-                                    <td>RU</td>
-                                </tr>
+                                
                         <?php }
                         } ?>
                     </tbody>
@@ -121,15 +134,6 @@ $replace = '<br>';
                                     <td><input type="text" name="srok_en" style="width: 100%;" value="<?php print($direction['Srok_uslugi_site']); ?>"></td>
                                     <td>ENG</td>
                                 </tr>
-                                <tr>
-                                    <td>Тип направления</td>
-                                    <td><select name="btn_en">
-                                            <option disabled>Выберите тип</option>
-                                            <option value="GO TO SERVICES">Услуги</option>
-                                            <option value="GO TO PRODUCTS">Продукты</option>
-                                        </select></td>
-                                    <td>ENG</td>
-                                </tr>
                         <?php }
                         } ?>
                     </tbody>
@@ -157,15 +161,6 @@ $replace = '<br>';
                                 <tr>
                                     <td>Под описанием</td>
                                     <td><input type="text" name="srok_kz" style="width: 100%;" value="<?php print($direction['Srok_uslugi_site']); ?>"></td>
-                                    <td>KZ</td>
-                                </tr>
-                                <tr>
-                                    <td>Тип направления</td>
-                                    <td><select name="btn_kz">
-                                            <option disabled>Выберите тип</option>
-                                            <option value="ҚЫЗМЕТТЕРГЕ ӨТУ">Услуги</option>
-                                            <option value="ӨНІМДЕРГЕ ӨТУ">Продукты</option>
-                                        </select></td>
                                     <td>KZ</td>
                                 </tr>
                         <?php }

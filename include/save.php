@@ -574,12 +574,20 @@ function edit_directions($link)
     $en=false;
     $kz=false;
     $ti='';
+    $type=str_replace("'","\'",$_POST['btn_ru']);
 
     if(str_replace("'","\'",$_POST['btn_ru'])==='ПЕРЕЙТИ К ПРОДУКТАМ') $ti='1'; else $ti='2';
 
 
     $title=str_replace("'","\'",$_POST['title_ru']);
-    $type=str_replace("'","\'",$_POST['btn_ru']);
+    switch ($type) {
+        case '1':
+            $type = "ПЕРЕЙТИ К УСЛУГАМ";
+            break;
+        case '2':
+            $type = "ПЕРЕЙТИ К ПРОДУКТАМ";
+            break;
+    }
     $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
     $srok=str_replace("'","\'",$_POST['srok_ru']);
     $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$ti."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'ru'";
@@ -591,7 +599,14 @@ function edit_directions($link)
     }
 
     $title=str_replace("'","\'",$_POST['title_en']);
-    $type=str_replace("'","\'",$_POST['btn_en']);
+    switch ($type) {
+        case '1':
+            $type = "GO TO SERVICES";
+            break;
+        case '2':
+            $type = "GO TO PRODUCTS";
+            break;
+    }
     $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
     $srok=str_replace("'","\'",$_POST['srok_en']);
     $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$ti."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'en'";
@@ -603,7 +618,14 @@ function edit_directions($link)
     }
 
     $title=str_replace("'","\'",$_POST['title_kz']);
-    $type=str_replace("'","\'",$_POST['btn_kz']);
+    switch ($type) {
+        case '1':
+            $type = "ҚЫЗМЕТТЕРГЕ ӨТУ";
+            break;
+        case '2':
+            $type = "ӨНІМДЕРГЕ ӨТУ";
+            break;
+    }
     $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
     $srok=str_replace("'","\'",$_POST['srok_kz']);
     $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$ti."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'kz'";
