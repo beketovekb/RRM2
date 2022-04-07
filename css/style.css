@@ -2926,4 +2926,8 @@ label .flag::before {
 .slick-slider {
   margin-bottom: 50px;
 }
+
+.slick-prev:before {
+  content: '❯';
+}
 /*# sourceMappingURL=style.css.map */

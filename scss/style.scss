@@ -2193,3 +2193,7 @@ footer{
     .slick-slider{
         margin-bottom: 50px;
     }
+
+    .slick-prev:before{
+        content: '❯';
+    }
