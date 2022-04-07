@@ -2927,7 +2927,7 @@ label .flag::before {
   margin-bottom: 50px;
 }
 
-.slick-prev:before {
-  content: '❯';
+.slick-next:before {
+  content: '❯' !important;
 }
 /*# sourceMappingURL=style.css.map */
