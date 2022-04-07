@@ -2925,5 +2925,18 @@ label .flag::before {
 
 .slick-slider {
   margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.slick-slider .slick-next:before {
+  content: '❯' !important;
+  font-size: 26px !important;
+  font-weight: 900 !important;
+}
+
+.slick-prev:before {
+  content: '❮' !important;
+  font-size: 26px !important;
+  font-weight: 900 !important;
 }
 /*# sourceMappingURL=style.css.map */
