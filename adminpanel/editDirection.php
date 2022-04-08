@@ -8,11 +8,10 @@ foreach ($directions as $direction) {
     if($direction['Lng_uslugi_site']==='ru')
     {
         $name = $direction['Title_uslugi_site'];
-        $tp = $direction['Type_uslugi_site'];
+        $tp = $direction['type_proj_or_prod'];
     }
 }
 
-if($tp === 'ПЕРЕЙТИ К УСЛУГАМ')$tp='1'; else $tp='2';
 $order   = "\n";
 $replace = '<br>';
 ?>
