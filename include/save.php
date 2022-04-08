@@ -602,10 +602,10 @@ function edit_directions($link)
     $type=$_POST['btn_ru'];
     switch ($type) {
         case '2':
-            $type = "GO TO SERVICES";
+            $type = "VIEW SERVICES";
             break;
         case '1':
-            $type = "GO TO PRODUCTS";
+            $type = "VIEW PRODUCTS";
             break;
     }
     $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
