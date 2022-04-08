@@ -743,3 +743,7 @@ body::-webkit-scrollbar {
       color: red;
   }
 
+
+  .recentOrders table select {
+      max-width: 1000px;
+  }

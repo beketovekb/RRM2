@@ -100,6 +100,9 @@ if(isset($_GET['save']))
                                 </tr>
                             </tbody>
                             <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА РУССКОМ ЯЗЫКЕ</td>
+                        </tr>
                                 <tr>
                                     <td>Название</td>
                                     <td>Текст</td>
@@ -131,6 +134,9 @@ if(isset($_GET['save']))
                         <?php } ?>
                         <?php if ($project['Lng_project_site'] === 'en') { ?>
                             <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА АНГЛИЙСКОМ ЯЗЫКЕ</td>
+                        </tr>
                                 <tr>
                                     <td>Название</td>
                                     <td>Текст</td>
@@ -160,6 +166,9 @@ if(isset($_GET['save']))
                         <?php } ?>
                         <?php if ($project['Lng_project_site'] === 'kz') { ?>
                             <thead>
+                        <tr style="border-bottom: none;">
+                            <td style="color: #959595; font-weight: 400;" colspan="3">ТЕКСТ НА КАЗАХСКОМ ЯЗЫКЕ</td>
+                        </tr>
                                 <tr>
                                     <td>Название</td>
                                     <td>Текст</td>
