@@ -580,10 +580,10 @@ function edit_directions($link)
 
     $title=str_replace("'","\'",$_POST['title_ru']);
     switch ($type) {
-        case '1':
+        case '2':
             $type = "ПЕРЕЙТИ К УСЛУГАМ";
             break;
-        case '2':
+        case '1':
             $type = "ПЕРЕЙТИ К ПРОДУКТАМ";
             break;
     }
@@ -601,10 +601,10 @@ function edit_directions($link)
     $title=str_replace("'","\'",$_POST['title_en']);
     $type=$_POST['btn_ru'];
     switch ($type) {
-        case '1':
+        case '2':
             $type = "GO TO SERVICES";
             break;
-        case '2':
+        case '1':
             $type = "GO TO PRODUCTS";
             break;
     }
@@ -621,10 +621,10 @@ function edit_directions($link)
     $title=str_replace("'","\'",$_POST['title_kz']);
     $type=$_POST['btn_ru'];
     switch ($type) {
-        case '1':
+        case '2':
             $type = "ҚЫЗМЕТТЕРГЕ ӨТУ";
             break;
-        case '2':
+        case '1':
             $type = "ӨНІМДЕРГЕ ӨТУ";
             break;
     }
