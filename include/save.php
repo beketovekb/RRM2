@@ -573,10 +573,9 @@ function edit_directions($link)
     $ru=false;
     $en=false;
     $kz=false;
-    $ti='';
+    $ti=$_POST['btn_ru'];
     $type=$_POST['btn_ru'];
 
-    if(str_replace("'","\'",$_POST['btn_ru'])==='ПЕРЕЙТИ К ПРОДУКТАМ') $ti='1'; else $ti='2';
 
 
     $title=str_replace("'","\'",$_POST['title_ru']);
@@ -590,7 +589,7 @@ function edit_directions($link)
     }
     $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
     $srok=str_replace("'","\'",$_POST['srok_ru']);
-    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$type."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'ru'";
+    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$ti."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'ru'";
     if (mysqli_query($link, $sql)) {
         $ru=true;
     } else {
@@ -611,7 +610,7 @@ function edit_directions($link)
     }
     $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
     $srok=str_replace("'","\'",$_POST['srok_en']);
-    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$type."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'en'";
+    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$ti."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'en'";
     if (mysqli_query($link, $sql)) {
         $en=true;
     } else {
@@ -631,7 +630,7 @@ function edit_directions($link)
     }
     $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
     $srok=str_replace("'","\'",$_POST['srok_kz']);
-    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$type."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'kz'";
+    $sql="UPDATE uslugi_site SET Title_uslugi_site = '".$title."', Type_uslugi_site = '".$type."', Opisanie_uslugi_site = '".$opisanie."', Srok_uslugi_site = '".$srok."', type_proj_or_prod = '".$ti."' WHERE Position_uslugi_site = '".$pos."' AND Lng_uslugi_site = 'kz'";
     if (mysqli_query($link, $sql)) {
         $kz=true;
     } else {
