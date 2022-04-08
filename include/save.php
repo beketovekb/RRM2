@@ -792,7 +792,7 @@ function new_edit($link)
 function edit_projects($link)
 {
     $pos=$_POST['pos'];
-    $redirect_url = "/admin/admin.php?str=editProject&pos=".$pos;
+    $redirect_url = "/admin/admin.php?str=editProject&pos=".$pos."&save=true";
     $ru=false;
     $en=false;
     $kz=false;

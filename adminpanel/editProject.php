@@ -16,6 +16,11 @@ foreach ($editions as $edition) {
     $col++;
 }
 $imgs = get_img_project($link, $pos);
+
+if(isset($_GET['save']))
+{
+    print "<body onload=\"savedop();\">";
+}
 ?>
 <div class="main">
     <?php include "menu.php"; ?>
@@ -262,4 +267,6 @@ $imgs = get_img_project($link, $pos);
                 alert("Удалён!");
             });
     }
+
+    
 </script>

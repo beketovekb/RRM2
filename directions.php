@@ -171,13 +171,13 @@ foreach ($titles as $title) {
                                     </a>
                                     <div class="language_mobile">
 
-                                        <a href="directions.php?num=<?php print($_GET['num']);?>&lng=EN">
+                                        <a href="directions.php?num=<?php print($pos);?>&lng=EN">
                                             EN
                                         </a>
-                                        <a href="directions.php?num=<?php print($_GET['num']);?>&lng=RU">
+                                        <a href="directions.php?num=<?php print($pos);?>&lng=RU">
                                             RU
                                         </a>
-                                        <a href="directions.php?num=<?php print($_GET['num']);?>&lng=KZ">
+                                        <a href="directions.php?num=<?php print($pos);?>&lng=KZ">
                                             KZ
                                         </a>
                                     </div>

@@ -18,9 +18,8 @@ if (isset($_GET['str'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin RRM</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="assets/modAlert.css">
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
-    <script src="../js/sweetalert.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../js/sweetalert.css">
 </head>
 
 <body>
@@ -153,6 +152,7 @@ if (isset($_GET['str'])) {
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="assets/modAlert.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
@@ -181,6 +181,14 @@ if (isset($_GET['str'])) {
                 $('.toggle_accordion2').toggleClass('accordion');
             });
         });
+
+        function savedop()
+    {
+        ModAlert.addAlert({
+	type: 'success',
+	text: 'Изменения сохранены',
+    });
+    }
     </script>
 
 
