@@ -129,13 +129,13 @@ foreach ($titles as $title) {
                                     </label>
                                     <ul class="lang-list">
                                         <li class="lang lang-ru <?php if ($lng == 'RU') print('selected'); ?>" title="RU">
-                                            <a href="directions.php?num=1&lng=RU"><span class="flag"></span></a>
+                                            <a href="directions.php?num=<?php print($pos);?>&lng=RU"><span class="flag"></span></a>
                                         </li>
                                         <li class="lang lang-en <?php if ($lng == 'EN') print('selected'); ?>" title="EN">
-                                            <a href="directions.php?num=1&lng=EN"><span class="flag"></span> </a>
+                                            <a href="directions.php?num=<?php print($pos);?>&lng=EN"><span class="flag"></span> </a>
                                         </li>
                                         <li class="lang lang-kz <?php if ($lng == 'KZ') print('selected'); ?>" title="KZ">
-                                            <a href="directions.php?num=1&lng=KZ"><span class="flag"></span></a>
+                                            <a href="directions.php?num=<?php print($pos);?>&lng=KZ"><span class="flag"></span></a>
                                         </li>
                                     </ul>
                                 </div>
