@@ -5,22 +5,22 @@ if (isset($_GET['iac'])) {
     $loc;
     switch ($_GET['iac']) {
         case '1':
-            $loc = '#s1_1';
+            $loc = '?lng='.$_GET['lng'].'#s1_1';
             break;
         case '3':
-            $loc = '#s3_1';
+            $loc = '?lng='.$_GET['lng'].'#s3_1';
             break;
         case '4':
-            $loc = '#s4_1';
+            $loc = '?lng='.$_GET['lng'].'#s4_1';
             break;
         case '5':
-            $loc = '#s5_1';
+            $loc = '?lng='.$_GET['lng'].'#s5_1';
             break;
         case '7':
-            $loc = '#s7_1';
+            $loc = '?lng='.$_GET['lng'].'#s7_1';
             break;
         case '9':
-            $loc = '#s9_1';
+            $loc = '?lng='.$_GET['lng'].'#s9_1';
             break;
     }
     header('Location: index.php' . $loc);

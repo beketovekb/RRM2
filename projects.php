@@ -75,25 +75,25 @@ foreach ($titles as $title) {
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
                             <ul>
-                                <a href="index.php?iac=1">
+                                <a href="index.php?iac=1&lng=<?php print($lng);?>">
                                     <li><?php print($ftitle["16"]); ?></li>
                                 </a>
-                                <a href="index.php?iac=3">
+                                <a href="index.php?iac=3&lng=<?php print($lng);?>">
                                     <li><?php print($ftitle["17"]); ?></li>
                                 </a>
-                                <a href="index.php?iac=4">
+                                <a href="index.php?iac=4&lng=<?php print($lng);?>">
                                     <li><?php print($ftitle["18"]); ?></li>
                                 </a>
-                                <a href="index.php?iac=5">
+                                <a href="index.php?iac=5&lng=<?php print($lng);?>">
                                     <li><?php print($ftitle["19"]); ?></li>
                                 </a>
-                                <!-- <a href="index.php?iac=7">
+                                <!-- <a href="index.php?iac=7&lng=<?php print($lng);?>">
                                     <li><?php print($ftitle["20"]); ?></li>
                                 </a> -->
                                 <a href="https://robotprostore.kz/">
                                     <li><?php print($ftitle["21"]); ?></li>
                                 </a>
-                                <a href="index.php?iac=9">
+                                <a href="index.php?iac=9&lng=<?php print($lng);?>">
                                     <li><?php print($ftitle["22"]); ?></li>
                                 </a>
                             </ul>
@@ -149,25 +149,25 @@ foreach ($titles as $title) {
                                     <div class="burger_line"></div>
                                 </div>
                                 <ul class="none">
-                                    <a href="index.php?iac=1">
+                                    <a href="index.php?iac=1&lng=<?php print($lng);?>">
                                         <li><?php print($ftitle["16"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=3">
+                                    <a href="index.php?iac=3&lng=<?php print($lng);?>">
                                         <li><?php print($ftitle["17"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=4">
+                                    <a href="index.php?iac=4&lng=<?php print($lng);?>">
                                         <li><?php print($ftitle["18"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=5">
+                                    <a href="index.php?iac=5&lng=<?php print($lng);?>">
                                         <li><?php print($ftitle["19"]); ?></li>
                                     </a>
-                                    <!-- <a href="index.php?iac=7">
+                                    <!-- <a href="index.php?iac=7&lng=<?php print($lng);?>">
                                         <li><?php print($ftitle["20"]); ?></li>
                                     </a> -->
                                     <a href="https://robotprostore.kz/">
                                         <li><?php print($ftitle["21"]); ?></li>
                                     </a>
-                                    <a href="index.php?iac=9">
+                                    <a href="index.php?iac=9&lng=<?php print($lng);?>">
                                         <li><?php print($ftitle["22"]); ?></li>
                                     </a>
                                     <div class="language_mobile">
