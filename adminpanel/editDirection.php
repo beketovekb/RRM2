@@ -72,8 +72,8 @@ $replace = '<br>';
                                     <td>Тип направления</td>
                                     <td><select name="btn_ru" class="select_style">
                                             <option disabled>Выберите тип</option>
-                                            <option value='1' <?php if($tp==='1') print('selected');?>>Услуги</option>
-                                            <option value='2' <?php if($tp==='2') print('selected');?>>Продукты</option>
+                                            <option value='1' <?php if($tp==='1') print('selected');?>>Продукты</option>
+                                            <option value='2' <?php if($tp==='2') print('selected');?>>Услуги</option>
                                         </select></td>
                                 </tr>
                     </tbody>
