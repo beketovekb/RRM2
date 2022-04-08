@@ -70,7 +70,7 @@ foreach ($titles as $title) {
                     <div class="shadow_up"></div>
                     <div class="container">
                         <nav>
-                            <a class="logo_link" href="index.php">
+                            <a class="logo_link" href="index.php?lng=<?php print($lng);?>">
                                 <img class="logo logo_light" src="img/logo_light.png" alt="Regulus Robotics Machine Logo">
                                 <img class="logo logo_color" src="img/logo.png" alt="Regulus Robotics Machine Logo">
                             </a>
