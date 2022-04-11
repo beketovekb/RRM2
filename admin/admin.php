@@ -5,6 +5,7 @@ $lst;
 if (isset($_GET['str'])) {
     $lst = '../adminpanel/' . $_GET['str'] . '.php';
 }
+$par='';
 ?>
 
 
@@ -146,7 +147,7 @@ if (isset($_GET['str'])) {
                 </li>
             </ul>
         </div>
-
+        
         <!--main-->
         <?php if ($lst !== null) include $lst; ?>
     </div>
@@ -155,6 +156,7 @@ if (isset($_GET['str'])) {
     <script src="assets/modAlert.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="scrip.js"></script>
     <script>
         //MenuToggle
         let toggle = document.querySelector('.toggle');
@@ -187,6 +189,14 @@ if (isset($_GET['str'])) {
         ModAlert.addAlert({
 	type: 'success',
 	text: 'Изменения сохранены',
+    });
+    }
+
+    function saveimg()
+    {
+        ModAlert.addAlert({
+	type: 'success',
+	text: 'Изображения изменены',
     });
     }
     </script>

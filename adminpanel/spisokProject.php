@@ -136,7 +136,20 @@ $replace = '<br>';
                             <td><?php print($direcrtion['Title_project_site']);?></td>
                             <td><?php if(strlen($direcrtion['Opisanie_project_site'])>=60){print(mb_strimwidth($direcrtion['Opisanie_project_site'], 0, 59,"..."));} else {print($direcrtion['Opisanie_project_site']);}?></td>
                             <td><a href="/admin/admin.php?str=editProject&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Редактировать</a></td>
-                            <td><a href="../include/delete.php?type=proj&pos=<?php print($direcrtion['uk_project_site']);?>" class="btn">Удалить</a></td>
+                            <td><button href="#" class="btn btn-danger boxed-action" id="delete-account">Удалить</button></td>
+                            <dialog id="confirm-delete" class="site-dialog">
+                            <header class="dialog-header">
+                                <h1>Удаления</h1>
+                            </header>
+                            <div class="dialog-content">
+                                <p>Вы точно хотите удалить?</p>
+                            </div>
+                            <div class="btn-group cf">
+                                <a href="../include/delete.php?type=proj&pos=<?php print($direcrtion['uk_project_site']);?>"><button class="btn btn-danger" id="delete">Delete</button></a>
+                                <button class="btn btn-cancel" id="cancel">Cancel</button>
+
+                            </div>
+                            </dialog>
                         </tr>
                     </tbody>
                     <?php } ?>

@@ -12,6 +12,11 @@ $pos = $_GET['pos'];
 $projects = edit_product($link, $pos);
 
 $imgs = get_img_project($link, $pos);
+
+if(isset($_GET['save']))
+{
+    print "<body onload=\"savedop();\">";
+}
 ?>
 <div class="main">
     <?php include "menu.php"; ?>

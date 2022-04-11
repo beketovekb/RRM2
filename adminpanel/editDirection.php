@@ -11,7 +11,14 @@ foreach ($directions as $direction) {
         $tp = $direction['type_proj_or_prod'];
     }
 }
-
+if(isset($_GET['save']))
+{
+    print "<body onload=\"savedop();\">";
+}
+if(isset($_GET['saveimg']))
+{
+    print "<body onload=\"saveimg();\">";
+}
 $order   = "\n";
 $replace = '<br>';
 ?>

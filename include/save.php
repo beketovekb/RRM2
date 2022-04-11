@@ -225,7 +225,7 @@ if (isset($_FILES['editProd'])) {
 }
 if (isset($_FILES['dir'])) {
     $pos = $_POST['pos'];
-    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos."&saveimg=true";
     // проверяем, можно ли загружать изображение
     $check = can_upload($_FILES['dir']);
 
@@ -247,7 +247,7 @@ if (isset($_FILES['dir'])) {
 }
 if (isset($_FILES['dird'])) {
     $pos = $_POST['pos'];
-    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos."&saveimg=true";
     // проверяем, можно ли загружать изображение
     $check = can_upload($_FILES['dird']);
 
@@ -569,7 +569,7 @@ function set_bd($i1, $i2,$link)
 function edit_directions($link)
 {
     $pos=$_POST['pos'];
-    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos;
+    $redirect_url = "/admin/admin.php?str=editDirection&pos=".$pos."&save=true";
     $ru=false;
     $en=false;
     $kz=false;
@@ -1079,7 +1079,7 @@ function edit_products($link)
 {
     $pos=$_POST['pos'];
 
-    $redirect_url = "/admin/admin.php?str=edit_product&pos=".$pos."";
+    $redirect_url = "/admin/admin.php?str=edit_product&pos=".$pos."&save=true";
     $ru=false;
     $en=false;
     $kz=false;

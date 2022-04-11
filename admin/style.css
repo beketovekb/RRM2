@@ -305,7 +305,8 @@ body {
     display: flex;
     align-items: center;
 }
-.cardHeader h2  svg {
+
+.cardHeader h2 svg {
     margin-right: 10px;
 }
 
@@ -318,7 +319,6 @@ body {
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    
     width: fit-content;
     margin-left: auto;
 }
@@ -355,10 +355,10 @@ body {
     cursor: default;
 }
 
-
-.details .recentOrders table tr td:nth-child(1)  {
+.details .recentOrders table tr td:nth-child(1) {
     width: 10%;
 }
+
 
 /* .details .recentOrders table tr td:nth-child(2) {
     text-align: end;
@@ -665,7 +665,6 @@ textarea::-webkit-scrollbar-thumb {
     overflow: auto;
 }
 
-
 .navigation ul::-webkit-scrollbar {
     width: 0px;
 }
@@ -679,19 +678,22 @@ textarea::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
-.accordion{
+.accordion {
     height: 65px;
     min-height: 0 !important;
     overflow: hidden;
 }
+
 .edit_accordion1 svg,
 .edit_accordion2 svg {
     transform: rotate(180deg);
 }
-.accordion  .edit_accordion1 svg,
-.accordion  .edit_accordion2 svg {
+
+.accordion .edit_accordion1 svg,
+.accordion .edit_accordion2 svg {
     transform: rotate(0deg);
 }
+
 .edit_accordion1,
 .edit_accordion2 {
     cursor: pointer;
@@ -699,51 +701,263 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 body::-webkit-scrollbar {
-    width: 0px;               /* ширина scrollbar */
-  }
-  body::-webkit-scrollbar-track {
-    background: transparent;        /* цвет дорожки */
-  }
-  body::-webkit-scrollbar-thumb {
-    border-radius: 20px;       /* закругления плашки */
-  }
+    width: 0px;
+    /* ширина scrollbar */
+}
 
-  .projectTable table tr td:nth-child(1){
-      width: 30% !important;
-  }
-  .listTable table tr td:nth-child(1) {
-    width: 30% !important;
-  }
-  .contactTable table tr td:nth-child(1) {
-    width: 30% !important;
-  }
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* цвет дорожки */
+}
 
-  .select_style {
+body::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    /* закругления плашки */
+}
+
+.projectTable table tr td:nth-child(1) {
+    width: 30% !important;
+}
+
+.listTable table tr td:nth-child(1) {
+    width: 30% !important;
+}
+
+.contactTable table tr td:nth-child(1) {
+    width: 30% !important;
+}
+
+.select_style {
     width: 100%;
     border: 1px solid #d69600;
     border-bottom: 1px solid #d69600 !important;
     outline: none;
     height: 27px;
     border-radius: 8px;
-    background-image: url('../img/arrow_down.svg'); 
+    background-image: url('../img/arrow_down.svg');
     background-repeat: no-repeat, repeat;
     background-position: right .7em top 50%, 0 0;
-    background-size: .65em auto, 100%; 
+    background-size: .65em auto, 100%;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
     padding: 5px;
-  }
-  .select_style:focus {
+}
+
+.select_style:focus {
     border-radius: 8px 8px 0 0;
+}
 
-  }
+.necessarily {
+    color: red;
+}
 
-  .necessarily{
-      color: red;
-  }
+.recentOrders table select {
+    max-width: 1000px;
+}
 
 
-  .recentOrders table select {
-      max-width: 1000px;
-  }
+/* Для диалогового окна */
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.cf:before,
+.cf:after {
+    display: table;
+    content: " ";
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+}
+
+figure a {
+    display: block;
+}
+
+mark {
+    padding: 0 5px;
+    background-color: #ddd;
+}
+
+ ::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn.disabled {
+    cursor: not-allowed;
+    color: #ddd;
+    border-color: #ddd;
+}
+
+.btn-group {
+    padding: 15px 20px;
+    text-align: right;
+    background-color: #f5f6f8;
+}
+
+.btn-primary {
+    color: #fff;
+    border-color: #0066c0;
+    background-color: #0074d9;
+}
+
+.btn-primary:hover {
+    background-color: #0066c0;
+}
+
+.btn-danger {
+    color: #fff;
+    border-color: #ab3326;
+    background-color: #c0392b;
+}
+
+.btn-danger:hover {
+    background-color: #ab3326;
+}
+
+.btn-cancel {
+    color: rgb(0, 0, 0);
+    border-color: #ddd;
+}
+
+.btn-cancel:hover {
+    background-color: #e6e6e6;
+}
+
+.site-header {
+    text-align: center;
+    background-color: #196e76;
+}
+
+.site-header h1,
+.site-header a {
+    padding: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.site-header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.site-header a {
+    font-size: 14px;
+    font-weight: 300;
+    display: block;
+    text-decoration: none;
+    background-color: #10474c;
+}
+
+.boxed-group {
+    width: 90%;
+    max-width: 680px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.boxed-group h3,
+.boxed-group h4 {
+    font-weight: 400;
+    margin: 0;
+}
+
+.boxed-group h3 {
+    padding: 12px 20px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #434a54;
+}
+
+.boxed-group h4 {
+    font-size: 18px;
+    color: #555;
+}
+
+.boxed-group section {
+    padding: 30px 20px;
+}
+
+.boxed-group section:first-child {
+    border-bottom: 1px solid #e6e9ed;
+}
+
+.boxed-group section:only-of-type,
+.boxed-group section:only-child {
+    border-bottom: 0;
+}
+
+.boxed-group .boxed-group-inner {
+    font-size: 14px;
+    font-weight: 300;
+    color: #aaa;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: #e6e9ed;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #fff;
+}
+
+.boxed-group .btn {
+    float: right;
+    margin-left: 20px;
+}
+
+.site-dialog {
+    overflow: hidden;
+    width: 95%;
+    max-width: 500px;
+    padding: 0;
+    border-width: 0;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 100px);
+}
+
+.site-dialog h1 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+    color: #fff;
+}
+
+.site-dialog p {
+    font-size: 14px;
+}
+
+.site-dialog .dialog-header {
+    padding: 12px 20px;
+    background-color: #434a54;
+}
+
+.site-dialog .dialog-content {
+    padding: 30px 20px;
+    color: #555;
+    background-color: #fff;
+}
+
+.site-dialog .dialog-content p:last-of-type,
+.site-dialog .dialog-content p:only-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
