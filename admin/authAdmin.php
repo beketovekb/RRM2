@@ -13,7 +13,7 @@ $mysql = new mysqli($host,$login,$password,$name_bd);
 $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login2' AND `pass` = '$pass' AND `prava` = 'admin'");
 $user = $result->fetch_assoc(); // Конвертируем в массив
 if(count($user) == 0){
-	echo "Такой пользователь не найден или вы не админ";
+    header('Location: login.php?stat=erroruser');
 	exit();
 }
 else if(count($user) == 1){
