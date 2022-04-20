@@ -1,4 +1,8 @@
 <?php
+if($_COOKIE['user']=='')
+{
+    header('Location: login.php');
+}
 require_once '../include/database.php';
 require_once '../include/functions.php';
 $lst;
@@ -143,6 +147,22 @@ $par='';
                             <ion-icon name="at-outline"></ion-icon>
                         </span>
                         <span class="title">Контакты</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/regist.php">
+                        <span class="icon">
+                        <ion-icon name="person-add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Добавить нового админа</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/exit.php">
+                        <span class="icon">
+                        <ion-icon name="person-add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Выход</span>
                     </a>
                 </li>
             </ul>
