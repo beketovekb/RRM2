@@ -2207,7 +2207,120 @@ footer{
     .skills {
         height: auto;
         width: 100%;
-        background-color: #fff;
         padding: 90px 0 130px 0;
+        hr {
+            width: 100px;
+            height: 2px;
+            margin: 25px auto;
+            border: none;
+            background-color: #fff;
+        }
+        .title_caption {
+            display: block;
+            max-width: 490px;
+            text-align: center;
+            margin: 0 auto;
+            color: #fff;
+        }
+        .stars_window {
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: -101;
+        }
     }
+    
 
+    
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+
+.sercvices_cards {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+.sercvices_cards .card {
+    position: relative;
+    width: 280px;
+    height: 220px;
+    margin: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    @media (max-width:660px) {
+        height: 150px;
+    }
+}
+
+.sercvices_cards .card .content {
+    padding: 20px;
+    text-align: center;
+    /* transform: translateY(100px); */
+    /* opacity: 0; */
+    transition: 0.5s;
+}
+
+.sercvices_cards .card .content h2 {
+    position: absolute;
+    top: -25px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.sercvices_cards .card .content h3 {
+    font-size: 1.6em;
+    color: #fff;
+    z-index: 1;
+    margin-bottom: 10px;
+}
+
+.sercvices_cards .card .content a span {
+    font-size: 0.6em;
+    display: block;
+}
+
+.sercvices_cards .card .content p {
+    font-size: 0.8em;
+    line-height: 1.4em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.sercvices_cards .card .content a {
+    min-width: 70%;
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.8em;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
