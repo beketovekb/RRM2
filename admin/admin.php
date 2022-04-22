@@ -80,6 +80,14 @@ $par='';
                     </a>
                 </li>
                 <li>
+                    <a href="/admin/admin.php?str=compitions">
+                        <span class="icon">
+                        <ion-icon name="desktop-outline"></ion-icon>
+                        </span>
+                        <span class="title">Компетенции</span>
+                    </a>
+                </li>
+                <li>
                     <a href="/admin/admin.php?str=directions">
                         <span class="icon">
                             <ion-icon name="library-outline"></ion-icon>
@@ -160,7 +168,7 @@ $par='';
                 <li>
                     <a href="/admin/exit.php">
                         <span class="icon">
-                        <ion-icon name="person-add-outline"></ion-icon>
+                            <ion-icon name="exit-outline"></ion-icon>
                         </span>
                         <span class="title">Выход</span>
                     </a>

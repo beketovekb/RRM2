@@ -354,3 +354,36 @@ function get_more_product($link, $lng, $id)
 
     return $projects;
 }
+
+function get_competencies($link)
+{
+    $sql = "SELECT * FROM competencies ORDER BY pos_competencies";
+    
+    $result = mysqli_query($link, $sql);
+
+    $directions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $directions;
+}
+
+function get_competencie($link, $pos)
+{
+    $sql = "SELECT * FROM `competencies` WHERE pos_competencies = '".$pos."'";
+    
+    $result = mysqli_query($link, $sql);
+
+    $directions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $directions;
+}
+
+function get_competencie_index($link, $lng)
+{
+    $sql = "SELECT * FROM `competencies`  WHERE lng_competencies = '".$lng."' ORDER BY `pos_competencies`";
+
+    $result = mysqli_query($link, $sql);
+
+    $napravlenia = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    return $napravlenia;
+}

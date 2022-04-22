@@ -22,6 +22,14 @@ switch ($_POST['fun']) {
             }
         }
         break;
+    case 'competInfo':
+        if (isset($_POST['r49'])) {
+            $redirect_url = "/admin/admin.php?str=compitions";
+            if (set_bd(49, 50, $link)) {
+                header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+            }
+        }
+        break;
     case 'partners':
         if (isset($_POST['r12'])) {
             $redirect_url = "/admin/admin.php?str=listpartner";
@@ -80,6 +88,9 @@ switch ($_POST['fun']) {
         break;
     case 'editProduct':
         edit_products($link);
+        break;
+    case 'edit_compettit':
+        edit_compettit($link);
         break;
 }
 
@@ -1129,6 +1140,55 @@ function edit_products($link)
         echo ($sql);
         echo "Ошибка: " . mysqli_error($link);
     }
+    if($ru && $en && $kz)
+    {
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    }
+    
+}
+
+
+function edit_compettit($link)
+{
+    $pos=$_POST['pos'];
+    $redirect_url = "/admin/admin.php?str=editCompetencies&pos=".$pos."&save=true";
+    $ru=false;
+    $en=false;
+    $kz=false;
+
+
+
+    $title=str_replace("'","\'",$_POST['title_ru']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_ru']);
+    $sql="UPDATE `competencies` SET `title_competencies` = '".$title."', `detail_competencies` = '".$opisanie."'  WHERE `pos_competencies` = '".$pos."' AND `lng_competencies` = 'ru'";
+    if (mysqli_query($link, $sql)) {
+        $ru=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+    
+
+    $title=str_replace("'","\'",$_POST['title_en']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_en']);
+    $sql="UPDATE `competencies` SET `title_competencies` = '".$title."', `detail_competencies` = '".$opisanie."'  WHERE `pos_competencies` = '".$pos."' AND `lng_competencies` = 'en'";
+    if (mysqli_query($link, $sql)) {
+        $en=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
+    $title=str_replace("'","\'",$_POST['title_kz']);
+    $opisanie=str_replace("'","\'",$_POST['opisanie_kz']);
+    $sql="UPDATE `competencies` SET `title_competencies` = '".$title."', `detail_competencies` = '".$opisanie."'  WHERE `pos_competencies` = '".$pos."' AND `lng_competencies` = 'kz'";
+    if (mysqli_query($link, $sql)) {
+        $kz=true;
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+
     if($ru && $en && $kz)
     {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);

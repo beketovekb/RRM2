@@ -59,6 +59,8 @@ foreach ($img_urls as $img_ur) {
 }
 $partners = get_partners($link);
 $news = get_index_news($link, $lng, 3);
+
+$competitions = get_competencie_index($link, $lng);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -329,75 +331,22 @@ $news = get_index_news($link, $lng, 3);
         <div id='stars3'></div>
     </div>
         <div class="container">
-            <h2 data-aos="fade-down"><span><?php print($ftitle["8"]); ?></span> </h2>
+            <h2 data-aos="fade-down"><span><?php print($ftitle["49"]); ?></span> </h2>
             <hr data-aos="flip-left">
-            <span class="title_caption" data-aos="fade-up"><?php print($ftitle["9"]); ?></span>
+            <span class="title_caption" data-aos="fade-up"><?php print($ftitle["50"]); ?></span>
             
         <div class="services">
             <div class="sercvices_cards">
-                <div class="card c1">
+                <?php foreach($competitions as $cmp){ ?>
+                <div class="card c<?php print($cmp['pos_competencies']);?>">
                     <div class="content">
-                        <h2>01</h2>
-                        <h3>FrontEnd</h3>
-                        <p>HTML5, CSS3, SASS, SCSS, Less, SVG, Git. GitHub, JQuery, Js(JavaScript), Node JS, AJAX, JSON</p>
+                        <h2><?php if($cmp['pos_competencies']<10)print('0'.$cmp['pos_competencies']); else print($cmp['pos_competencies']);?></h2>
+                        <h3><?php print($cmp['title_competencies']);?></h3>
+                        <p><?php print($cmp['detail_competencies']);?></p>
                     </div>
                 </div>
-                <div class="card c2">
-                    <div class="content">
-                        <h2>02</h2>
-                        <h3>BackEnd</h3>
-                        <p>Asp.net (C#), PHP, Django(Python), Node.js, Java, GIT</p>
-                    </div>
-                </div>
-                <div class="card c3">
-                    <div class="content">
-                        <h2>03</h2>
-                        <h3>Design</h3>
-                        <p>Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, Adobe After Effects, Figma, CorelDraw, UI & UX Дизайн</p>
-                    </div>
-                </div>
-                <div class="card c4">
-                    <div class="content">
-                        <h2>04</h2>
-                        <h3>Mobile</h3>
-                        <p>Java, Kotlin, XML, FLutter</p>
-                    </div>
-                </div>
-                <div class="card c5">
-                    <div class="content">
-                        <h2>05</h2>
-                        <h3>Engineering</h3>
-                        <p>IOT, 3D разработка элементов (Compass 3d), Микроконтроллеры, Принципиальные схемы, Топология печатных плат</p>
-                    </div>
-                </div>
-                <div class="card c6">
-                    <div class="content">
-                        <h2>06</h2>
-                        <h3>Desktop</h3>
-                        <p>.Net Framework (C#) , C++, Java, XML</p>
-                    </div>
-                </div>
-                <div class="card c7">
-                    <div class="content">
-                        <h2>07</h2>
-                        <h3>VR</h3>
-                        <p>Unity, OpenGL, C#, Autodesk Maya, Blender</p>
-                    </div>
-                </div>
-                <div class="card c8">
-                    <div class="content">
-                        <h2>08</h2>
-                        <h3>DataBase</h3>
-                        <p>SQL, NoSQL (FireBase) </p>
-                    </div>
-                </div>
-                <div class="card c9">
-                    <div class="content">
-                        <h2>09</h2>
-                        <h3>Machine learning & machine vision</h3>
-                        <p>Keras, TensorFlow, OpenCV</p>
-                    </div>
-                </div>
+                <?php }?>
+                
             </div>
                 </div>
         </div>
