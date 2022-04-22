@@ -2970,6 +2970,13 @@ label .flag::before {
   z-index: -101;
 }
 
+.skills .container > h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+}
+
 .services {
   display: -webkit-box;
   display: -ms-flexbox;
