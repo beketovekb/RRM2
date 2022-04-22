@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link type="image/x-icon" rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="assets/modAlert.css">
-    <title>Document</title>
+    <title>Авторизация</title>
 </head>
 <body>
     <div class="admin_login">
