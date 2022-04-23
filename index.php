@@ -59,8 +59,6 @@ foreach ($img_urls as $img_ur) {
 }
 $partners = get_partners($link);
 $news = get_index_news($link, $lng, 3);
-
-$competitions = get_competencie_index($link, $lng);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -337,7 +335,6 @@ $competitions = get_competencie_index($link, $lng);
             
         <div class="services">
             <div class="sercvices_cards">
-                <h1></h1>
                 <?php foreach($competitions as $cmp){ ?>
                 <div class="card c<?php print($cmp['pos_competencies']);?>">
                     <div class="content">
