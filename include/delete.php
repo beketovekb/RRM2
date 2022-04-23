@@ -16,6 +16,9 @@ switch($_GET['type'])
     case 'part':
         drop_partner($link);
         break;
+    case 'prod':
+        drop_product($link);
+        break;
 }
 
 
@@ -64,6 +67,19 @@ function drop_partner($link)
     $sql = "DELETE FROM `partners` WHERE  id_partners = '".$pos."'";
     if (mysqli_query($link, $sql)) {
         $redirect_url = "/admin/admin.php?str=listpartner";
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
+    } else {
+        echo ($sql);
+        echo "Ошибка: " . mysqli_error($link);
+    }
+}
+
+function drop_product($link)
+{
+    $pos = $_GET['pos'];
+    $sql = "DELETE FROM `productions` WHERE  uk_production = '".$pos."'";
+    if (mysqli_query($link, $sql)) {
+        $redirect_url = "/admin/admin.php?str=list_product";
         header('Location: http://' . $_SERVER['HTTP_HOST'] . $redirect_url);
     } else {
         echo ($sql);
