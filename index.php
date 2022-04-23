@@ -337,6 +337,7 @@ $competitions = get_competencie_index($link, $lng);
             
         <div class="services">
             <div class="sercvices_cards">
+                <h1></h1>
                 <?php foreach($competitions as $cmp){ ?>
                 <div class="card c<?php print($cmp['pos_competencies']);?>">
                     <div class="content">
